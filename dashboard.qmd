@@ -1,0 +1,204 @@
+---
+title: "Footy Forest power ratings"
+format: 
+  dashboard:
+      logo: "Images/Footy_forest_simple_logo.png"
+---
+
+## Column
+
+```{r, loadpackages}
+
+#| echo: FALSE
+#| include: FALSE 
+library(tidyverse)
+library(fitzRoy)
+library(elo)
+library(svglite)
+library(gt)
+library(gtExtras)
+
+```
+
+
+```{r, generate elo}
+
+#Set current year
+current_date <- Sys.Date()
+current_year <- format(current_date, "%Y")
+
+#Download lastest results from 2024
+historical_results_df_2022 <- fetch_results_afl(2022) 
+historical_results_df_2023 <- fetch_results_afl(2023)
+historical_results_df_2024 <- fetch_results_afl(2024)
+
+historical_results_df <- rbind(historical_results_df_2022, 
+                               historical_results_df_2023, 
+                               historical_results_df_2024) %>%
+select(match.utcStartTime, round.roundNumber, match.venue, venue.name, match.homeTeam.name, match.awayTeam.name, homeTeamScore.matchScore.totalScore, awayTeamScore.matchScore.totalScore, weather.weatherType, round.name) %>%
+  mutate(season = paste0(substr(match.utcStartTime, 1, 4))) %>%
+  mutate(seas_rnd = as.character(paste0(season, "_", round.roundNumber)))
+
+#Remove finals games
+historical_results_df  <- historical_results_df %>% filter(!grepl("Final", round.name))
+
+
+#Rename variables to something more sensible
+historical_results_df <- historical_results_df %>% rename(round_number = round.roundNumber, venue = match.venue, home_team = match.homeTeam.name, away_team = match.awayTeam.name, home_score = homeTeamScore.matchScore.totalScore, away_score = awayTeamScore.matchScore.totalScore)
+
+
+#need to change gold coast and gws to more sensible names
+historical_results_df$home_team <- str_replace(historical_results_df$home_team, "GWS GIANTS", "GWS Giants")
+historical_results_df$away_team <- str_replace(historical_results_df$away_team, "GWS GIANTS", "GWS Giants")
+historical_results_df$home_team <- str_replace(historical_results_df$home_team, "Gold Coast SUNS", "Gold Coast Suns")
+historical_results_df$away_team <- str_replace(historical_results_df$away_team, "Gold Coast SUNS", "Gold Coast Suns")
+
+
+#change any aboriginal names to original names
+#need to change gold coast and gws to more sensible names
+historical_results_df$home_team <- str_replace(historical_results_df$home_team, "Narrm", "Melbourne")
+historical_results_df$away_team <- str_replace(historical_results_df$away_team, "Narrm", "Melbourne")
+historical_results_df$home_team <- str_replace(historical_results_df$home_team, "Kuwarna", "Adelaide Crows")
+historical_results_df$away_team <- str_replace(historical_results_df$away_team, "Kuwarna", "Adelaide Crows")
+historical_results_df$home_team <- str_replace(historical_results_df$home_team, "Yartapuulti", "Port Adelaide")
+historical_results_df$away_team <- str_replace(historical_results_df$away_team, "Yartapuulti", "Port Adelaide")
+historical_results_df$home_team <- str_replace(historical_results_df$home_team, "Walyalup", "Fremantle")
+historical_results_df$away_team <- str_replace(historical_results_df$away_team, "Walyalup", "Fremantle")
+historical_results_df$home_team <- str_replace(historical_results_df$home_team, "Euro-Yroke", "St Kilda")
+historical_results_df$away_team <- str_replace(historical_results_df$away_team, "Euro-Yroke", "St Kilda")
+historical_results_df$home_team <- str_replace(historical_results_df$home_team, "Waalitj Marawar", "West Coast Eagles")
+historical_results_df$away_team <- str_replace(historical_results_df$away_team, "Waalitj Marawar", "West Coast Eagles")
+
+
+
+#Set parameters for home ground advantage score, proportion of carryover ELO rating from season to season and k weighting. These values were initially taken from here - https://www.matterofstats.com/mafl-stats-journal/2013/10/13/building-your-own-team-rating-system.html
+HGA <- 25 #I've tuned this see the excel spreadsheet called HGA_tuning
+Carry_over <- 0.15 #I've tuned this see the excel spreadsheet called Carryover_tuning
+k_val <- 20 # note that this has been tuned see Hyperparameter_tuning.R. I bumped this up in May 2024 as it wasnt updating quick enough. But one day I should tune this properly https://rpubs.com/DTS098/SPE5AMS_Portfolio02
+
+
+#Cap the benefit from winning or losing by greater than 80 points
+map_margin_to_outcome <- function(margin, marg.max = 80, marg.min = -80){
+  norm <- (margin - marg.min)/(marg.max - marg.min)
+  norm %>% pmin(1) %>% pmax(0)
+}
+
+
+# Run ELO
+elo.data <- elo.run(
+  map_margin_to_outcome(home_score - away_score) ~
+    adjust(home_team, HGA) +
+    away_team +
+    regress(season, 1000, Carry_over) +
+    group(seas_rnd),
+  k = k_val,
+  initial.elos = 1000,
+  data = historical_results_df
+)
+
+
+elo.df <- as.data.frame(elo.data)
+
+#Join this to the results database   
+historical_results_df <- bind_cols(historical_results_df, elo.df)
+
+#Filter to just this year
+historical_results_df <- historical_results_df |>  
+  filter(season == current_year)
+
+power_rankings_home_elos <- historical_results_df |> 
+  select(round_number, home_team, elo.A) |> 
+  rename(Team = home_team, Power = elo.A)
+
+power_rankings_away_elos <- historical_results_df |> 
+  select(round_number, away_team, elo.B) |> 
+  rename(Team = away_team, Power = elo.B)
+
+#Join the home and away elos together and Round the numbers and divide by 10 so an average team is 100 
+power_rankings_dashboard <- rbind(power_rankings_home_elos, power_rankings_away_elos) |> 
+  arrange(round_number)
+
+#Convert to average team = 100 not 1000 for ease of interpretation 
+power_rankings_dashboard <- power_rankings_dashboard |> 
+  mutate(Power = round(Power, 1)/10) 
+
+
+```
+
+```{r, make ladder}
+#### make table for website dashboard
+
+
+#Download ladder and select variables of interest
+ladder <- fetch_ladder_afl(comp = "AFLM") |>   
+  select(position, team.name, played, thisSeasonRecord.aggregatePoints, thisSeasonRecord.percentage, thisRoundLastSeason.ladderPosition)
+
+#Rename variables to be more sensible
+ladder <- ladder |> 
+  rename("Ladder position" = position, Team = team.name, "Games played" = played, Points = thisSeasonRecord.aggregatePoints, Percentage = thisSeasonRecord.percentage, "Ladder position this time last year" = thisRoundLastSeason.ladderPosition)
+
+#Clean up team names
+ladder <- ladder %>%
+  mutate(Team = str_replace(Team, "Gold Coast SUNS", "Gold Coast Suns")) %>%
+  mutate(Team = str_replace(Team, "GWS GIANTS", "GWS Giants")) %>%
+  mutate(Team = str_replace(Team, "Narrm", "Melbourne")) %>%
+  mutate(Team = str_replace(Team, "Kuwarna", "Adelaide Crows")) %>%
+  mutate(Team = str_replace(Team, "Yartapuulti", "Port Adelaide")) %>%
+  mutate(Team = str_replace(Team, "Kuwarna", "Adelaide Crows")) %>%
+  mutate(Team = str_replace(Team, "Euro-Yroke", "St Kilda")) %>%
+  mutate(Team = str_replace(Team, "Waalitj Marawar", "West Coast Eagles")) %>%
+  mutate(Team = str_replace(Team, "Walyalup", "Fremantle")) 
+
+
+
+
+#Put the power rankings into a single column to create a sparkline
+sparkline_data <- power_rankings_dashboard |> 
+  group_by(Team) |> 
+  summarize("Power trend" = list(Power), .groups = "drop")
+
+
+#Flip this so that each team is on its own row
+power_rankings_dashboard_for_joining <- pivot_wider(data = power_rankings_dashboard, names_from = round_number, values_from = Power)
+
+
+#Replace NAs with the previous column 
+power_rankings_dashboard_for_joining <- power_rankings_dashboard_for_joining |>  
+  select(Team, last_col(offset = 1), last_col())
+
+
+power_rankings_dashboard_for_joining <- power_rankings_dashboard_for_joining %>% rename(latest_elo = 3, second_latest_elo = 2 )
+
+power_rankings_dashboard_for_joining <- power_rankings_dashboard_for_joining |>  mutate(power = coalesce(latest_elo, second_latest_elo))
+
+power_rankings_dashboard_for_joining <- select(power_rankings_dashboard_for_joining, 1, last_col())
+
+#Join ladder with temp elo df but first remove old elos
+ladder <- ladder |> select("Ladder position", Team, Points, Percentage, "Ladder position this time last year")
+
+ladder <- left_join(ladder, power_rankings_dashboard_for_joining, by = "Team") 
+
+ladder <- ladder |>  rename("Power" = last_col())
+
+ladder <- ladder |> arrange(desc(Power))
+
+ladder <- left_join(ladder, sparkline_data, by = "Team")
+```
+
+```{r, generate GT table}
+
+ladder |> 
+  gt() |> 
+  cols_align(
+    align = "center",
+    columns = everything()
+  ) |> 
+  data_color(
+    columns = Power,
+    palette = c("#A23333", "white", "#003300")) |> 
+  gt_plt_sparkline("Power trend", type = "default", same_limit = FALSE, label = FALSE, palette = c("black", "transparent","#A23333","#003300","transparent")) |> 
+  opt_interactive(use_resizers = TRUE, use_highlight = TRUE, use_page_size_select = FALSE, use_pagination = FALSE) 
+
+```
+
+

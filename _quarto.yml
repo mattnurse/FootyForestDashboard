@@ -1,0 +1,21 @@
+project:
+  type: website
+
+website:
+  title: "The Footy Forest"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: about.qmd
+        text: About
+      - href: dashboard.qmd
+        text: Team power rankings
+
+format:
+  html:
+    theme: [cosmo, custom.scss]
+    toc: true
+
+
+
