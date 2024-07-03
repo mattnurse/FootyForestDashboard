@@ -7,7 +7,7 @@ format:
 
 ## Column
 
-```{r, loadpackages}
+```{r, loadpackagess}
 
 #| echo: FALSE
 #| include: FALSE 
