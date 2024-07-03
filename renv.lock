@@ -1495,7 +1495,7 @@
     },
     "rpart": {
       "Package": "rpart",
-      "Version": "4.1.19",
+      "Version": "4.1.23",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
@@ -1504,7 +1504,7 @@
         "graphics",
         "stats"
       ],
-      "Hash": "b3c892a81783376cc2204af0f5805a80"
+      "Hash": "b3d390424f41d04174cccf84d49676c2"
     },
     "rstudioapi": {
       "Package": "rstudioapi",
