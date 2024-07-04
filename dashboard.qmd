@@ -194,6 +194,9 @@ ladder <- left_join(Team_logos, ladder, by = "Team") |> arrange(desc(Power))
 
 ```{r, generate GT table}
 
+library(gt)
+library(gtExtras)
+
 ladder |> 
   gt() |> 
   gt_img_rows(logo, img_source = "local") |> 
@@ -204,7 +207,7 @@ ladder |>
   data_color(
     columns = Power,
     palette = c("#A23333", "white", "#003300")) |> 
-  cols_label(logo = "") |>  
+  cols_label(logo = "", Power = "Power rating") |>  
   gt_plt_sparkline("Power trend", type = "default", same_limit = FALSE, label = FALSE, palette = c("black", "transparent","#A23333","#003300","transparent")) |> 
   opt_interactive(use_resizers = TRUE, use_highlight = TRUE, use_page_size_select = FALSE, use_pagination = FALSE) 
 
