@@ -12,7 +12,7 @@ website:
       - href: dashboard.qmd
         text: Team power rankings
       - href: blog.qmd
-        test: Blog
+        text: Blog
         
 
 format:
