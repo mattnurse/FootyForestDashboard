@@ -20,10 +20,7 @@ jobs:
         uses: quarto-dev/quarto-actions/setup@v2
         
       - name: Install curl
-        RUN apt-get update && apt-get install -y sudo && sudo apt-get install -y curl
-        
-      - name: Install curl dependency
-        run: sudo apt-get install -y libcurl4-openssl-dev
+        run: apt-get update && apt-get install -y sudo && sudo apt-get install -y curl
 
       - name: Install R
         uses: r-lib/actions/setup-r@v2
