@@ -11,22 +11,27 @@ website:
     type: secondary
     position: below-navbar
   navbar:
+    logo: Images/Footy_forest_simple_logo.png
     left:
-      - href: index.qmd
-        text: Home
-      - href: about.qmd
-        text: About
-      - href: dashboard.qmd
-        text: Team power rankings
-      - href: blog.qmd
-        text: Blog
+      - text: "About"
+        href: about.qmd
+      - text: "Team power rankings"
+        href: dashboard.qmd
+      - text: "Blog"
+        href: blog.qmd
+    right: 
+      - icon: github
+        href: https://github.com/mattnurse
+      - icon: facebook
+        href: https://www.facebook.com/profile.php?id=61559518431071
+        
         
 
 format:
   html:
     theme: [cosmo, custom.scss]
     toc: true
-    page-layout: full
+    page-layout: full 
 
 
 
