@@ -1,9 +1,113 @@
-cd ---
-title: "About"
+---
+editor: 
+  markdown: 
+    wrap: 72
 ---
 
-About this site
+cd --- title: "About" ---
 
-```{r}
-1 + 1
-```
+**How is the model going so far?**
+
+You can find the latest results via the AFL tipping website – just
+search for “The Footy Forest”
+
+**Where can I find the predictions for this week?**
+
+Follow me on Facebook for that. In the future I may post each prediction
+on this site but I have not set that up yet.
+
+**Which variables (features) does it use?**
+
+It uses four variables. These are:
+
+a measure of form, based on an [Elo
+formula](https://www.theatlantic.com/technology/archive/2024/04/elo-ratings-are-everywhere/678129/).
+a measure of venue experience a measure of player rating for each
+selected team, and a measure of the distance each team has had to
+travel. Each of these are calculated for each team and then converted as
+a relative measure showing the advantage for the home team compared to
+its opponent on the day.
+
+**Are you doing this to make money?**
+
+Hell, no. I am doing this for fun and for a challenge. Yes, I am a nerd.
+And yes, I am obsessed by Australian football.
+
+**Should I use this model to place bets?**
+
+Definitely not. Betting is for mugs and niff-naffs.
+
+**Should I use this model for footy tipping?**
+
+Absolutely. Go bananas.
+
+**What program did you use to write this model?**
+
+[I use R for this project.](https://www.r-project.org/). This is the
+program I often use for my academic work. R is extremely powerful and
+free, but takes some time to learn.
+
+**Does this model use ChatGPT, or AI?**
+
+No. This model is one hundred per cent pure, old fashioned, home-grown
+human-written computer code, born free right here in the real world.
+
+**Isn’t that a line from The Matrix?**
+
+[Yes. Yes it is.](https://www.youtube.com/watch?v=HD_MO3cCl28)
+
+**What is your background?**
+
+I am a quantitative social scientist who is mainly interested in
+researching problems in science communication. While this gives me some
+useful skills in statistical analysis, and I have published some
+academic work using machine learning techniques, [there are many more
+qualified people than me who have produced similar
+models](https://squiggle.com.au/). Prior to this I worked in various
+communication roles.
+
+**What techniques are used for this model?**
+
+This model is an ensemble of models compiled with the [R Tidymodels
+package](https://www.tidymodels.org/). It uses a stacked combination of
+gradient boosted trees, generalised linear models and random forest
+models to make its predictions.
+
+**Why is this called the “Footy Forest”?**
+
+A few of the techniques used in this model are tree-based (eg.
+gradient-boosted trees, random forest), so I thought I’d take the
+concept and run with it like Ed Langdon on a fast break. Also it
+predicts … footy.
+
+**Where do you get your data from?**
+
+I use the [FitzRoy package for
+R.](https://cran.r-project.org/web/packages/fitzRoy/index.html) It is
+wonderful. Cheers to the legends to have developed it and maintain it.
+
+**What is Australian football or the Australian Football League?**
+
+My friend, let me introduce you to [by far the best sport on the entire
+planet](https://www.youtube.com/watch?v=u_SqfNNfhmM&t=13s).
+
+**What football team do you barrack for?**
+
+I barrack for the original Australian football team – the [Melbourne
+Demons](https://www.melbournefc.com.au/).
+
+**Who is your favourite footballer?**
+
+As a kid my favourite player was [Stephen (Stinga)
+Tingay](http://demonwiki.org/Stephen+Tingay). But right now it is
+probably young [Caleb
+Windsor](https://www.melbournefc.com.au/players/6443/caleb-windsor). I
+guess I have a thing for wingers.
+
+**Are you a real doctor?**
+
+I am not a medical doctor. I have a PhD in science from ANU.
+
+**How frequently are you actually asked these questions?**
+
+Never. I’ve never been asked any of these questions.
