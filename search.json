@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blog test",
+    "section": "",
+    "text": "This is just a test blog"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "FootyForest-dashboard",
