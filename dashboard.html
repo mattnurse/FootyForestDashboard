@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.53">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Footy Forest power ratings – The Footy Forest</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<script src="site_libs/quarto-dashboard/quarto-dashboard.js"></script>
+<script src="site_libs/quarto-dashboard/stickythead.js"></script>
+<script src="site_libs/quarto-dashboard/datatables.min.js" kdttablesentinel="true"></script>
+<script src="site_libs/quarto-dashboard/pdfmake.min.js" kdttablesentinel="true"></script>
+<script src="site_libs/quarto-dashboard/vfs_fonts.js" kdttablesentinel="true"></script>
+<script src="site_libs/quarto-dashboard/web-components.js" type="module"></script>
+<script src="site_libs/quarto-dashboard/components.js"></script>
+<link href="site_libs/quarto-dashboard/datatables.min.css" rel="stylesheet" kdttablesentinel="true">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="site_libs/core-js-2.5.3/shim.min.js"></script>
+<script src="site_libs/react-18.2.0/react.min.js"></script>
+<script src="site_libs/react-18.2.0/react-dom.min.js"></script>
+<script src="site_libs/reactwidget-2.0.0/react-tools.umd.cjs"></script>
+<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<link href="site_libs/reactable-0.4.4/reactable.css" rel="stylesheet">
+<script src="site_libs/reactable-binding-0.4.4/reactable.js"></script>
+
+
+</head>
+
+<body class="quarto-dashboard nav-fixed dashboard-fill fullcontent">
+
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">The Footy Forest</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./dashboard.html" aria-current="page"> 
+<span class="menu-text">Team power rankings</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+<header id="quarto-dashboard-header">
+<nav class="navbar navbar-expand-md slim" data-bs-theme="dark">
+  <div class="navbar-container container-fluid">
+    <button class="navbar-toggler hidden" type="button" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-controls="dashboard-collapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>    
+
+
+    <div class="navbar-brand-container">       
+    <a href="#"><img src="Images/Footy_forest_simple_logo.png" alt="" class="navbar-logo d-inline-block"></a>
+      <div class="navbar-title">
+        <div class="navbar-title-text"><a href="#">Footy Forest power ratings</a></div>
+        
+        
+      </div>
+    </div>
+</div>
+</nav>
+</header></header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-layout-custom page-navbar quarto-dashboard-content bslib-gap-spacing html-fill-container bslib-page-fill">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+<!-- main -->
+
+<div class="bslib-grid-item html-fill-item bslib-grid" data-layout="fill" style="display: grid; grid-template-rows: minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
+<div class="bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr);
+grid-auto-rows: minmax(0, 1fr);">
+<div class="card cell bslib-card html-fill-container" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output-display html-fill-item html-fill-container">
+<div id="dapwtdcypm" class=".gt_table html-fill-item html-fill-container" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#dapwtdcypm table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#dapwtdcypm thead, #dapwtdcypm tbody, #dapwtdcypm tfoot, #dapwtdcypm tr, #dapwtdcypm td, #dapwtdcypm th {
+  border-style: none;
+}
+
+#dapwtdcypm p {
+  margin: 0;
+  padding: 0;
+}
+
+#dapwtdcypm .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#dapwtdcypm .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#dapwtdcypm .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#dapwtdcypm .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#dapwtdcypm .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#dapwtdcypm .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#dapwtdcypm .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#dapwtdcypm .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#dapwtdcypm .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#dapwtdcypm .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#dapwtdcypm .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#dapwtdcypm .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#dapwtdcypm .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#dapwtdcypm .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#dapwtdcypm .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#dapwtdcypm .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#dapwtdcypm .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#dapwtdcypm .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#dapwtdcypm .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#dapwtdcypm .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#dapwtdcypm .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#dapwtdcypm .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#dapwtdcypm .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#dapwtdcypm .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#dapwtdcypm .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#dapwtdcypm .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#dapwtdcypm .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#dapwtdcypm .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#dapwtdcypm .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#dapwtdcypm .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#dapwtdcypm .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#dapwtdcypm .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#dapwtdcypm .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#dapwtdcypm .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#dapwtdcypm .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#dapwtdcypm .gt_left {
+  text-align: left;
+}
+
+#dapwtdcypm .gt_center {
+  text-align: center;
+}
+
+#dapwtdcypm .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#dapwtdcypm .gt_font_normal {
+  font-weight: normal;
+}
+
+#dapwtdcypm .gt_font_bold {
+  font-weight: bold;
+}
+
+#dapwtdcypm .gt_font_italic {
+  font-style: italic;
+}
+
+#dapwtdcypm .gt_super {
+  font-size: 65%;
+}
+
+#dapwtdcypm .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#dapwtdcypm .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#dapwtdcypm .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#dapwtdcypm .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#dapwtdcypm .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#dapwtdcypm .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#dapwtdcypm .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<div id="dapwtdcypm" class="reactable html-widget html-fill-item html-fill-container" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="dapwtdcypm">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"Ladder position":[1,8,2,5,9,6,12,3,7,10,14,11,15,13,4,17,18,16],"Team":["Sydney Swans","Brisbane Lions","Carlton","Geelong Cats","Western Bulldogs","Collingwood","Melbourne","Fremantle","Port Adelaide","GWS Giants","Adelaide Crows","Gold Coast Suns","St Kilda","Hawthorn","Essendon","Richmond","North Melbourne","West Coast Eagles"],"Points":[52,34,44,36,32,36,32,38,36,32,22,32,20,32,38,8,4,12],"Percentage":[144.2,121,118.5,106.2,120.2,105.8,99.9,111.3,101.1,108.4,103.8,106,92.5,97.9,99,63,64.1,70.4],"Ladder position this time last year":[15,3,11,8,7,1,4,14,2,10,9,13,6,16,5,12,17,18],"Power":[106.72,105.27,104.57,103.37,103.35,103.19,103.07,101.81,101.51,101.12,100.81,99.72,99.36,97.67,97.13,94.59,88.69,88.03],"Power trend":[[102.8,103.3,103.42,103.31,103.27,103.74,104.53,104.75,105.32,105.83,106,106.24,106.69,106.96,106.72],[104.1,103.78,103.43,103.89,104.28,103.9,103.23,103.46,103.46,104.2,103.7,104.3,104.34,105.35,105.27],[102.42,102.33,102.78,102.93,102.76,102.9,102.87,102.73,102.76,102.25,102.48,103.02,103.26,103.99,104.57],[103.82,104.05,104.32,104.39,104.88,105.26,105.28,105.26,105.05,104.15,103.94,104.01,103.77,103.04,103.37],[101.43,101.9,102.41,102.34,101.73,102.53,102.24,101.87,102.81,103.19,103.02,103.33,102.73,103.48,103.35],[103.39,102.89,102.71,103.06,102.83,103.31,103.2,103.34,103.71,103.62,103.62,103.3,103.72,103.37,103.19],[104.44,104.86,105.36,105.46,105.58,105.19,105.6,105.62,105.6,104.77,105.03,103.85,103.43,102.99,103.07],[100.64,100.77,101.14,100.99,101.11,100.36,100.65,101.32,100.75,101.01,101.02,102.2,101.45,101.58,101.81],[103.11,103.46,103.35,103.96,103.84,103.36,103.32,102.94,103.16,102.87,103.27,102.72,102.48,101.47,101.51],[100.65,100.81,101.35,101.7,101.61,101.48,102.15,101.93,101.61,101.23,101.44,101.29,101.53,101.27,101.12],[101.12,100.89,100.52,100.4,100.57,100.35,100.82,101.2,101.19,101.28,101.89,101.45,101.11,100.66,100.81],[99.27,99.33,98.86,98.51,99.01,98.54,98.67,98.44,98.95,99.86,99.63,99.64,99.67,99.54,99.72],[100.56,100.75,100.65,100.77,100.86,100.06,100.1,100.2,100.05,99.79,99.53,99.47,99.44,99.4,99.36],[95.88,95.38,95.11,95.34,94.84,95.32,94.54,94.91,95.06,95.34,95.83,96.27,96.42,97.08,97.67],[96.76,96.64,96.74,96.13,96.74,96.96,97.07,96.98,97.3,97.48,97.65,97.64,97.4,97.46,97.13],[99.51,99.6,99.26,99.37,99.24,98.5,98.08,97.41,96.46,95.73,95.56,95.49,95.83,95.17,94.59],[91.21,91.08,90.63,90.17,89.68,89.19,88.72,88.63,88.12,87.94,87.55,87.77,88.13,88.56,88.69],[88.56,88.02,87.51,87.55,88.3,89.05,88.92,89,88.63,89.46,88.85,88.91,88.68,88.62,88.03]]},"columns":[{"id":"Ladder position","name":"Ladder position","type":"numeric","style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\nif (colInfo.id === 'Power' & rowIndex === 1) {\n  return { backgroundColor: '#003300', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 2) {\n  return { backgroundColor: '#295026', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 3) {\n  return { backgroundColor: '#3B5E37', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 4) {\n  return { backgroundColor: '#5A7755', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 5) {\n  return { backgroundColor: '#5A7755', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 6) {\n  return { backgroundColor: '#5E7B59', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 7) {\n  return { backgroundColor: '#617D5C', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 8) {\n  return { backgroundColor: '#83997E', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 9) {\n  return { backgroundColor: '#8B9F86', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 10) {\n  return { backgroundColor: '#95A891', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 11) {\n  return { backgroundColor: '#9DAF9A', color: '#000000' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 12) {\n  return { backgroundColor: '#BCC8B9', color: '#000000' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 13) {\n  return { backgroundColor: '#C6D0C3', color: '#000000' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 14) {\n  return { backgroundColor: '#F6F8F6', color: '#000000' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 15) {\n  return { backgroundColor: '#FDFAF9', color: '#000000' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 16) {\n  return { backgroundColor: '#EAC2BD', color: '#000000' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 17) {\n  return { backgroundColor: '#AB433F', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 18) {\n  return { backgroundColor: '#A23333', color: '#FFFFFF' }\n}\n\n}","cell":["1","8","2","5","9","6","12","3","7","10","14","11","15","13","4","17","18","16"],"html":true,"align":"center","headerStyle":{"font-weight":"normal"}},{"id":"Team","name":"Team","type":"character","style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\nif (colInfo.id === 'Power' & rowIndex === 1) {\n  return { backgroundColor: '#003300', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 2) {\n  return { backgroundColor: '#295026', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 3) {\n  return { backgroundColor: '#3B5E37', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 4) {\n  return { backgroundColor: '#5A7755', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 5) {\n  return { backgroundColor: '#5A7755', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 6) {\n  return { backgroundColor: '#5E7B59', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 7) {\n  return { backgroundColor: '#617D5C', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 8) {\n  return { backgroundColor: '#83997E', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 9) {\n  return { backgroundColor: '#8B9F86', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 10) {\n  return { backgroundColor: '#95A891', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 11) {\n  return { backgroundColor: '#9DAF9A', color: '#000000' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 12) {\n  return { backgroundColor: '#BCC8B9', color: '#000000' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 13) {\n  return { backgroundColor: '#C6D0C3', color: '#000000' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 14) {\n  return { backgroundColor: '#F6F8F6', color: '#000000' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 15) {\n  return { backgroundColor: '#FDFAF9', color: '#000000' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 16) {\n  return { backgroundColor: '#EAC2BD', color: '#000000' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 17) {\n  return { backgroundColor: '#AB433F', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 18) {\n  return { backgroundColor: '#A23333', color: '#FFFFFF' }\n}\n\n}","cell":["Sydney Swans","Brisbane Lions","Carlton","Geelong Cats","Western Bulldogs","Collingwood","Melbourne","Fremantle","Port Adelaide","GWS Giants","Adelaide Crows","Gold Coast Suns","St Kilda","Hawthorn","Essendon","Richmond","North Melbourne","West Coast Eagles"],"html":true,"align":"center","headerStyle":{"font-weight":"normal"}},{"id":"Points","name":"Points","type":"numeric","style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\nif (colInfo.id === 'Power' & rowIndex === 1) {\n  return { backgroundColor: '#003300', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 2) {\n  return { backgroundColor: '#295026', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 3) {\n  return { backgroundColor: '#3B5E37', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 4) {\n  return { backgroundColor: '#5A7755', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 5) {\n  return { backgroundColor: '#5A7755', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 6) {\n  return { backgroundColor: '#5E7B59', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 7) {\n  return { backgroundColor: '#617D5C', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 8) {\n  return { backgroundColor: '#83997E', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 9) {\n  return { backgroundColor: '#8B9F86', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 10) {\n  return { backgroundColor: '#95A891', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 11) {\n  return { backgroundColor: '#9DAF9A', color: '#000000' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 12) {\n  return { backgroundColor: '#BCC8B9', color: '#000000' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 13) {\n  return { backgroundColor: '#C6D0C3', color: '#000000' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 14) {\n  return { backgroundColor: '#F6F8F6', color: '#000000' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 15) {\n  return { backgroundColor: '#FDFAF9', color: '#000000' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 16) {\n  return { backgroundColor: '#EAC2BD', color: '#000000' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 17) {\n  return { backgroundColor: '#AB433F', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 18) {\n  return { backgroundColor: '#A23333', color: '#FFFFFF' }\n}\n\n}","cell":["52","34","44","36","32","36","32","38","36","32","22","32","20","32","38","8","4","12"],"html":true,"align":"center","headerStyle":{"font-weight":"normal"}},{"id":"Percentage","name":"Percentage","type":"numeric","style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\nif (colInfo.id === 'Power' & rowIndex === 1) {\n  return { backgroundColor: '#003300', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 2) {\n  return { backgroundColor: '#295026', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 3) {\n  return { backgroundColor: '#3B5E37', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 4) {\n  return { backgroundColor: '#5A7755', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 5) {\n  return { backgroundColor: '#5A7755', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 6) {\n  return { backgroundColor: '#5E7B59', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 7) {\n  return { backgroundColor: '#617D5C', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 8) {\n  return { backgroundColor: '#83997E', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 9) {\n  return { backgroundColor: '#8B9F86', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 10) {\n  return { backgroundColor: '#95A891', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 11) {\n  return { backgroundColor: '#9DAF9A', color: '#000000' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 12) {\n  return { backgroundColor: '#BCC8B9', color: '#000000' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 13) {\n  return { backgroundColor: '#C6D0C3', color: '#000000' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 14) {\n  return { backgroundColor: '#F6F8F6', color: '#000000' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 15) {\n  return { backgroundColor: '#FDFAF9', color: '#000000' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 16) {\n  return { backgroundColor: '#EAC2BD', color: '#000000' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 17) {\n  return { backgroundColor: '#AB433F', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 18) {\n  return { backgroundColor: '#A23333', color: '#FFFFFF' }\n}\n\n}","cell":["144.2","121.0","118.5","106.2","120.2","105.8","99.9","111.3","101.1","108.4","103.8","106.0","92.5","97.9","99.0","63.0","64.1","70.4"],"html":true,"align":"center","headerStyle":{"font-weight":"normal"}},{"id":"Ladder position this time last year","name":"Ladder position this time last year","type":"numeric","style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\nif (colInfo.id === 'Power' & rowIndex === 1) {\n  return { backgroundColor: '#003300', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 2) {\n  return { backgroundColor: '#295026', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 3) {\n  return { backgroundColor: '#3B5E37', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 4) {\n  return { backgroundColor: '#5A7755', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 5) {\n  return { backgroundColor: '#5A7755', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 6) {\n  return { backgroundColor: '#5E7B59', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 7) {\n  return { backgroundColor: '#617D5C', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 8) {\n  return { backgroundColor: '#83997E', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 9) {\n  return { backgroundColor: '#8B9F86', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 10) {\n  return { backgroundColor: '#95A891', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 11) {\n  return { backgroundColor: '#9DAF9A', color: '#000000' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 12) {\n  return { backgroundColor: '#BCC8B9', color: '#000000' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 13) {\n  return { backgroundColor: '#C6D0C3', color: '#000000' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 14) {\n  return { backgroundColor: '#F6F8F6', color: '#000000' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 15) {\n  return { backgroundColor: '#FDFAF9', color: '#000000' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 16) {\n  return { backgroundColor: '#EAC2BD', color: '#000000' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 17) {\n  return { backgroundColor: '#AB433F', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 18) {\n  return { backgroundColor: '#A23333', color: '#FFFFFF' }\n}\n\n}","cell":["15","3","11","8","7","1","4","14","2","10","9","13","6","16","5","12","17","18"],"html":true,"align":"center","headerStyle":{"font-weight":"normal"}},{"id":"Power","name":"Power","type":"numeric","style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\nif (colInfo.id === 'Power' & rowIndex === 1) {\n  return { backgroundColor: '#003300', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 2) {\n  return { backgroundColor: '#295026', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 3) {\n  return { backgroundColor: '#3B5E37', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 4) {\n  return { backgroundColor: '#5A7755', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 5) {\n  return { backgroundColor: '#5A7755', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 6) {\n  return { backgroundColor: '#5E7B59', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 7) {\n  return { backgroundColor: '#617D5C', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 8) {\n  return { backgroundColor: '#83997E', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 9) {\n  return { backgroundColor: '#8B9F86', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 10) {\n  return { backgroundColor: '#95A891', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 11) {\n  return { backgroundColor: '#9DAF9A', color: '#000000' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 12) {\n  return { backgroundColor: '#BCC8B9', color: '#000000' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 13) {\n  return { backgroundColor: '#C6D0C3', color: '#000000' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 14) {\n  return { backgroundColor: '#F6F8F6', color: '#000000' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 15) {\n  return { backgroundColor: '#FDFAF9', color: '#000000' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 16) {\n  return { backgroundColor: '#EAC2BD', color: '#000000' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 17) {\n  return { backgroundColor: '#AB433F', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 18) {\n  return { backgroundColor: '#A23333', color: '#FFFFFF' }\n}\n\n}","cell":["106.72","105.27","104.57","103.37","103.35","103.19","103.07","101.81","101.51","101.12","100.81","99.72","99.36","97.67","97.13","94.59","88.69","88.03"],"html":true,"align":"center","headerStyle":{"font-weight":"normal"}},{"id":"Power trend","name":"Power trend","type":"list","style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\nif (colInfo.id === 'Power' & rowIndex === 1) {\n  return { backgroundColor: '#003300', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 2) {\n  return { backgroundColor: '#295026', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 3) {\n  return { backgroundColor: '#3B5E37', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 4) {\n  return { backgroundColor: '#5A7755', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 5) {\n  return { backgroundColor: '#5A7755', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 6) {\n  return { backgroundColor: '#5E7B59', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 7) {\n  return { backgroundColor: '#617D5C', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 8) {\n  return { backgroundColor: '#83997E', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 9) {\n  return { backgroundColor: '#8B9F86', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 10) {\n  return { backgroundColor: '#95A891', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 11) {\n  return { backgroundColor: '#9DAF9A', color: '#000000' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 12) {\n  return { backgroundColor: '#BCC8B9', color: '#000000' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 13) {\n  return { backgroundColor: '#C6D0C3', color: '#000000' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 14) {\n  return { backgroundColor: '#F6F8F6', color: '#000000' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 15) {\n  return { backgroundColor: '#FDFAF9', color: '#000000' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 16) {\n  return { backgroundColor: '#EAC2BD', color: '#000000' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 17) {\n  return { backgroundColor: '#AB433F', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'Power' & rowIndex === 18) {\n  return { backgroundColor: '#A23333', color: '#FFFFFF' }\n}\n\n}","cell":["<?xml version='1.0' encoding='UTF-8' ?><svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' class='svglite' width='85.04pt' height='14.17pt' viewBox='0 0 85.04 14.17'><defs>  <style type='text/css'><![CDATA[    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }  ]]><\/style><\/defs><rect width='100%' height='100%' style='stroke: none; fill: none;'/><defs>  <clipPath id='cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3'>    <rect x='0.00' y='0.00' width='85.04' height='14.17' />  <\/clipPath><\/defs><g clip-path='url(#cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3)'><polyline points='3.87,12.55 9.39,11.23 14.91,10.92 20.43,11.21 25.95,11.31 31.48,10.08 37.00,8.01 42.52,7.43 48.04,5.93 53.56,4.59 59.09,4.15 64.61,3.52 70.13,2.34 75.65,1.63 81.17,2.26 ' style='stroke-width: 1.07; stroke-linecap: butt;' /><circle cx='81.17' cy='2.26' r='0.89' style='stroke-width: 0.71; stroke: none;' /><circle cx='3.87' cy='12.55' r='0.89' style='stroke-width: 0.71; stroke: #A23333; fill: #A23333;' /><circle cx='75.65' cy='1.63' r='0.89' style='stroke-width: 0.71; stroke: #003300; fill: #003300;' /><\/g><\/svg>","<?xml version='1.0' encoding='UTF-8' ?><svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' class='svglite' width='85.04pt' height='14.17pt' viewBox='0 0 85.04 14.17'><defs>  <style type='text/css'><![CDATA[    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }  ]]><\/style><\/defs><rect width='100%' height='100%' style='stroke: none; fill: none;'/><defs>  <clipPath id='cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3'>    <rect x='0.00' y='0.00' width='85.04' height='14.17' />  <\/clipPath><\/defs><g clip-path='url(#cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3)'><polyline points='3.87,8.07 9.39,9.71 14.91,11.52 20.43,9.15 25.95,7.14 31.48,9.10 37.00,12.55 42.52,11.36 48.04,11.36 53.56,7.55 59.09,10.13 64.61,7.04 70.13,6.83 75.65,1.63 81.17,2.04 ' style='stroke-width: 1.07; stroke-linecap: butt;' /><circle cx='81.17' cy='2.04' r='0.89' style='stroke-width: 0.71; stroke: none;' /><circle cx='37.00' cy='12.55' r='0.89' style='stroke-width: 0.71; stroke: #A23333; fill: #A23333;' /><circle cx='75.65' cy='1.63' r='0.89' style='stroke-width: 0.71; stroke: #003300; fill: #003300;' /><\/g><\/svg>","<?xml version='1.0' encoding='UTF-8' ?><svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' class='svglite' width='85.04pt' height='14.17pt' viewBox='0 0 85.04 14.17'><defs>  <style type='text/css'><![CDATA[    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }  ]]><\/style><\/defs><rect width='100%' height='100%' style='stroke: none; fill: none;'/><defs>  <clipPath id='cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3'>    <rect x='0.00' y='0.00' width='85.04' height='14.17' />  <\/clipPath><\/defs><g clip-path='url(#cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3)'><polyline points='3.87,11.75 9.39,12.17 14.91,10.05 20.43,9.35 25.95,10.15 31.48,9.49 37.00,9.63 42.52,10.29 48.04,10.15 53.56,12.55 59.09,11.46 64.61,8.92 70.13,7.79 75.65,4.36 81.17,1.63 ' style='stroke-width: 1.07; stroke-linecap: butt;' /><circle cx='81.17' cy='1.63' r='0.89' style='stroke-width: 0.71; stroke: none;' /><circle cx='53.56' cy='12.55' r='0.89' style='stroke-width: 0.71; stroke: #A23333; fill: #A23333;' /><circle cx='81.17' cy='1.63' r='0.89' style='stroke-width: 0.71; stroke: #003300; fill: #003300;' /><\/g><\/svg>","<?xml version='1.0' encoding='UTF-8' ?><svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' class='svglite' width='85.04pt' height='14.17pt' viewBox='0 0 85.04 14.17'><defs>  <style type='text/css'><![CDATA[    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }  ]]><\/style><\/defs><rect width='100%' height='100%' style='stroke: none; fill: none;'/><defs>  <clipPath id='cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3'>    <rect x='0.00' y='0.00' width='85.04' height='14.17' />  <\/clipPath><\/defs><g clip-path='url(#cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3)'><polyline points='3.87,8.74 9.39,7.62 14.91,6.31 20.43,5.97 25.95,3.58 31.48,1.72 37.00,1.63 42.52,1.72 48.04,2.75 53.56,7.14 59.09,8.16 64.61,7.82 70.13,8.99 75.65,12.55 81.17,10.94 ' style='stroke-width: 1.07; stroke-linecap: butt;' /><circle cx='81.17' cy='10.94' r='0.89' style='stroke-width: 0.71; stroke: none;' /><circle cx='75.65' cy='12.55' r='0.89' style='stroke-width: 0.71; stroke: #A23333; fill: #A23333;' /><circle cx='37.00' cy='1.63' r='0.89' style='stroke-width: 0.71; stroke: #003300; fill: #003300;' /><\/g><\/svg>","<?xml version='1.0' encoding='UTF-8' ?><svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' class='svglite' width='85.04pt' height='14.17pt' viewBox='0 0 85.04 14.17'><defs>  <style type='text/css'><![CDATA[    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }  ]]><\/style><\/defs><rect width='100%' height='100%' style='stroke: none; fill: none;'/><defs>  <clipPath id='cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3'>    <rect x='0.00' y='0.00' width='85.04' height='14.17' />  <\/clipPath><\/defs><g clip-path='url(#cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3)'><polyline points='3.87,12.55 9.39,10.04 14.91,7.33 20.43,7.70 25.95,10.95 31.48,6.69 37.00,8.23 42.52,10.20 48.04,5.20 53.56,3.17 59.09,4.08 64.61,2.43 70.13,5.62 75.65,1.63 81.17,2.32 ' style='stroke-width: 1.07; stroke-linecap: butt;' /><circle cx='81.17' cy='2.32' r='0.89' style='stroke-width: 0.71; stroke: none;' /><circle cx='3.87' cy='12.55' r='0.89' style='stroke-width: 0.71; stroke: #A23333; fill: #A23333;' /><circle cx='75.65' cy='1.63' r='0.89' style='stroke-width: 0.71; stroke: #003300; fill: #003300;' /><\/g><\/svg>","<?xml version='1.0' encoding='UTF-8' ?><svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' class='svglite' width='85.04pt' height='14.17pt' viewBox='0 0 85.04 14.17'><defs>  <style type='text/css'><![CDATA[    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }  ]]><\/style><\/defs><rect width='100%' height='100%' style='stroke: none; fill: none;'/><defs>  <clipPath id='cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3'>    <rect x='0.00' y='0.00' width='85.04' height='14.17' />  <\/clipPath><\/defs><g clip-path='url(#cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3)'><polyline points='3.87,5.19 9.39,10.60 14.91,12.55 20.43,8.76 25.95,11.25 31.48,6.06 37.00,7.25 42.52,5.74 48.04,1.74 53.56,2.71 59.09,2.71 64.61,6.17 70.13,1.63 75.65,5.41 81.17,7.36 ' style='stroke-width: 1.07; stroke-linecap: butt;' /><circle cx='81.17' cy='7.36' r='0.89' style='stroke-width: 0.71; stroke: none;' /><circle cx='14.91' cy='12.55' r='0.89' style='stroke-width: 0.71; stroke: #A23333; fill: #A23333;' /><circle cx='70.13' cy='1.63' r='0.89' style='stroke-width: 0.71; stroke: #003300; fill: #003300;' /><\/g><\/svg>","<?xml version='1.0' encoding='UTF-8' ?><svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' class='svglite' width='85.04pt' height='14.17pt' viewBox='0 0 85.04 14.17'><defs>  <style type='text/css'><![CDATA[    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }  ]]><\/style><\/defs><rect width='100%' height='100%' style='stroke: none; fill: none;'/><defs>  <clipPath id='cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3'>    <rect x='0.00' y='0.00' width='85.04' height='14.17' />  <\/clipPath><\/defs><g clip-path='url(#cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3)'><polyline points='3.87,6.53 9.39,4.78 14.91,2.71 20.43,2.29 25.95,1.79 31.48,3.41 37.00,1.71 42.52,1.63 48.04,1.71 53.56,5.16 59.09,4.08 64.61,8.98 70.13,10.72 75.65,12.55 81.17,12.21 ' style='stroke-width: 1.07; stroke-linecap: butt;' /><circle cx='81.17' cy='12.21' r='0.89' style='stroke-width: 0.71; stroke: none;' /><circle cx='75.65' cy='12.55' r='0.89' style='stroke-width: 0.71; stroke: #A23333; fill: #A23333;' /><circle cx='42.52' cy='1.63' r='0.89' style='stroke-width: 0.71; stroke: #003300; fill: #003300;' /><\/g><\/svg>","<?xml version='1.0' encoding='UTF-8' ?><svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' class='svglite' width='85.04pt' height='14.17pt' viewBox='0 0 85.04 14.17'><defs>  <style type='text/css'><![CDATA[    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }  ]]><\/style><\/defs><rect width='100%' height='100%' style='stroke: none; fill: none;'/><defs>  <clipPath id='cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3'>    <rect x='0.00' y='0.00' width='85.04' height='14.17' />  <\/clipPath><\/defs><g clip-path='url(#cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3)'><polyline points='3.87,10.88 9.39,10.11 14.91,7.92 20.43,8.81 25.95,8.10 31.48,12.55 37.00,10.83 42.52,6.85 48.04,10.23 53.56,8.69 59.09,8.63 64.61,1.63 70.13,6.08 75.65,5.31 81.17,3.94 ' style='stroke-width: 1.07; stroke-linecap: butt;' /><circle cx='81.17' cy='3.94' r='0.89' style='stroke-width: 0.71; stroke: none;' /><circle cx='31.48' cy='12.55' r='0.89' style='stroke-width: 0.71; stroke: #A23333; fill: #A23333;' /><circle cx='64.61' cy='1.63' r='0.89' style='stroke-width: 0.71; stroke: #003300; fill: #003300;' /><\/g><\/svg>","<?xml version='1.0' encoding='UTF-8' ?><svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' class='svglite' width='85.04pt' height='14.17pt' viewBox='0 0 85.04 14.17'><defs>  <style type='text/css'><![CDATA[    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }  ]]><\/style><\/defs><rect width='100%' height='100%' style='stroke: none; fill: none;'/><defs>  <clipPath id='cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3'>    <rect x='0.00' y='0.00' width='85.04' height='14.17' />  <\/clipPath><\/defs><g clip-path='url(#cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3)'><polyline points='3.87,5.35 9.39,3.82 14.91,4.30 20.43,1.63 25.95,2.15 31.48,4.26 37.00,4.43 42.52,6.10 48.04,5.14 53.56,6.41 59.09,4.65 64.61,7.06 70.13,8.12 75.65,12.55 81.17,12.37 ' style='stroke-width: 1.07; stroke-linecap: butt;' /><circle cx='81.17' cy='12.37' r='0.89' style='stroke-width: 0.71; stroke: none;' /><circle cx='75.65' cy='12.55' r='0.89' style='stroke-width: 0.71; stroke: #A23333; fill: #A23333;' /><circle cx='20.43' cy='1.63' r='0.89' style='stroke-width: 0.71; stroke: #003300; fill: #003300;' /><\/g><\/svg>","<?xml version='1.0' encoding='UTF-8' ?><svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' class='svglite' width='85.04pt' height='14.17pt' viewBox='0 0 85.04 14.17'><defs>  <style type='text/css'><![CDATA[    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }  ]]><\/style><\/defs><rect width='100%' height='100%' style='stroke: none; fill: none;'/><defs>  <clipPath id='cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3'>    <rect x='0.00' y='0.00' width='85.04' height='14.17' />  <\/clipPath><\/defs><g clip-path='url(#cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3)'><polyline points='3.87,12.55 9.39,11.38 14.91,7.45 20.43,4.90 25.95,5.56 31.48,6.50 37.00,1.63 42.52,3.23 48.04,5.56 53.56,8.32 59.09,6.80 64.61,7.89 70.13,6.14 75.65,8.03 81.17,9.12 ' style='stroke-width: 1.07; stroke-linecap: butt;' /><circle cx='81.17' cy='9.12' r='0.89' style='stroke-width: 0.71; stroke: none;' /><circle cx='3.87' cy='12.55' r='0.89' style='stroke-width: 0.71; stroke: #A23333; fill: #A23333;' /><circle cx='37.00' cy='1.63' r='0.89' style='stroke-width: 0.71; stroke: #003300; fill: #003300;' /><\/g><\/svg>","<?xml version='1.0' encoding='UTF-8' ?><svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' class='svglite' width='85.04pt' height='14.17pt' viewBox='0 0 85.04 14.17'><defs>  <style type='text/css'><![CDATA[    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }  ]]><\/style><\/defs><rect width='100%' height='100%' style='stroke: none; fill: none;'/><defs>  <clipPath id='cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3'>    <rect x='0.00' y='0.00' width='85.04' height='14.17' />  <\/clipPath><\/defs><g clip-path='url(#cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3)'><polyline points='3.87,7.09 9.39,8.72 14.91,11.34 20.43,12.19 25.95,10.99 31.48,12.55 37.00,9.21 42.52,6.52 48.04,6.59 53.56,5.95 59.09,1.63 64.61,4.75 70.13,7.16 75.65,10.35 81.17,9.28 ' style='stroke-width: 1.07; stroke-linecap: butt;' /><circle cx='81.17' cy='9.28' r='0.89' style='stroke-width: 0.71; stroke: none;' /><circle cx='31.48' cy='12.55' r='0.89' style='stroke-width: 0.71; stroke: #A23333; fill: #A23333;' /><circle cx='59.09' cy='1.63' r='0.89' style='stroke-width: 0.71; stroke: #003300; fill: #003300;' /><\/g><\/svg>","<?xml version='1.0' encoding='UTF-8' ?><svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' class='svglite' width='85.04pt' height='14.17pt' viewBox='0 0 85.04 14.17'><defs>  <style type='text/css'><![CDATA[    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }  ]]><\/style><\/defs><rect width='100%' height='100%' style='stroke: none; fill: none;'/><defs>  <clipPath id='cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3'>    <rect x='0.00' y='0.00' width='85.04' height='14.17' />  <\/clipPath><\/defs><g clip-path='url(#cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3)'><polyline points='3.87,6.16 9.39,5.70 14.91,9.32 20.43,12.01 25.95,8.16 31.48,11.78 37.00,10.78 42.52,12.55 48.04,8.62 53.56,1.63 59.09,3.40 64.61,3.32 70.13,3.09 75.65,4.09 81.17,2.70 ' style='stroke-width: 1.07; stroke-linecap: butt;' /><circle cx='81.17' cy='2.70' r='0.89' style='stroke-width: 0.71; stroke: none;' /><circle cx='42.52' cy='12.55' r='0.89' style='stroke-width: 0.71; stroke: #A23333; fill: #A23333;' /><circle cx='53.56' cy='1.63' r='0.89' style='stroke-width: 0.71; stroke: #003300; fill: #003300;' /><\/g><\/svg>","<?xml version='1.0' encoding='UTF-8' ?><svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' class='svglite' width='85.04pt' height='14.17pt' viewBox='0 0 85.04 14.17'><defs>  <style type='text/css'><![CDATA[    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }  ]]><\/style><\/defs><rect width='100%' height='100%' style='stroke: none; fill: none;'/><defs>  <clipPath id='cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3'>    <rect x='0.00' y='0.00' width='85.04' height='14.17' />  <\/clipPath><\/defs><g clip-path='url(#cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3)'><polyline points='3.87,3.81 9.39,2.43 14.91,3.16 20.43,2.28 25.95,1.63 31.48,7.45 37.00,7.16 42.52,6.43 48.04,7.52 53.56,9.42 59.09,11.31 64.61,11.75 70.13,11.96 75.65,12.26 81.17,12.55 ' style='stroke-width: 1.07; stroke-linecap: butt;' /><circle cx='81.17' cy='12.55' r='0.89' style='stroke-width: 0.71; stroke: none;' /><circle cx='81.17' cy='12.55' r='0.89' style='stroke-width: 0.71; stroke: #A23333; fill: #A23333;' /><circle cx='25.95' cy='1.63' r='0.89' style='stroke-width: 0.71; stroke: #003300; fill: #003300;' /><\/g><\/svg>","<?xml version='1.0' encoding='UTF-8' ?><svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' class='svglite' width='85.04pt' height='14.17pt' viewBox='0 0 85.04 14.17'><defs>  <style type='text/css'><![CDATA[    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }  ]]><\/style><\/defs><rect width='100%' height='100%' style='stroke: none; fill: none;'/><defs>  <clipPath id='cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3'>    <rect x='0.00' y='0.00' width='85.04' height='14.17' />  <\/clipPath><\/defs><g clip-path='url(#cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3)'><polyline points='3.87,7.87 9.39,9.62 14.91,10.56 20.43,9.76 25.95,11.50 31.48,9.83 37.00,12.55 42.52,11.26 48.04,10.73 53.56,9.76 59.09,8.05 64.61,6.51 70.13,5.99 75.65,3.69 81.17,1.63 ' style='stroke-width: 1.07; stroke-linecap: butt;' /><circle cx='81.17' cy='1.63' r='0.89' style='stroke-width: 0.71; stroke: none;' /><circle cx='37.00' cy='12.55' r='0.89' style='stroke-width: 0.71; stroke: #A23333; fill: #A23333;' /><circle cx='81.17' cy='1.63' r='0.89' style='stroke-width: 0.71; stroke: #003300; fill: #003300;' /><\/g><\/svg>","<?xml version='1.0' encoding='UTF-8' ?><svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' class='svglite' width='85.04pt' height='14.17pt' viewBox='0 0 85.04 14.17'><defs>  <style type='text/css'><![CDATA[    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }  ]]><\/style><\/defs><rect width='100%' height='100%' style='stroke: none; fill: none;'/><defs>  <clipPath id='cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3'>    <rect x='0.00' y='0.00' width='85.04' height='14.17' />  <\/clipPath><\/defs><g clip-path='url(#cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3)'><polyline points='3.87,8.02 9.39,8.88 14.91,8.16 20.43,12.55 25.95,8.16 31.48,6.58 37.00,5.79 42.52,6.44 48.04,4.14 53.56,2.85 59.09,1.63 64.61,1.70 70.13,3.42 75.65,2.99 81.17,5.36 ' style='stroke-width: 1.07; stroke-linecap: butt;' /><circle cx='81.17' cy='5.36' r='0.89' style='stroke-width: 0.71; stroke: none;' /><circle cx='20.43' cy='12.55' r='0.89' style='stroke-width: 0.71; stroke: #A23333; fill: #A23333;' /><circle cx='59.09' cy='1.63' r='0.89' style='stroke-width: 0.71; stroke: #003300; fill: #003300;' /><\/g><\/svg>","<?xml version='1.0' encoding='UTF-8' ?><svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' class='svglite' width='85.04pt' height='14.17pt' viewBox='0 0 85.04 14.17'><defs>  <style type='text/css'><![CDATA[    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }  ]]><\/style><\/defs><rect width='100%' height='100%' style='stroke: none; fill: none;'/><defs>  <clipPath id='cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3'>    <rect x='0.00' y='0.00' width='85.04' height='14.17' />  <\/clipPath><\/defs><g clip-path='url(#cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3)'><polyline points='3.87,1.82 9.39,1.63 14.91,2.37 20.43,2.13 25.95,2.41 31.48,4.02 37.00,4.94 42.52,6.40 48.04,8.47 53.56,10.06 59.09,10.43 64.61,10.58 70.13,9.84 75.65,11.28 81.17,12.55 ' style='stroke-width: 1.07; stroke-linecap: butt;' /><circle cx='81.17' cy='12.55' r='0.89' style='stroke-width: 0.71; stroke: none;' /><circle cx='81.17' cy='12.55' r='0.89' style='stroke-width: 0.71; stroke: #A23333; fill: #A23333;' /><circle cx='9.39' cy='1.63' r='0.89' style='stroke-width: 0.71; stroke: #003300; fill: #003300;' /><\/g><\/svg>","<?xml version='1.0' encoding='UTF-8' ?><svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' class='svglite' width='85.04pt' height='14.17pt' viewBox='0 0 85.04 14.17'><defs>  <style type='text/css'><![CDATA[    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }  ]]><\/style><\/defs><rect width='100%' height='100%' style='stroke: none; fill: none;'/><defs>  <clipPath id='cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3'>    <rect x='0.00' y='0.00' width='85.04' height='14.17' />  <\/clipPath><\/defs><g clip-path='url(#cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3)'><polyline points='3.87,1.63 9.39,2.01 14.91,3.36 20.43,4.73 25.95,6.19 31.48,7.65 37.00,9.06 42.52,9.32 48.04,10.85 53.56,11.38 59.09,12.55 64.61,11.89 70.13,10.82 75.65,9.53 81.17,9.15 ' style='stroke-width: 1.07; stroke-linecap: butt;' /><circle cx='81.17' cy='9.15' r='0.89' style='stroke-width: 0.71; stroke: none;' /><circle cx='59.09' cy='12.55' r='0.89' style='stroke-width: 0.71; stroke: #A23333; fill: #A23333;' /><circle cx='3.87' cy='1.63' r='0.89' style='stroke-width: 0.71; stroke: #003300; fill: #003300;' /><\/g><\/svg>","<?xml version='1.0' encoding='UTF-8' ?><svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' class='svglite' width='85.04pt' height='14.17pt' viewBox='0 0 85.04 14.17'><defs>  <style type='text/css'><![CDATA[    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }  ]]><\/style><\/defs><rect width='100%' height='100%' style='stroke: none; fill: none;'/><defs>  <clipPath id='cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3'>    <rect x='0.00' y='0.00' width='85.04' height='14.17' />  <\/clipPath><\/defs><g clip-path='url(#cpMC4wMHw4NS4wNHwwLjAwfDE0LjE3)'><polyline points='3.87,6.67 9.39,9.69 14.91,12.55 20.43,12.32 25.95,8.12 31.48,3.92 37.00,4.65 42.52,4.20 48.04,6.27 53.56,1.63 59.09,5.04 64.61,4.71 70.13,5.99 75.65,6.33 81.17,9.63 ' style='stroke-width: 1.07; stroke-linecap: butt;' /><circle cx='81.17' cy='9.63' r='0.89' style='stroke-width: 0.71; stroke: none;' /><circle cx='14.91' cy='12.55' r='0.89' style='stroke-width: 0.71; stroke: #A23333; fill: #A23333;' /><circle cx='53.56' cy='1.63' r='0.89' style='stroke-width: 0.71; stroke: #003300; fill: #003300;' /><\/g><\/svg>"],"html":true,"align":"center","headerStyle":{"font-weight":"normal"}}],"resizable":true,"pagination":false,"defaultPageSize":10,"showPageSizeOptions":false,"pageSizeOptions":[10,25,50,100],"paginationType":"numbers","showPagination":true,"showPageInfo":true,"minRows":1,"highlight":true,"showSortable":true,"height":"auto","theme":{"color":"#333333","backgroundColor":"#FFFFFF","stripedColor":"rgba(128,128,128,0.05)","style":{"fontFamily":"system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"},"headerStyle":{"borderTopStyle":"solid","borderTopWidth":"2px","borderTopColor":"#D3D3D3","borderBottomStyle":"solid","borderBottomWidth":"2px","borderBottomColor":"#D3D3D3"}},"elementId":"dapwtdcypm","dataKey":"3ee103deab36c000ec7310d0989b124f"},"children":[]},"class":"reactR_markup"},"evals":["tag.attribs.columns.0.style","tag.attribs.columns.1.style","tag.attribs.columns.2.style","tag.attribs.columns.3.style","tag.attribs.columns.4.style","tag.attribs.columns.5.style","tag.attribs.columns.6.style"],"jsHooks":[]}</script>
+</div>
+</div>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div id="3ade8a4a-fb1d-4a6c-8409-ac45482d5fc9" class="hidden">
+
+</div>
+</div>
+</div>
+
+
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/mattnurse\.github\.io\/FootyForestDashboard\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+<script type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (_event) {
+  if (window.bslib.Card) {
+    window.bslib.Card.initializeAllCards();
+  }
+}); 
+</script>
+  
+
+
+
+</body></html>
