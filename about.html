@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -114,6 +80,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./Images/Footy_forest_simple_logo.png" alt="" class="navbar-logo">
+    </a>
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">The Footy Forest</span>
     </a>
@@ -124,10 +93,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
-<span class="menu-text">Home</span></a>
-  </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./about.html" aria-current="page"> 
 <span class="menu-text">About</span></a>
@@ -141,6 +106,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Blog</span></a>
   </li>  
 </ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/mattnurse"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.facebook.com/profile.php?id=61559518431071"> <i class="bi bi-facebook" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
@@ -151,27 +128,60 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div></div>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
         
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content">
 
 
 
 
-<p>cd — title: “About”</p>
-<hr>
-<p>About this site</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
-</div>
-</div>
+<p><strong>How is the model going so far?</strong></p>
+<p>You can find the latest results via the AFL tipping website – just search for “The Footy Forest”</p>
+<p><strong>Where can I find the predictions for this week?</strong></p>
+<p>Follow me on Facebook for that. In the future I may post each prediction on this site but I have not set that up yet.</p>
+<p><strong>Which variables (features) does it use?</strong></p>
+<p>It uses four variables. These are:</p>
+<ol type="1">
+<li><p>a measure of each team’s form, based on an <a href="https://www.theatlantic.com/technology/archive/2024/04/elo-ratings-are-everywhere/678129/">Elo formula</a>.</p></li>
+<li><p>a measure of venue experience</p></li>
+<li><p>a measure of player rating for each selected team, and</p></li>
+<li><p>a measure of the distance each team has had to travel. Each of these are calculated for each team and then converted as a relative measure showing the advantage for the home team compared to its opponent on the day.</p></li>
+</ol>
+<p><strong>Are you doing this to make money?</strong></p>
+<p>Hell, no. I am doing this for fun and for a challenge. Yes, I am a nerd. And yes, I am obsessed by Australian football.</p>
+<p><strong>Should I use this model to place bets?</strong></p>
+<p>Definitely not. Betting is for mugs and niff-naffs.</p>
+<p><strong>Should I use this model for footy tipping?</strong></p>
+<p>Absolutely. Go bananas.</p>
+<p><strong>What program did you use to write this model?</strong></p>
+<p><a href="https://www.r-project.org/">I use R for this project.</a> This is the program I often use for my academic work. While R is extremely powerful and free, but takes some time to learn if you aren’t familiar with line coding.</p>
+<p><strong>Does this model use ChatGPT, or AI?</strong></p>
+<p>No.&nbsp;This model is one hundred per cent pure, old fashioned, home-grown human-written computer code, born free right here in the real world.</p>
+<p><strong>Isn’t that a line from The Matrix?</strong></p>
+<p><a href="https://www.youtube.com/watch?v=HD_MO3cCl28">Yes. Yes it is.</a></p>
+<p><strong>What is your background?</strong></p>
+<p>I am a quantitative social scientist who is mainly interested in researching problems in science communication. While this gives me some useful skills in statistical analysis, and I have published some academic work using machine learning techniques, <a href="https://squiggle.com.au/">there are many more qualified people than me who have produced similar models</a>. Prior to this I worked in various communication roles.</p>
+<p><strong>What techniques are used for this model?</strong></p>
+<p>This model is an ensemble of models compiled with the <a href="https://www.tidymodels.org/">R Tidymodels package</a>. It uses a stacked combination of gradient boosted trees, generalised linear models and random forest models to make its predictions.</p>
+<p><strong>Why is this called the “Footy Forest”?</strong></p>
+<p>A few of the techniques used in this model are tree-based (eg. gradient-boosted trees, random forest), so I thought I’d take the concept and run with it like Ed Langdon on a fast break. Also it predicts … footy.</p>
+<p><strong>Where do you get your data from?</strong></p>
+<p>I use the <a href="https://cran.r-project.org/web/packages/fitzRoy/index.html">FitzRoy package for R.</a> It is wonderful. Cheers to the legends to have developed it and maintain it.</p>
+<p><strong>What is Australian football or the Australian Football League?</strong></p>
+<p>My friend, let me introduce you to <a href="https://www.youtube.com/watch?v=u_SqfNNfhmM&amp;t=13s">by far the best sport on the entire planet</a>.</p>
+<p><strong>What football team do you barrack for?</strong></p>
+<p>I barrack for the original Australian football team – the <a href="https://www.melbournefc.com.au/">Melbourne Demons</a>.</p>
+<p><strong>Who is your favourite footballer?</strong></p>
+<p>As a kid my favourite player was <a href="http://demonwiki.org/Stephen+Tingay">Stephen (Stinga) Tingay</a>. But right now it is probably young <a href="https://www.melbournefc.com.au/players/6443/caleb-windsor">Caleb Windsor</a>. I guess I have a thing for wingers.</p>
+<p><strong>Are you a real doctor?</strong></p>
+<p>I am not a medical doctor. I have a PhD in science from ANU.</p>
+<p><strong>How frequently are you actually asked these questions?</strong></p>
+<p>Never. I’ve never been asked any of these questions.</p>
 
 
 
