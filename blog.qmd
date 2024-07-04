@@ -1,0 +1,7 @@
+---
+title: "Blog test"
+editor: visual
+---
+
+This is just a test blog
+---
