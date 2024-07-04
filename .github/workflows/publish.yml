@@ -7,9 +7,6 @@ on:
 
 name: Quarto Publish
 
-# Ensure you are running as the root user
-USER root
-
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
