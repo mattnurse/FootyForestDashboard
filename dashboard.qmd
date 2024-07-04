@@ -178,15 +178,25 @@ ladder <- left_join(ladder, power_rankings_dashboard_for_joining, by = "Team")
 
 ladder <- ladder |>  rename("Power" = last_col())
 
-ladder <- ladder |> arrange(desc(Power))
-
 ladder <- left_join(ladder, sparkline_data, by = "Team")
 ```
+
+```{r, get images}
+library(tidyverse)
+Team_logos <- tibble(logo = fs::dir_ls("Images/TeamLogos", glob = "*.*"))
+Team <- ladder$Team |> sort()
+Team_logos <- cbind(Team_logos, Team)
+
+ladder <- left_join(Team_logos, ladder, by = "Team") |> arrange(desc(Power))
+```
+
+
 
 ```{r, generate GT table}
 
 ladder |> 
   gt() |> 
+  gt_img_rows(logo, img_source = "local") |> 
   cols_align(
     align = "center",
     columns = everything()
@@ -194,6 +204,7 @@ ladder |>
   data_color(
     columns = Power,
     palette = c("#A23333", "white", "#003300")) |> 
+  cols_label(logo = "") |>  
   gt_plt_sparkline("Power trend", type = "default", same_limit = FALSE, label = FALSE, palette = c("black", "transparent","#A23333","#003300","transparent")) |> 
   opt_interactive(use_resizers = TRUE, use_highlight = TRUE, use_page_size_select = FALSE, use_pagination = FALSE) 
 

@@ -2,6 +2,7 @@ project:
   type: website
 
 website:
+  favicon: Images/Footy_forest_favicon_logo.png
   title: "The Footy Forest"
   open-graph: true
   announcement: 

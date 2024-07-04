@@ -1,6 +1,10 @@
 ---
-title: "Blog test"
-editor: visual
+title: "Blog"
+listing: 
+  contents: posts
+  sort: "date desc"
+  type: default
+  categories: true
 ---
 
 This is just a test blog
