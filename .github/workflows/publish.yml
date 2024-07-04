@@ -20,7 +20,7 @@ jobs:
         uses: quarto-dev/quarto-actions/setup@v2
         
       - name: Install curl
-        run: apt-get update && apt-get install -y sudo && sudo apt-get install -y curl
+        run: sudo apt install curl
 
       - name: Install R
         uses: r-lib/actions/setup-r@v2
