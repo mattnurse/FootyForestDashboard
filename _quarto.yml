@@ -3,6 +3,13 @@ project:
 
 website:
   title: "The Footy Forest"
+  open-graph: true
+  announcement: 
+    icon: info-circle
+    dismissable: false
+    content: "A machine learning model that predicts the winners of AFL football matches"
+    type: secondary
+    position: below-navbar
   navbar:
     left:
       - href: index.qmd

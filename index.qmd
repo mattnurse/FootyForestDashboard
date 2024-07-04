@@ -1,6 +1,5 @@
 ---
 title: "Doctor Nurse's Footy Forest"
-logo: "Images/Footy_forest_simple_logo.png"
 ---
 
 This is a Quarto website.
