@@ -1,8 +1,7 @@
 ---
-title: "Footy Forest power ratings"
+title: "Team power ratings"
 format: 
-  dashboard:
-      logo: "Images/Footy_forest_simple_logo.png"
+  dashboard
 ---
 
 ## Column
