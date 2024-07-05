@@ -61,7 +61,10 @@ ggplot(model_performance) +
   scale_y_continuous(breaks = seq(0, total_correct + 20, 10)) +
   labs(y = "correct tips") +
   geom_image(aes(image = icon), size = 0.085) +
-  theme_classic(base_size = 18) 
+  ggtitle("Correct tips 2024") +
+  theme_classic(base_size = 18) +
+  theme(plot.title = element_text(hjust = 0.5))
+
 
 ```
 
