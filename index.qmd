@@ -1,14 +1,8 @@
 ---
 format: dashboard
 ---
+
 ## Row 
-
-Would you like a data-driven way to understand what is really happening in the world of Australian Rules Football? The Footy Forest uses statistics to make a probabilistic prediction for AFL football games each week and uses them for tipping.  
-
-Here you'll find performance metrics on the model, a ranking of each team based on the model's data and analyses about AFL footy and other sports. 
-
-
-## Row
 
 ### Column
 
@@ -22,8 +16,7 @@ list(
 
 ```
 
-
-### Column 
+### Column
 
 ```{r}
 #| content: valuebox
@@ -35,10 +28,7 @@ list(
 
 ```
 
-
 ### column
-
-
 
 ```{r}
 library(tidyverse)
@@ -69,15 +59,15 @@ ggplot(model_performance) +
 
 ```
 
-
-
 ## Row
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pellentesque dapibus malesuada. Ut eu purus in ante imperdiet imperdiet. Sed euismod auctor pulvinar. Nulla vehicula pulvinar mollis. Quisque in placerat urna. Nullam nisl justo, molestie nec libero ac, rhoncus feugiat arcu. Maecenas nec nisl in enim aliquet interdum ac ac mi. Donec sit amet velit eu libero gravida dapibus at a arcu. Nunc tincidunt ultrices commodo. Fusce congue non est ac fermentum.
+### Column {width=70%}
 
-Mauris sodales odio sed dignissim sollicitudin. Donec eget dictum erat. Etiam maximus sollicitudin diam quis euismod. Nullam convallis facilisis est et lobortis. Maecenas tempor, leo mollis tempor accumsan, nisl massa viverra ante, nec vestibulum turpis neque vitae lectus. Sed consectetur dignissim hendrerit. Suspendisse ultrices mi facilisis sapien condimentum pretium. In hac habitasse platea dictumst. Etiam eget massa nec magna imperdiet rhoncus vitae ac nibh. Vestibulum sapien massa, vestibulum a sagittis quis, viverra quis felis. Nulla lobortis tempus ultricies. Nullam auctor viverra varius. Morbi pellentesque mi vitae velit pellentesque tempor. Fusce vulputate, nisl eu aliquam congue, felis elit tristique est, sit amet consectetur orci elit dictum turpis. Fusce dignissim hendrerit interdum.
+Would you like a data-driven way to understand what is really happening in the world of Australian Rules Football? The Footy Forest uses statistics to make a probabilistic prediction for AFL football games each week and uses them for tipping.
 
-Cras ante eros, feugiat et felis in, maximus sodales velit. Quisque volutpat arcu augue, finibus efficitur dui efficitur nec. In ipsum lacus, hendrerit ac fermentum elementum, feugiat quis metus. Nunc lectus quam, condimentum ut nisl at, laoreet laoreet leo. Nulla ut eros vitae dui ornare malesuada eu eleifend erat. Nunc congue orci venenatis, facilisis ligula sed, elementum tellus. Phasellus sagittis massa eget vehicula pretium. Mauris molestie lacinia sagittis. Fusce vel tortor ut lorem dictum venenatis. Aenean dapibus consequat vulputate.
+Here you'll find performance metrics on the model, a ranking of each team based on the model's data and analyses about AFL footy and other sports.
 
-Quisque nec odio at urna fringilla semper. Suspendisse semper turpis dui. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce facilisis augue sed lectus placerat maximus. Nam finibus quam eget mauris molestie, ut maximus dui finibus. Donec turpis ligula, molestie ut lorem ut, efficitur posuere nibh. Etiam vitae gravida arcu. Morbi tempus accumsan velit at dapibus.
+### Column {width=30%}
+
+![](Images/large_logo.png){width="400"}
 

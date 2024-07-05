@@ -6,9 +6,8 @@ website:
   title: "The Footy Forest"
   open-graph: true
   announcement: 
-    icon: info-circle
     dismissable: false
-    content: "A machine learning model that predicts the winners of AFL football matches"
+    content: <font color="white">A machine learning model that predicts the winners of AFL football matches</font>
     type: secondary
     position: below-navbar
   navbar:
@@ -30,7 +29,7 @@ website:
 
 format:
   html:
-    theme: [cosmo, custom.scss]
+    theme: [morph, custom.scss]
     toc: true
     page-layout: full 
 

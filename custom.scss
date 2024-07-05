@@ -4,8 +4,13 @@ $body-bg: white;
 $body-color: black;
 $link-color: #003300;
 
-$primary: #003300;
-$secondary: #438A43;
+$primary: white;
+$secondary: #003300;
+
+.custom-row-1 {
+  max-height: 200px; /* Adjust the height as needed */
+  overflow: hidden; /* Optional: hide the overflow content */
+}
 
 // Code blocks
 $code-block-bg-alpha: -.8;
