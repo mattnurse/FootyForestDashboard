@@ -32,6 +32,9 @@ format:
     theme: [morph, custom.scss]
     toc: true
     page-layout: full 
+    
+resources:
+  - CNAME
 
 
 
