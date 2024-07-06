@@ -63,7 +63,7 @@ ggplot(model_performance) +
 
 ### Column {width=66.6%}
 
-Would you like a data-driven way to understand what is really happening in the world of Australian Rules Football? The Footy Forest uses statistics to make a probabilistic prediction for AFL football games each week and uses them for tipping.
+Would you like a data-driven wayddd to understand what is really happening in the world of Australian Rules Football? The Footy Forest uses statistics to make a probabilistic prediction for AFL football games each week and uses them for tipping.
 
 Here you'll find performance metrics on the model, a ranking of each team based on the model's data and analyses about AFL footy and other sports.
 
