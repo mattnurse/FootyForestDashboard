@@ -4,6 +4,8 @@ editor:
     wrap: 100
 ---
 
+# Frequently asked questions
+
 **How is the model performing?**
 
 You can find the latest results via the [official AFL tipping
