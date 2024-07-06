@@ -6,16 +6,6 @@ editor:
 
 # Frequently asked questions
 
-**How is the model performing?**
-
-You can find the latest results via the [official AFL tipping
-website](https://tipping.afl.com.au/tipping/index.html) – just search for “The Footy Forest”
-
-**Where can I find the predictions for this week?**
-
-Follow me on Facebook for that. In the future I may post each prediction on this site but I have not
-set that up yet.
-
 **Which variables (features) does it use?**
 
 It uses four variables. These are:

@@ -133,7 +133,7 @@ ladder <- fetch_ladder_afl(comp = "AFLM") |>
 
 #Rename variables to be more sensible
 ladder <- ladder |> 
-  rename("Ladder position" = position, Team = team.name, "Games played" = played, Points = thisSeasonRecord.aggregatePoints, Percentage = thisSeasonRecord.percentage, "Ladder position this time last year" = thisRoundLastSeason.ladderPosition)
+  rename("Ladder position" = position, Team = team.name, "Games played" = played, Points = thisSeasonRecord.aggregatePoints, Percentage = thisSeasonRecord.percentage, "Ladder position this time last year" = thisRoundLastSeason.ladderPosition, Played = played)
 
 #Clean up team names
 ladder <- ladder %>%
@@ -172,7 +172,7 @@ power_rankings_dashboard_for_joining <- power_rankings_dashboard_for_joining |> 
 power_rankings_dashboard_for_joining <- select(power_rankings_dashboard_for_joining, 1, last_col())
 
 #Join ladder with temp elo df but first remove old elos
-ladder <- ladder |> select("Ladder position", Team, Points, Percentage, "Ladder position this time last year")
+ladder <- ladder |> select("Ladder position", Team, Played, Points, Percentage, "Ladder position this time last year")
 
 ladder <- left_join(ladder, power_rankings_dashboard_for_joining, by = "Team") 
 
