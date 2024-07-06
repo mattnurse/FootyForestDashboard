@@ -1,5 +1,7 @@
 project:
   type: website
+  resources:
+  - CNAME
 
 website:
   favicon: Images/Footy_forest_favicon_logo.png
@@ -33,8 +35,7 @@ format:
     toc: true
     page-layout: full 
     
-resources:
-  - CNAME
+
 
 
 
