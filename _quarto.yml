@@ -7,7 +7,7 @@ website:
   open-graph: true
   announcement: 
     dismissable: false
-    content: <font color="white">A machine learning model that predicts the winners of AFL football matches</font>
+    content: <font color="white">  A machine learning model that predicts the winners of AFL football matches</font>
     type: secondary
     position: below-navbar
   navbar:
