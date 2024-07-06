@@ -1,1 +1,1 @@
-Sitemap: https://mattnurse.github.io/FootyForestDashboard/sitemap.xml
+Sitemap: https://www.footyforest.com/sitemap.xml
