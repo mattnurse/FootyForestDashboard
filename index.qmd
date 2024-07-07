@@ -11,7 +11,7 @@ format: dashboard
 #| title: "Correct tips"
 list(
   icon = "clipboard-check",
-  value = "92"
+  value = "98"
 )
 
 ```
@@ -35,11 +35,11 @@ library(tidyverse)
 library(ggimage)
 library(magick)
 #Create df of correct tips by round
-rounds <- c(0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15)
-correct <- c(6, 5, 6, 8, 4, 5, 9, 6, 4, 5, 7, 3, 4, 6, 5, 6)
+rounds <- c(0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16)
+correct <- c(6, 5, 6, 8, 4, 5, 9, 6, 4, 5, 7, 3, 4, 6, 5, 6, 6)
 total_correct <- sum(correct)
 icon <- c("Images/Tree_icon_forest.png")
-size = 10 
+size = 11 
 replace = TRUE
 
 model_performance <- data.frame(rounds, correct, icon, size, replace)
@@ -63,7 +63,7 @@ ggplot(model_performance) +
 
 ### Column {width=66.6%}
 
-Would you like a data-driven wayddd to understand what is really happening in the world of Australian Rules Football? The Footy Forest uses statistics to make a probabilistic prediction for AFL football games each week and uses them for tipping.
+Would you like a data-driven way to understand what is really happening in the world of Australian Rules Football? The Footy Forest uses statistics to make a probabilistic prediction for AFL football games each week and uses them for tipping.
 
 Here you'll find performance metrics on the model, a ranking of each team based on the model's data and analyses about AFL footy and other sports.
 

@@ -6,20 +6,21 @@ editor:
 
 # Frequently asked questions
 
-**Which variables (features) does it use?**
+**Which variables (features) does the Footy Forest use?**
 
 It uses four variables. These are:
 
-1.  a measure of each team's form, based on an [Elo
+1.  each team's form, based on an [Elo
     formula](https://www.theatlantic.com/technology/archive/2024/04/elo-ratings-are-everywhere/678129/).
 
-2.  a measure of venue experience
+2.  venue experience
 
-3.  a measure of player rating for each selected team, and
+3.  player ratings for each selected team, and
 
-4.  a measure of the distance each team has had to travel. Each of these are calculated for each
-    team and then converted as a relative measure showing the advantage for the home team compared
-    to its opponent on the day.
+4.  the distance each team has had to travel.
+
+Each of these are calculated for each team and then converted as a relative measure showing the
+advantage for the home team compared to its opponent on the day.
 
 **Are you doing this to make money?**
 
@@ -36,11 +37,10 @@ Absolutely. Go bananas.
 
 **What program did you use to write this model?**
 
-[I use R for this project.](https://www.r-project.org/) This is the program I often use for my
-academic work. While R is extremely powerful and free, but takes some time to learn if you aren't
-familiar with line coding.
+[I use R for this project](https://www.r-project.org/), which is what I use for a lot of my academic
+work.
 
-**Does this model use ChatGPT, or AI?**
+**Does this model use ChatGPT, or a similar large language model?**
 
 No. This model is one hundred per cent pure, old fashioned, home-grown human-written computer code,
 born free right here in the real world.

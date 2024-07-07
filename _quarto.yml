@@ -34,6 +34,8 @@ format:
     theme: [morph, custom.scss]
     toc: true
     page-layout: full 
+    date-format: "D-MMMM-YYYY" # Example: 7 July 2024
+  
     
 
 

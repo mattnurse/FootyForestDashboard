@@ -1,0 +1,23 @@
+---
+title: "Update v1.1"
+description: "New variables and a new hope"
+author:
+  - name: Matt Nurse
+    url: https://footyforest.com
+date: 19-April-2024
+date-format: "D-MMMM-YYYY"
+categories: [AFL football, Machine learning] # self-defined categories
+draft: false 
+---
+
+So today I’m releasing a new version which introduces three new features:
+
+1\. The model will factor in the distance each team has traveled as a fourth predictor (along with a form Elo formula, a rating of each player in each selected team, and how often the team plays home games at the venue).
+
+2\. It centres and scales each of these four predictors from -100 to +100, meaning that I will be able to give an easy-to-interpret assessment of the reasons for each prediction (see below).
+
+3\. Each week it selects a few of the empirically best of potentially 68 possible machine learning models in a weighted stack rather than just one. These include random forest models, gradient boosted trees and generalised linear models with elastic net regularisation.
+
+I’m hoping these changes will lead to more accurate predictions and a better display of what the model is looking at before making each decision.
+
+![](round6.png)

@@ -1,0 +1,21 @@
+---
+title: "Launch of the Footy Forest"
+description: "Let's bounce the ball"
+author:
+  - name: Matt Nurse
+    url: https://footyforest.com
+date: 7-March-2024
+date-format: "D-MMMM-YYYY"
+categories: [AFL football, Machine learning] # self-defined categories
+draft: false 
+---
+
+![](large_logo.png){width="200"}
+
+I’ve spent the summer programming and training a machine learning model to predict AFL footy games. I’m not doing this for betting but simply hoping to do better than the average expert tipster over the year.
+
+You can follow me on Facebook if you’re interested in finding out how I go. No doubt I’ll learn a fair bit during the year and might update the model as I learn, but if it does fairly well, I might register it with [Squiggle](https://squiggle.com.au/) in 2025. Some people might be interested in my motivation for doing this. Part of my PhD project involved researching how people who tended to think intuitively were more likely make poor decisions compared to those who used analytic thinking styles.
+
+Thinking about this I often reflected upon all the intuitive heuristics that people – including me – use for things like footy tipping. I also started to use machine learning for predictive analysis. During the summer I started to investigate whether I could use these skills to develop a purely data-driven approach to footy tipping, that would override intuition.
+
+And this is the result of those musings – a machine learning model that overrides intuition for the pure enjoyment of analysing the chance that your footy team might get the four points on the weekend.
