@@ -10,9 +10,8 @@ editor:
 
 **Why is this called the “Footy Forest”?**
 
-The statistical techniques used in this model are tree-based (eg. gradient-boosted trees, random
-forest), so I thought I’d take the tree concept and run with it like Ed Langdon on a fast break.
-Also it predicts … footy.
+The statistical techniques used in this model are "tree-based", so I thought I’d take the tree
+concept and run with it like Ed Langdon on a fast break. Also it predicts … footy.
 
 **What variables does the Footy Forest use?**
 
@@ -96,11 +95,11 @@ wingers.
 
 **What is your background?**
 
-I am a quantitative social scientist who is mainly interested in researching problems in science
-communication. While this gives me some useful skills in statistical analysis, and I have published
-some academic work using machine learning techniques, [there are many more qualified people than me
-who have produced similar models](https://squiggle.com.au/). Prior to this I worked in various
-communication roles.
+I am a quantitative social scientist who is mainly interested in researching empirical problems in
+science communication. While this gives me some useful skills in statistical analysis, and I have
+published some academic work using machine learning techniques, [there are many more qualified
+people than me who have produced similar models](https://squiggle.com.au/). Prior to this I worked
+in various communication roles.
 
 **Are you a real doctor?**
 
