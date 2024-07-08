@@ -10,11 +10,11 @@ editor:
 
 **Why is this called the “Footy Forest”?**
 
-A few of the techniques used in this model are tree-based (eg. gradient-boosted trees, random
-forest), so I thought I’d take the concept and run with it like Ed Langdon on a fast break. Also it
-predicts … footy.
+The statistical techniques used in this model are tree-based (eg. gradient-boosted trees, random
+forest), so I thought I’d take the tree concept and run with it like Ed Langdon on a fast break.
+Also it predicts … footy.
 
-**Which variables (features) does the Footy Forest use?**
+**What variables does the Footy Forest use?**
 
 It uses four variables. These are:
 
@@ -50,7 +50,8 @@ Absolutely. Go bananas.
 **What program did you use to write this model?**
 
 [I use R for this project](https://www.r-project.org/), which is what I use for a lot of my academic
-work. The website you're looking at now is also produced in R with RStudio and Quarto.
+work. The website you're looking at now is also produced with R with
+[RStudio](https://posit.co/products/open-source/rstudio/) and [Quarto](https://quarto.org/).
 
 **Does this model use ChatGPT, or a similar large language model?**
 
@@ -79,7 +80,7 @@ wonderful. Cheers to the legends to have developed it and maintain it.
 My friend, let me introduce you to [by far the best sport on the entire
 planet](https://www.youtube.com/watch?v=u_SqfNNfhmM&t=13s).
 
-## <https://www.anu.edu.au/>Personal questions
+## Personal questions
 
 **What football team do you barrack for?**
 
@@ -103,7 +104,7 @@ communication roles.
 
 **Are you a real doctor?**
 
-I am not a medical doctor. I have a PhD in science from ANU.
+I am not a medical doctor. I have a PhD in science from [ANU](https://www.anu.edu.au/).
 
 **How frequently are you actually asked these questions?**
 
