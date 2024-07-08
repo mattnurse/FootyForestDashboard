@@ -1,8 +1,9 @@
 ---
-format: dashboard
+format: 
+  dashboard
 ---
 
-## Row 
+## Row
 
 ### Column
 
@@ -28,12 +29,29 @@ list(
 
 ```
 
-### column
+
+### Column
+
+```{r}
+#| content: valuebox
+#| title: "Percentile of the official AFL footy tipping competition"
+list(
+  icon = "bar-chart-line", 
+  value = "1.7%"
+)
+
+```
+
+## Row
+
+### Column
 
 ```{r}
 library(tidyverse)
 library(ggimage)
 library(magick)
+
+
 #Create df of correct tips by round
 rounds <- c(0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16)
 correct <- c(6, 5, 6, 8, 4, 5, 9, 6, 4, 5, 7, 3, 4, 6, 5, 6, 6)
@@ -56,18 +74,7 @@ ggplot(model_performance) +
   theme_classic(base_size = 18) +
   theme(plot.title = element_text(hjust = 0.5))
 
-
 ```
 
-## Row
-
-### Column {width=66.6%}
-
-Would you like a data-driven way to understand what is really happening in the world of Australian Rules Football? The Footy Forest uses statistics to make a probabilistic prediction for AFL football games each week and uses them for tipping.
-
-Here you'll find performance metrics on the model, a ranking of each team based on the model's data and analyses about AFL footy and other sports.
-
-### Column {width=33.4%}
-
-![](Images/large_logo.png){width="400"}
-
+### Column 
+![](Images/21_logo.png){fig-align="center"}

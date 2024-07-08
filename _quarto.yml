@@ -31,9 +31,12 @@ website:
 
 format:
   html:
+    grid:
+      margin-width: 450px
+      body-width: 600px
     theme: [morph, custom.scss]
     toc: true
-    page-layout: full 
+    page-layout: article
     date-format: "D-MMMM-YYYY" # Example: 7 July 2024
   
     

@@ -12,7 +12,7 @@ draft: false
 
 The way I measure form in the Footy Forest is entirely based on a [commonly used rating formula called Elo](https://en.wikipedia.org/wiki/Elo_rating_system). This formula was developed to rate and rank the relative skill levels chess players, but it can also be applied to team sports like Australian rules football. Originally developed by Arpad Elo, a Hungarian-American physics professor, the Elo formula has become one of the [most popular ways of ranking players and teams across many competitive domains](https://www.theatlantic.com/technology/archive/2024/04/elo-ratings-are-everywhere/678129/).
 
-#### How the Elo Formula Works 
+#### How the Elo Formula Works
 
 At its core, the Elo rating system assumes that the chance of one team beating another is a based on a rating difference between. This rating takes into account the previous results not only between these two teams but against all teams in the competition. If two teams have equal ratings, we’d expect each team to have an equal chance of winning the game. But as the rating gap widens, the probability favours the higher-rated team.
 
