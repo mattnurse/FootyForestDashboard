@@ -8,6 +8,12 @@ editor:
 
 ## Model questions
 
+**Why is this called the “Footy Forest”?**
+
+A few of the techniques used in this model are tree-based (eg. gradient-boosted trees, random
+forest), so I thought I’d take the concept and run with it like Ed Langdon on a fast break. Also it
+predicts … footy.
+
 **Which variables (features) does the Footy Forest use?**
 
 It uses four variables. These are:
@@ -44,7 +50,7 @@ Absolutely. Go bananas.
 **What program did you use to write this model?**
 
 [I use R for this project](https://www.r-project.org/), which is what I use for a lot of my academic
-work.
+work. The website you're looking at now is also produced in R with RStudio and Quarto.
 
 **Does this model use ChatGPT, or a similar large language model?**
 
@@ -66,22 +72,6 @@ generalised linear models and random forest models to make its predictions.
 I use the [FitzRoy package for R.](https://cran.r-project.org/web/packages/fitzRoy/index.html) It is
 wonderful. Cheers to the legends to have developed it and maintain it.
 
-## Personal questions
-
-**What is your background?**
-
-I am a quantitative social scientist who is mainly interested in researching problems in science
-communication. While this gives me some useful skills in statistical analysis, and I have published
-some academic work using machine learning techniques, [there are many more qualified people than me
-who have produced similar models](https://squiggle.com.au/). Prior to this I worked in various
-communication roles.
-
-**Why is this called the “Footy Forest”?**
-
-A few of the techniques used in this model are tree-based (eg. gradient-boosted trees, random
-forest), so I thought I’d take the concept and run with it like Ed Langdon on a fast break. Also it
-predicts … footy.
-
 ## AFL questions
 
 **What is Australian football or the Australian Football League?**
@@ -89,8 +79,7 @@ predicts … footy.
 My friend, let me introduce you to [by far the best sport on the entire
 planet](https://www.youtube.com/watch?v=u_SqfNNfhmM&t=13s).
 
-## Personal questions
-
+## <https://www.anu.edu.au/>Personal questions
 
 **What football team do you barrack for?**
 
@@ -103,6 +92,14 @@ As a kid my favourite player was [Stephen (Stinga) Tingay](http://demonwiki.org/
 right now it is probably young [Caleb
 Windsor](https://www.melbournefc.com.au/players/6443/caleb-windsor). I guess I have a thing for
 wingers.
+
+**What is your background?**
+
+I am a quantitative social scientist who is mainly interested in researching problems in science
+communication. While this gives me some useful skills in statistical analysis, and I have published
+some academic work using machine learning techniques, [there are many more qualified people than me
+who have produced similar models](https://squiggle.com.au/). Prior to this I worked in various
+communication roles.
 
 **Are you a real doctor?**
 
