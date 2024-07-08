@@ -183,9 +183,15 @@ ladder <- left_join(ladder, sparkline_data, by = "Team")
 
 ```{r, get images}
 library(tidyverse)
+#Upload team logo images into a tibble
 Team_logos <- tibble(logo = fs::dir_ls("Images/TeamLogos", glob = "*.*"))
-Team <- ladder$Team |> sort()
-Team_logos <- cbind(Team_logos, Team)
+
+#Make sure each team logo corresponds to its team name by copying the name from the logo name and removing the file path and image suffix
+Team_logos$Team <- Team_logos$logo
+File_paths_and_suffixes <- c("Images/TeamLogos/|.png")
+Team_logos$Team <- str_replace_all(Team_logos$Team, File_paths_and_suffixes, "")
+
+
 
 ladder <- left_join(Team_logos, ladder, by = "Team") |> arrange(desc(Power))
 ```
