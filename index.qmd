@@ -3,7 +3,7 @@ format:
   dashboard
 ---
 
-## Row
+## Row {height="20%"}
 
 ### Column
 
@@ -42,7 +42,7 @@ list(
 
 ```
 
-## Row
+## Row {height="80%"}
 
 ### Column
 
@@ -77,4 +77,4 @@ ggplot(model_performance) +
 ```
 
 ### Column 
-![](Images/21_logo.png){fig-align="center"}
+![](Images/43_logo.png){fig-align="center"}
