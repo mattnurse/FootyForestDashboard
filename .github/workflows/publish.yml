@@ -3,7 +3,28 @@ on:
   push:
     branches: main
   schedule:
-    - cron: "* 7,9,10,13,20 * 3-9 4,5,6,7"
+    on:
+  schedule:
+    - cron: "0 7 * 3-9 4"    # At 07:00 on every Thursday from March to September
+    - cron: "0 9 * 3-9 4"    # At 09:00 on every Thursday from March to September
+    - cron: "0 10 * 3-9 4"   # At 10:00 on every Thursday from March to September
+    - cron: "0 13 * 3-9 4"   # At 13:00 on every Thursday from March to September
+    - cron: "0 20 * 3-9 4"   # At 20:00 on every Thursday from March to September
+    - cron: "0 7 * 3-9 5"    # At 07:00 on every Friday from March to September
+    - cron: "0 9 * 3-9 5"    # At 09:00 on every Friday from March to September
+    - cron: "0 10 * 3-9 5"   # At 10:00 on every Friday from March to September
+    - cron: "0 13 * 3-9 5"   # At 13:00 on every Friday from March to September
+    - cron: "0 20 * 3-9 5"   # At 20:00 on every Friday from March to September
+    - cron: "0 7 * 3-9 6"    # At 07:00 on every Saturday from March to September
+    - cron: "0 9 * 3-9 6"    # At 09:00 on every Saturday from March to September
+    - cron: "0 10 * 3-9 6"   # At 10:00 on every Saturday from March to September
+    - cron: "0 13 * 3-9 6"   # At 13:00 on every Saturday from March to September
+    - cron: "0 20 * 3-9 6"   # At 20:00 on every Saturday from March to September
+    - cron: "0 7 * 3-9 7"    # At 07:00 on every Sunday from March to September
+    - cron: "0 9 * 3-9 7"    # At 09:00 on every Sunday from March to September
+    - cron: "0 10 * 3-9 7"   # At 10:00 on every Sunday from March to September
+    - cron: "0 13 * 3-9 7"   # At 13:00 on every Sunday from March to September
+    - cron: "0 20 * 3-9 7"   # At 20:00 on every Sunday from March to September
 
 name: Quarto Publish
 
