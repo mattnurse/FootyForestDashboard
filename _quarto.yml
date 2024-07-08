@@ -9,7 +9,7 @@ website:
   open-graph: true
   announcement: 
     dismissable: false
-    content: <font color="black"> &ensp; A machine learning model that predicts the winners of AFL football matches</font>
+    content: <font color="black"> A machine learning model that predicts the winners of AFL football matches</font>
     type: primary
     position: below-navbar
   navbar:

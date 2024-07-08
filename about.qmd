@@ -6,6 +6,8 @@ editor:
 
 # Frequently asked questions
 
+## Model questions
+
 **Which variables (features) does the Footy Forest use?**
 
 It uses four variables. These are:
@@ -22,6 +24,8 @@ It uses four variables. These are:
 Each of these are calculated for each team and then converted as a relative measure showing the
 advantage for the home team compared to its opponent on the day.
 
+## Betting and tipping
+
 **Are you doing this to make money?**
 
 Hell, no. I am doing this for fun and for a challenge. Yes, I am a nerd. And yes, I am obsessed by
@@ -34,6 +38,8 @@ Definitely not. Betting is for mugs and niff-naffs.
 **Should I use this model for footy tipping?**
 
 Absolutely. Go bananas.
+
+## Technical questions
 
 **What program did you use to write this model?**
 
@@ -49,6 +55,19 @@ born free right here in the real world.
 
 [Yes. Yes it is.](https://www.youtube.com/watch?v=HD_MO3cCl28)
 
+**What techniques are used for this model?**
+
+This model is an ensemble of models compiled with the [R Tidymodels
+package](https://www.tidymodels.org/). It uses a stacked combination of gradient boosted trees,
+generalised linear models and random forest models to make its predictions.
+
+**Where do you get your data from?**
+
+I use the [FitzRoy package for R.](https://cran.r-project.org/web/packages/fitzRoy/index.html) It is
+wonderful. Cheers to the legends to have developed it and maintain it.
+
+## Personal questions
+
 **What is your background?**
 
 I am a quantitative social scientist who is mainly interested in researching problems in science
@@ -57,27 +76,21 @@ some academic work using machine learning techniques, [there are many more quali
 who have produced similar models](https://squiggle.com.au/). Prior to this I worked in various
 communication roles.
 
-**What techniques are used for this model?**
-
-This model is an ensemble of models compiled with the [R Tidymodels
-package](https://www.tidymodels.org/). It uses a stacked combination of gradient boosted trees,
-generalised linear models and random forest models to make its predictions.
-
 **Why is this called the “Footy Forest”?**
 
 A few of the techniques used in this model are tree-based (eg. gradient-boosted trees, random
 forest), so I thought I’d take the concept and run with it like Ed Langdon on a fast break. Also it
 predicts … footy.
 
-**Where do you get your data from?**
-
-I use the [FitzRoy package for R.](https://cran.r-project.org/web/packages/fitzRoy/index.html) It is
-wonderful. Cheers to the legends to have developed it and maintain it.
+## AFL questions
 
 **What is Australian football or the Australian Football League?**
 
 My friend, let me introduce you to [by far the best sport on the entire
 planet](https://www.youtube.com/watch?v=u_SqfNNfhmM&t=13s).
+
+## Personal questions
+
 
 **What football team do you barrack for?**
 
