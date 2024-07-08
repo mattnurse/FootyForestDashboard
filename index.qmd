@@ -89,7 +89,8 @@ ggplot(model_performance) +
 library(tidyverse)
 library(gt)
 library(gtExtras)
-early_tips_table <- read.csv("C:\\Users\\User\\Documents\\GitHub\\FootyForest_v1.1\\early_tips_table.csv")
+
+early_tips_table <- read.csv("early_tips_table.csv")
 #Make pretty prediction table 2
 early_tips_table <- early_tips_table |> 
   select(!c(seas_rnd, venue, tip)) |> 

@@ -1,0 +1,10 @@
+"seas_rnd","home_team","away_team","elo_differential_c","venue","venue_experience_differential_c","travel_differential_c","tip","predicted_winner","probability","margin"
+"2024_18","Collingwood","Geelong Cats",-6.8,"CD_V40",-8.8,1.8,"away","Geelong Cats",56,7
+"2024_18","Hawthorn","Fremantle",-21.8,"CD_V200",71.9,69.6,"away","Fremantle",60,11
+"2024_18","Sydney Swans","North Melbourne",95.7,"CD_V60",95,20.2,"home","Sydney Swans",92,59
+"2024_18","Western Bulldogs","Carlton",-1.2,"CD_V190",-8.8,0,"home","Western Bulldogs",51,2
+"2024_18","Adelaide Crows","St Kilda",6.9,"CD_V6",64.7,18.1,"home","Adelaide Crows",68,20
+"2024_18","Melbourne","Essendon",33.2,"CD_V40",-8.8,0.1,"home","Melbourne",80,34
+"2024_18","Gold Coast Suns","Port Adelaide",-18.2,"CD_V81",79.8,44.1,"away","Port Adelaide",59,10
+"2024_18","Richmond","GWS Giants",-32.1,"CD_V40",62.2,19.5,"away","GWS Giants",71,23
+"2024_18","West Coast Eagles","Brisbane Lions",-87.9,"CD_V2925",-8.8,99.6,"away","Brisbane Lions",90,53
