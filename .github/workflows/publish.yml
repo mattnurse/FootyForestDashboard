@@ -3,26 +3,23 @@ on:
   push:
     branches: main
   schedule:
-    - cron: "0 7 * 3-9 4"    # At 07:00 on every Thursday from March to September
-    - cron: "0 9 * 3-9 4"    # At 09:00 on every Thursday from March to September
-    - cron: "0 10 * 3-9 4"   # At 10:00 on every Thursday from March to September
-    - cron: "0 13 * 3-9 4"   # At 13:00 on every Thursday from March to September
-    - cron: "0 20 * 3-9 4"   # At 20:00 on every Thursday from March to September
-    - cron: "0 7 * 3-9 5"    # At 07:00 on every Friday from March to September
-    - cron: "0 9 * 3-9 5"    # At 09:00 on every Friday from March to September
-    - cron: "0 10 * 3-9 5"   # At 10:00 on every Friday from March to September
-    - cron: "0 13 * 3-9 5"   # At 13:00 on every Friday from March to September
-    - cron: "0 20 * 3-9 5"   # At 20:00 on every Friday from March to September
-    - cron: "0 7 * 3-9 6"    # At 07:00 on every Saturday from March to September
-    - cron: "0 9 * 3-9 6"    # At 09:00 on every Saturday from March to September
-    - cron: "0 10 * 3-9 6"   # At 10:00 on every Saturday from March to September
-    - cron: "0 13 * 3-9 6"   # At 13:00 on every Saturday from March to September
-    - cron: "0 20 * 3-9 6"   # At 20:00 on every Saturday from March to September
-    - cron: "0 7 * 3-9 0"    # At 07:00 on every Sunday from March to September
-    - cron: "0 9 * 3-9 0"    # At 09:00 on every Sunday from March to September
-    - cron: "0 10 * 3-9 0"   # At 10:00 on every Sunday from March to September
-    - cron: "0 13 * 3-9 0"   # At 13:00 on every Sunday from March to September
-    - cron: "0 20 * 3-9 0"   # At 20:00 on every Sunday from March to September
+    - cron: "16 12 * 3-9 4"   # At 12:16 (10:16pm AEST) on every Thursday from March to September
+    - cron: "0 20 * 3-9 4"   # At 20:00 (6am AEST) on every Thursday from March to September
+    - cron: "0 9 * 3-9 5"    # At 09:00 (7pm AEST)on every Friday from March to September
+    - cron: "16 12 * 3-9 5"   # At 12:16 (10:16pm AEST) on every Friday from March to September
+    - cron: "0 20 * 3-9 5"   # At 20:00 (6am AEST) on every Friday from March to September
+    - cron: "0 7 * 3-9 6"    # At 07:00 (5pm AEST) on every Saturday from March to September
+    - cron: "0 9 * 3-9 6"    # At 09:00 (7pm AEST) on every Saturday from March to September
+    - cron: "0 10 * 3-9 6"   # At 10:00 (8pm AEST) on every Saturday from March to September
+    - cron: "16 12 * 3-9 6"   # At 12:16 (10:16pm AEST) on every Saturday from March to September
+    - cron: "0 20 * 3-9 6"   # At 20:00 (6am AEST) on every Saturday from March to September
+    - cron: "0 7 * 3-9 0"    # At 07:00 (5pm AEST) on every Sunday from March to September
+    - cron: "0 9 * 3-9 0"    # At 09:00 (7pm AEST) on every Sunday from March to September
+    - cron: "0 10 * 3-9 0"   # At 10:00 (8pm AEST) on every Sunday from March to September
+    - cron: "16 12 * 3-9 0"   # At 12:16 (10:16pm) on every Sunday from March to September
+    - cron: "0 20 * 3-9 0"   # At 20:00 (6am AEST) on every Sunday from March to September
+    - cron: "0 20 * 3-9 1"   # At 20:00 (6am AEST) on every Monday from March to September
+    - cron: "0 7 * 3-9 0"   # At 07:00 (5pm AEST) on every Monday from March to September
 
 
 name: Quarto Publish
