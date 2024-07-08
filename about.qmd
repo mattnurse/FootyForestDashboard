@@ -4,7 +4,6 @@ editor:
     wrap: 100
 ---
 
-
 # Frequently asked questions
 
 **Which variables (features) does the Footy Forest use?**

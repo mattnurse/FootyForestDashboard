@@ -3,6 +3,7 @@ format:
   dashboard
 ---
 
+
 ## Row {height="20%"}
 
 ### Column
@@ -23,26 +24,31 @@ list(
 #| content: valuebox
 #| title: "Accuracy"
 list(
+  color = "#49EBB7",
   icon = "bullseye", 
   value = "68.1%"
 )
 
 ```
 
-
 ### Column
 
 ```{r}
 #| content: valuebox
-#| title: "Percentile of the official AFL footy tipping competition"
+#| title: "Percentile of official AFL footy tipping comp"
 list(
+  color = "#49EB80",
   icon = "bar-chart-line", 
   value = "1.7%"
 )
 
 ```
 
-## Row {height="80%"}
+## Row {height="10%"}
+
+Welcome to the Footy Forest. Here you'll find predictions, details on how the model is performing, rankings of each team and occasional statistical analyses of AFL footy and other sports.
+
+## Row {height="70%"}
 
 ### Column
 
@@ -76,5 +82,45 @@ ggplot(model_performance) +
 
 ```
 
-### Column 
-![](Images/43_logo.png){fig-align="center"}
+### Column
+
+```{r, make pretty predictions table}
+########################################################################
+library(tidyverse)
+library(gt)
+library(gtExtras)
+early_tips_table <- read.csv("C:\\Users\\User\\Documents\\GitHub\\FootyForest_v1.1\\early_tips_table.csv")
+#Make pretty prediction table 2
+early_tips_table <- early_tips_table |> 
+  select(!c(seas_rnd, venue, tip)) |> 
+  rename(Home = home_team, Away = away_team, 
+         "Form" = elo_differential_c, 
+         "Venue exp" = venue_experience_differential_c, 
+         "Travel" = travel_differential_c, 
+         "Predicted winner" = predicted_winner, 
+         "Margin" = margin, 
+         "Probability" = probability) |> 
+  relocate(Home, Away, "Form", "Venue exp", "Travel", "Predicted winner", "Probability", "Margin")
+
+
+library(gt)
+early_tips_table |>  
+  gt() |> 
+  tab_header( 
+    title = "Early tips - updated when teams are announced") |> 
+  tab_spanner(
+    label = md("Relative advantage to the home team^1^"),
+    columns = c("Form", "Venue exp", "Travel")) %>%
+  tab_footnote(footnote = md("^1^This is the difference between the teams where 100 is the highest since 2015 and -100 is the lowest")) |> 
+  opt_align_table_header(align = "left") %>%
+  cols_align(columns = c("Form", "Venue exp", "Travel", "Predicted winner", "Probability", "Margin") , align = "center") |>  tab_style(style = cell_text(weight = "bold"), 
+            locations = cells_body(columns = c("Predicted winner"))) |> 
+  data_color(
+    columns = c("Form", "Venue exp", "Travel"),  
+    palette = c("red", "white", "darkgreen"),
+    domain = c(-100, 100), 
+    quantiles = 5 
+  ) |> 
+  cols_width(c("Form", "Venue exp", "Travel") ~ px(95))
+```
+

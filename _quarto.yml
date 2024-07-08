@@ -9,8 +9,8 @@ website:
   open-graph: true
   announcement: 
     dismissable: false
-    content: <font color="white">  A machine learning model that predicts the winners of AFL football matches</font>
-    type: secondary
+    content: <font color="black"> &ensp; A machine learning model that predicts the winners of AFL football matches</font>
+    type: primary
     position: below-navbar
   navbar:
     logo: Images/Footy_forest_simple_logo.png
