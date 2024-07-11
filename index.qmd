@@ -73,8 +73,8 @@ ggplot(model_performance) +
   aes(x = rounds, y = cumsum(correct)) +
   geom_line(linewidth = 1) +
   scale_x_continuous(breaks = seq(min(rounds), max(rounds), 1)) +
-  scale_y_continuous(breaks = seq(0, total_correct + 20, 10)) +
-  labs(y = "correct tips") +
+  scale_y_continuous(breaks = seq(0, total_correct, 10)) +
+  labs(y = "") +
   geom_image(aes(image = icon), size = 0.085) +
   ggtitle("Correct tips 2024") +
   theme_classic(base_size = 18) +
@@ -90,14 +90,15 @@ library(tidyverse)
 library(gt)
 library(gtExtras)
 
-early_tips_table <- read.csv("early_tips_table.csv")
+tips_table_for_website <- read.csv("tips_table_for_website.csv")
 #Make pretty prediction table 2
-early_tips_table <- early_tips_table |> 
+tips_table_for_website <- tips_table_for_website |> 
   select(!c(seas_rnd, venue, tip)) |> 
   rename(Home = home_team, Away = away_team, 
          "Form" = elo_differential_c, 
          "Venue exp" = venue_experience_differential_c, 
          "Travel" = travel_differential_c, 
+         "Team rating" = team_player_rating_differential_c,
          "Predicted winner" = predicted_winner, 
          "Margin" = margin, 
          "Probability" = probability) |> 
@@ -105,19 +106,19 @@ early_tips_table <- early_tips_table |>
 
 
 library(gt)
-early_tips_table |>  
+tips_table_for_website |>  
   gt() |> 
   tab_header( 
-    title = "Early tips - updated when teams are announced") |> 
+    title = "Based on teams selected on Thursday night") |> 
   tab_spanner(
     label = md("Relative advantage to the home team^1^"),
     columns = c("Form", "Venue exp", "Travel")) %>%
   tab_footnote(footnote = md("^1^This is the difference between the teams where 100 is the highest since 2015 and -100 is the lowest")) |> 
   opt_align_table_header(align = "left") %>%
-  cols_align(columns = c("Form", "Venue exp", "Travel", "Predicted winner", "Probability", "Margin") , align = "center") |>  tab_style(style = cell_text(weight = "bold"), 
+  cols_align(columns = c("Form", "Venue exp", "Team rating", "Travel", "Predicted winner", "Probability", "Margin") , align = "center") |>  tab_style(style = cell_text(weight = "bold"), 
             locations = cells_body(columns = c("Predicted winner"))) |> 
   data_color(
-    columns = c("Form", "Venue exp", "Travel"),  
+    columns = c("Form", "Venue exp", "Team rating", "Travel"),  
     palette = c("red", "white", "darkgreen"),
     domain = c(-100, 100), 
     quantiles = 5 
