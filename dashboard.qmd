@@ -180,9 +180,6 @@ ladder <- ladder |>  rename("Power" = last_col())
 
 ladder <- left_join(ladder, sparkline_data, by = "Team")
 
-Rank <- seq(1,18, by = 1)
-
-ladder <- cbind(Rank, ladder)
 ```
 
 ```{r, get images}
@@ -198,6 +195,12 @@ Team_logos$Team <- str_replace_all(Team_logos$Team, File_paths_and_suffixes, "")
 
 
 ladder <- left_join(Team_logos, ladder, by = "Team") |> arrange(desc(Power))
+
+#Add rank based on power sorting
+Rank <- seq(1,18, by = 1)
+
+ladder <- cbind(Rank, ladder)
+
 ```
 
 
