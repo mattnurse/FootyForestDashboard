@@ -179,6 +179,10 @@ ladder <- left_join(ladder, power_rankings_dashboard_for_joining, by = "Team")
 ladder <- ladder |>  rename("Power" = last_col())
 
 ladder <- left_join(ladder, sparkline_data, by = "Team")
+
+Rank <- seq(1,18, by = 1)
+
+ladder <- cbind(Rank, ladder)
 ```
 
 ```{r, get images}
