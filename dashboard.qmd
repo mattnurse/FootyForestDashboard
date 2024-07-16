@@ -69,10 +69,10 @@ historical_results_df$away_team <- str_replace(historical_results_df$away_team, 
 
 
 
-#Set parameters for home ground advantage score, proportion of carryover ELO rating from season to season and k weighting. These values were initially taken from here - https://www.matterofstats.com/mafl-stats-journal/2013/10/13/building-your-own-team-rating-system.html
-HGA <- 25 #I've tuned this see the excel spreadsheet called HGA_tuning
-Carry_over <- 0.15 #I've tuned this see the excel spreadsheet called Carryover_tuning
-k_val <- 20 # note that this has been tuned see Hyperparameter_tuning.R. I bumped this up in May 2024 as it wasnt updating quick enough. But one day I should tune this properly https://rpubs.com/DTS098/SPE5AMS_Portfolio02
+#these has not been extensively cross-validated and refined - see Hyperparameter_tuning2.R
+HGA <- 45 
+Carry_over <- 0.7 
+k_val <- 42 
 
 
 #Cap the benefit from winning or losing by greater than 80 points
