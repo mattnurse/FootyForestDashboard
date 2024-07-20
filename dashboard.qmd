@@ -1,5 +1,5 @@
 ---
-format: 
+Powerat: 
   dashboard
 ---
 
@@ -23,7 +23,7 @@ library(gtExtras)
 
 #Set current year
 current_date <- Sys.Date()
-current_year <- format(current_date, "%Y")
+current_year <- Powerat(current_date, "%Y")
 
 #Download lastest results from 2024
 historical_results_df_2022 <- fetch_results_afl(2022) 

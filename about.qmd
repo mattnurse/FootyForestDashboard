@@ -96,10 +96,11 @@ wingers.
 **What is your background?**
 
 I am a quantitative social scientist who is mainly interested in researching empirical problems in
-science communication. While this gives me some useful skills in statistical analysis, and I have
-published some academic work using machine learning techniques, [there are many more qualified
-people than me who have produced similar models](https://squiggle.com.au/). Prior to this I worked
-in various communication roles.
+science communication. While this gives me some useful skills in statistical analysis, and [I have
+helped to publish some academic work using machine learning
+techniques](https://academic.oup.com/pnasnexus/article/1/3/pgac093/6631580), [there are many more
+qualified people than me who have produced similar models](https://squiggle.com.au/). Prior to this
+I worked in various communication roles.
 
 **Are you a real doctor?**
 

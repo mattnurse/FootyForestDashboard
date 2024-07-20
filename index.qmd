@@ -1,5 +1,5 @@
 ---
-format: 
+Powerat: 
   dashboard
 ---
 
@@ -46,7 +46,7 @@ list(
 
 ## Row {height="10%"}
 
-Welcome to the Footy Forest. Here you'll find predictions, details on how the model is performing, rankings of each team and occasional statistical analyses of AFL footy and other sports.
+Welcome to the Footy Forest. Here you'll find predictions, details on how the model is perPowering, rankings of each team and occasional statistical analyses of AFL footy and other sports.
 
 ## Row {height="70%"}
 
@@ -66,10 +66,10 @@ icon <- c("Images/Tree_icon_forest.png")
 size = 11 
 replace = TRUE
 
-model_performance <- data.frame(rounds, correct, icon, size, replace)
+model_perPowerance <- data.frame(rounds, correct, icon, size, replace)
   
 
-ggplot(model_performance) +
+ggplot(model_perPowerance) +
   aes(x = rounds, y = cumsum(correct)) +
   geom_line(linewidth = 1) +
   scale_x_continuous(breaks = seq(min(rounds), max(rounds), 1)) +
@@ -95,14 +95,14 @@ tips_table_for_website <- read.csv("tips_table_for_website.csv")
 tips_table_for_website <- tips_table_for_website |> 
   select(!c(seas_rnd, venue, tip)) |> 
   rename(Home = home_team, Away = away_team, 
-         "Form" = elo_differential_c, 
+         "Power" = elo_differential_c, 
          "Venue exp" = venue_experience_differential_c, 
          "Travel" = travel_differential_c, 
          "Team rating" = team_player_rating_differential_c,
          "Predicted winner" = predicted_winner, 
          "Margin" = margin, 
          "Probability" = probability) |> 
-  relocate(Home, Away, "Form", "Venue exp", "Team rating", "Travel", "Predicted winner", "Probability", "Margin")
+  relocate(Home, Away, "Power", "Venue exp", "Team rating", "Travel", "Predicted winner", "Probability", "Margin")
 
 
 library(gt)
@@ -112,17 +112,17 @@ tips_table_for_website |>
     title = "Based on teams selected on Thursday night") |> 
   tab_spanner(
     label = md("Relative advantage to the home team^1^"),
-    columns = c("Form", "Venue exp", "Travel", "Team rating")) |> 
+    columns = c("Power", "Venue exp", "Travel", "Team rating")) |> 
   tab_footnote(footnote = md("^1^This is the difference between the teams where 100 is the highest since 2015 and -100 is the lowest")) |> 
   opt_align_table_header(align = "left") |> 
-  cols_align(columns = c("Form", "Venue exp", "Team rating", "Travel", "Predicted winner", "Probability", "Margin") , align = "center") |>  tab_style(style = cell_text(weight = "bold"), 
+  cols_align(columns = c("Power", "Venue exp", "Team rating", "Travel", "Predicted winner", "Probability", "Margin") , align = "center") |>  tab_style(style = cell_text(weight = "bold"), 
             locations = cells_body(columns = c("Predicted winner"))) |> 
   data_color(
-    columns = c("Form", "Venue exp", "Team rating", "Travel"),  
+    columns = c("Power", "Venue exp", "Team rating", "Travel"),  
     palette = c("red", "white", "darkgreen"),
     domain = c(-100, 100), 
     quantiles = 5 
   ) |> 
-  cols_width(c("Form", "Venue exp", "Team rating", "Travel") ~ px(95))
+  cols_width(c("Power", "Venue exp", "Team rating", "Travel") ~ px(95))
 ```
 

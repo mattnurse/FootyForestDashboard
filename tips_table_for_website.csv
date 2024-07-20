@@ -1,10 +1,10 @@
 "seas_rnd","home_team","away_team","elo_differential_c","venue","venue_experience_differential_c","team_player_rating_differential_c","travel_differential_c","tip","predicted_winner","probability","margin"
-"2024_18","Collingwood","Geelong Cats",-6.8,"CD_V40",-8.8,14.3,1.8,"home","Collingwood",51,2
-"2024_18","Hawthorn","Fremantle",-21.8,"CD_V200",71.9,35.7,69.6,"home","Hawthorn",53,3
-"2024_18","Sydney Swans","North Melbourne",95.7,"CD_V60",95,5.9,20.2,"home","Sydney Swans",79,32
-"2024_18","Western Bulldogs","Carlton",-1.2,"CD_V190",-8.8,3,0,"home","Western Bulldogs",52,2
-"2024_18","Adelaide Crows","St Kilda",6.9,"CD_V6",64.7,5.4,18.1,"home","Adelaide Crows",61,12
-"2024_18","Melbourne","Essendon",33.2,"CD_V40",-8.8,39.9,0.1,"home","Melbourne",71,23
-"2024_18","Gold Coast Suns","Port Adelaide",-18.2,"CD_V81",79.8,4.2,44.1,"home","Gold Coast Suns",50,1
-"2024_18","Richmond","GWS Giants",-32.1,"CD_V40",62.2,-27.1,19.5,"away","GWS Giants",62,13
-"2024_18","West Coast Eagles","Brisbane Lions",-87.9,"CD_V2925",-8.8,-14.8,99.6,"away","Brisbane Lions",74,26
+"2024_19","Essendon","Adelaide Crows",-13.1,"CD_V190",49.6,-11,18.1,"home","Essendon",52,3
+"2024_19","GWS Giants","Gold Coast Suns",4.8,"CD_V43",87.5,18.8,18.9,"home","GWS Giants",71,23
+"2024_19","St Kilda","West Coast Eagles",31.3,"CD_V190",42.3,18.7,75.1,"home","St Kilda",81,35
+"2024_19","Hawthorn","Collingwood",-7.8,"CD_V40",-8.8,22.8,0,"away","Collingwood",53,4
+"2024_19","Geelong Cats","Western Bulldogs",-4.2,"CD_V30",84.9,10.5,1.8,"home","Geelong Cats",62,13
+"2024_19","Port Adelaide","Richmond",40,"CD_V6",57.3,35.9,18.1,"home","Port Adelaide",82,37
+"2024_19","Brisbane Lions","Sydney Swans",-25.1,"CD_V20",79.9,-3.1,19.6,"away","Sydney Swans",61,12
+"2024_19","Fremantle","Melbourne",5.1,"CD_V2925",82.4,-15.6,75.2,"home","Fremantle",75,27
+"2024_19","Carlton","North Melbourne",62.2,"CD_V190",-8.8,27.1,0,"home","Carlton",83,39
