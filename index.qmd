@@ -105,6 +105,13 @@ tips_table_for_website <- tips_table_for_website |>
   relocate(Home, Away, "Power", "Venue exp", "Team rating", "Travel", "Predicted winner", "Probability", "Margin")
 
 
+#Get time and day of the week to determine whether to use team lists for predictions or to just predict on the other factors
+library(tidyverse)
+current_time = now("Australia/Canberra")
+day_of_the_week = wday(current_time, label = TRUE, abbr = FALSE)
+
+
+
 library(gt)
 tips_table_for_website |>  
   gt() |> 
