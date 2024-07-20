@@ -46,7 +46,7 @@ list(
 
 ## Row {height="10%"}
 
-Welcome to the Footy Forest. Here you'll find predictions, details on how the model is perPowering, rankings of each team and occasional statistical analyses of AFL footy and other sports.
+Welcome to the Footy Forest. Here you'll find predictions, details on how the model is performing, rankings of each team and occasional statistical analyses of AFL footy and other sports.
 
 ## Row {height="70%"}
 
@@ -66,10 +66,10 @@ icon <- c("Images/Tree_icon_forest.png")
 size = 11 
 replace = TRUE
 
-model_perPowerance <- data.frame(rounds, correct, icon, size, replace)
+model_performance <- data.frame(rounds, correct, icon, size, replace)
   
 
-ggplot(model_perPowerance) +
+ggplot(model_performance) +
   aes(x = rounds, y = cumsum(correct)) +
   geom_line(linewidth = 1) +
   scale_x_continuous(breaks = seq(min(rounds), max(rounds), 1)) +
