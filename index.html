@@ -253,7 +253,7 @@ $value
 </section>
 <section id="row-1" class="level2" height="10%">
 <h2 height="10%" class="anchored" data-anchor-id="row-1">Row</h2>
-<p>Welcome to the Footy Forest. Here you’ll find predictions, details on how the model is perPowering, rankings of each team and occasional statistical analyses of AFL footy and other sports.</p>
+<p>Welcome to the Footy Forest. Here you’ll find predictions, details on how the model is performing, rankings of each team and occasional statistical analyses of AFL footy and other sports.</p>
 </section>
 <section id="row-2" class="level2" height="70%">
 <h2 height="70%" class="anchored" data-anchor-id="row-2">Row</h2>
@@ -289,10 +289,10 @@ Using 4 threads</code></pre>
 <span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>size <span class="ot">=</span> <span class="dv">11</span> </span>
 <span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>replace <span class="ot">=</span> <span class="cn">TRUE</span></span>
 <span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>model_perPowerance <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(rounds, correct, icon, size, replace)</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>model_performance <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(rounds, correct, icon, size, replace)</span>
 <span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>  </span>
 <span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(model_perPowerance) <span class="sc">+</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(model_performance) <span class="sc">+</span></span>
 <span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(<span class="at">x =</span> rounds, <span class="at">y =</span> <span class="fu">cumsum</span>(correct)) <span class="sc">+</span></span>
 <span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
 <span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="fu">min</span>(rounds), <span class="fu">max</span>(rounds), <span class="dv">1</span>)) <span class="sc">+</span></span>
@@ -354,23 +354,23 @@ Using 4 threads</code></pre>
 <span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
 <span id="cb12-39"><a href="#cb12-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_width</span>(<span class="fu">c</span>(<span class="st">"Power"</span>, <span class="st">"Venue exp"</span>, <span class="st">"Team rating"</span>, <span class="st">"Travel"</span>) <span class="sc">~</span> <span class="fu">px</span>(<span class="dv">95</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="sbyuaqifsk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#sbyuaqifsk table {
+<div id="ovisvizvpq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ovisvizvpq table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#sbyuaqifsk thead, #sbyuaqifsk tbody, #sbyuaqifsk tfoot, #sbyuaqifsk tr, #sbyuaqifsk td, #sbyuaqifsk th {
+#ovisvizvpq thead, #ovisvizvpq tbody, #ovisvizvpq tfoot, #ovisvizvpq tr, #ovisvizvpq td, #ovisvizvpq th {
   border-style: none;
 }
 
-#sbyuaqifsk p {
+#ovisvizvpq p {
   margin: 0;
   padding: 0;
 }
 
-#sbyuaqifsk .gt_table {
+#ovisvizvpq .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -396,12 +396,12 @@ Using 4 threads</code></pre>
   border-left-color: #D3D3D3;
 }
 
-#sbyuaqifsk .gt_caption {
+#ovisvizvpq .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#sbyuaqifsk .gt_title {
+#ovisvizvpq .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -413,7 +413,7 @@ Using 4 threads</code></pre>
   border-bottom-width: 0;
 }
 
-#sbyuaqifsk .gt_subtitle {
+#ovisvizvpq .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -425,7 +425,7 @@ Using 4 threads</code></pre>
   border-top-width: 0;
 }
 
-#sbyuaqifsk .gt_heading {
+#ovisvizvpq .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -437,13 +437,13 @@ Using 4 threads</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#sbyuaqifsk .gt_bottom_border {
+#ovisvizvpq .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#sbyuaqifsk .gt_col_headings {
+#ovisvizvpq .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -458,7 +458,7 @@ Using 4 threads</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#sbyuaqifsk .gt_col_heading {
+#ovisvizvpq .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -478,7 +478,7 @@ Using 4 threads</code></pre>
   overflow-x: hidden;
 }
 
-#sbyuaqifsk .gt_column_spanner_outer {
+#ovisvizvpq .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -490,15 +490,15 @@ Using 4 threads</code></pre>
   padding-right: 4px;
 }
 
-#sbyuaqifsk .gt_column_spanner_outer:first-child {
+#ovisvizvpq .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#sbyuaqifsk .gt_column_spanner_outer:last-child {
+#ovisvizvpq .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#sbyuaqifsk .gt_column_spanner {
+#ovisvizvpq .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -510,11 +510,11 @@ Using 4 threads</code></pre>
   width: 100%;
 }
 
-#sbyuaqifsk .gt_spanner_row {
+#ovisvizvpq .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#sbyuaqifsk .gt_group_heading {
+#ovisvizvpq .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -540,7 +540,7 @@ Using 4 threads</code></pre>
   text-align: left;
 }
 
-#sbyuaqifsk .gt_empty_group_heading {
+#ovisvizvpq .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -555,15 +555,15 @@ Using 4 threads</code></pre>
   vertical-align: middle;
 }
 
-#sbyuaqifsk .gt_from_md > :first-child {
+#ovisvizvpq .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#sbyuaqifsk .gt_from_md > :last-child {
+#ovisvizvpq .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#sbyuaqifsk .gt_row {
+#ovisvizvpq .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -582,7 +582,7 @@ Using 4 threads</code></pre>
   overflow-x: hidden;
 }
 
-#sbyuaqifsk .gt_stub {
+#ovisvizvpq .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -595,7 +595,7 @@ Using 4 threads</code></pre>
   padding-right: 5px;
 }
 
-#sbyuaqifsk .gt_stub_row_group {
+#ovisvizvpq .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -609,15 +609,15 @@ Using 4 threads</code></pre>
   vertical-align: top;
 }
 
-#sbyuaqifsk .gt_row_group_first td {
+#ovisvizvpq .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#sbyuaqifsk .gt_row_group_first th {
+#ovisvizvpq .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#sbyuaqifsk .gt_summary_row {
+#ovisvizvpq .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -627,16 +627,16 @@ Using 4 threads</code></pre>
   padding-right: 5px;
 }
 
-#sbyuaqifsk .gt_first_summary_row {
+#ovisvizvpq .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#sbyuaqifsk .gt_first_summary_row.thick {
+#ovisvizvpq .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#sbyuaqifsk .gt_last_summary_row {
+#ovisvizvpq .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -646,7 +646,7 @@ Using 4 threads</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#sbyuaqifsk .gt_grand_summary_row {
+#ovisvizvpq .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -656,7 +656,7 @@ Using 4 threads</code></pre>
   padding-right: 5px;
 }
 
-#sbyuaqifsk .gt_first_grand_summary_row {
+#ovisvizvpq .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -666,7 +666,7 @@ Using 4 threads</code></pre>
   border-top-color: #D3D3D3;
 }
 
-#sbyuaqifsk .gt_last_grand_summary_row_top {
+#ovisvizvpq .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -676,11 +676,11 @@ Using 4 threads</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#sbyuaqifsk .gt_striped {
+#ovisvizvpq .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#sbyuaqifsk .gt_table_body {
+#ovisvizvpq .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -689,7 +689,7 @@ Using 4 threads</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#sbyuaqifsk .gt_footnotes {
+#ovisvizvpq .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -703,7 +703,7 @@ Using 4 threads</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#sbyuaqifsk .gt_footnote {
+#ovisvizvpq .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -712,7 +712,7 @@ Using 4 threads</code></pre>
   padding-right: 5px;
 }
 
-#sbyuaqifsk .gt_sourcenotes {
+#ovisvizvpq .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -726,7 +726,7 @@ Using 4 threads</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#sbyuaqifsk .gt_sourcenote {
+#ovisvizvpq .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -734,63 +734,63 @@ Using 4 threads</code></pre>
   padding-right: 5px;
 }
 
-#sbyuaqifsk .gt_left {
+#ovisvizvpq .gt_left {
   text-align: left;
 }
 
-#sbyuaqifsk .gt_center {
+#ovisvizvpq .gt_center {
   text-align: center;
 }
 
-#sbyuaqifsk .gt_right {
+#ovisvizvpq .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#sbyuaqifsk .gt_font_normal {
+#ovisvizvpq .gt_font_normal {
   font-weight: normal;
 }
 
-#sbyuaqifsk .gt_font_bold {
+#ovisvizvpq .gt_font_bold {
   font-weight: bold;
 }
 
-#sbyuaqifsk .gt_font_italic {
+#ovisvizvpq .gt_font_italic {
   font-style: italic;
 }
 
-#sbyuaqifsk .gt_super {
+#ovisvizvpq .gt_super {
   font-size: 65%;
 }
 
-#sbyuaqifsk .gt_footnote_marks {
+#ovisvizvpq .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#sbyuaqifsk .gt_asterisk {
+#ovisvizvpq .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#sbyuaqifsk .gt_indent_1 {
+#ovisvizvpq .gt_indent_1 {
   text-indent: 5px;
 }
 
-#sbyuaqifsk .gt_indent_2 {
+#ovisvizvpq .gt_indent_2 {
   text-indent: 10px;
 }
 
-#sbyuaqifsk .gt_indent_3 {
+#ovisvizvpq .gt_indent_3 {
   text-indent: 15px;
 }
 
-#sbyuaqifsk .gt_indent_4 {
+#ovisvizvpq .gt_indent_4 {
   text-indent: 20px;
 }
 
-#sbyuaqifsk .gt_indent_5 {
+#ovisvizvpq .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
