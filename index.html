@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -40,14 +74,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script src="site_libs/quarto-dashboard/quarto-dashboard.js"></script>
-<script src="site_libs/quarto-dashboard/stickythead.js"></script>
-<script src="site_libs/quarto-dashboard/datatables.min.js" kdttablesentinel="true"></script>
-<script src="site_libs/quarto-dashboard/pdfmake.min.js" kdttablesentinel="true"></script>
-<script src="site_libs/quarto-dashboard/vfs_fonts.js" kdttablesentinel="true"></script>
-<script src="site_libs/quarto-dashboard/web-components.js" type="module"></script>
-<script src="site_libs/quarto-dashboard/components.js"></script>
-<link href="site_libs/quarto-dashboard/datatables.min.css" rel="stylesheet" kdttablesentinel="true">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -78,11 +104,11 @@ ul.task-list li input[type="checkbox"] {
 
 
 <meta property="og:title" content="The Footy Forest">
+<meta property="og:description" content="">
 <meta property="og:site_name" content="The Footy Forest">
 </head>
 
-<body class="quarto-dashboard nav-fixed dashboard-fill fullcontent">
-
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -135,130 +161,216 @@ ul.task-list li input[type="checkbox"] {
   <div id="quarto-announcement" data-announcement-id="9f53af9f494b6701336661fdb17283fe" class="alert alert-primary hidden"><div class="quarto-announcement-content">
 <p><font color="black"> A machine learning model that predicts the winners of AFL football matches</font></p>
 </div></div>
-<header id="quarto-dashboard-header">
-<nav class="navbar navbar-expand-md slim" data-bs-theme="dark">
-  <div class="navbar-container container-fluid">
-    <button class="navbar-toggler hidden" type="button" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-controls="dashboard-collapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>    
-
-
-</div></nav>
-</header></header>
+</header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-layout-custom page-navbar quarto-dashboard-content bslib-gap-spacing html-fill-container bslib-page-fill">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#row" id="toc-row" class="nav-link active" data-scroll-target="#row">Row</a>
+  <ul class="collapse">
+  <li><a href="#column" id="toc-column" class="nav-link" data-scroll-target="#column">Column</a></li>
+  <li><a href="#column-1" id="toc-column-1" class="nav-link" data-scroll-target="#column-1">Column</a></li>
+  <li><a href="#column-2" id="toc-column-2" class="nav-link" data-scroll-target="#column-2">Column</a></li>
+  </ul></li>
+  <li><a href="#row-1" id="toc-row-1" class="nav-link" data-scroll-target="#row-1">Row</a></li>
+  <li><a href="#row-2" id="toc-row-2" class="nav-link" data-scroll-target="#row-2">Row</a>
+  <ul class="collapse">
+  <li><a href="#column-3" id="toc-column-3" class="nav-link" data-scroll-target="#column-3">Column</a></li>
+  <li><a href="#column-4" id="toc-column-4" class="nav-link" data-scroll-target="#column-4">Column</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
+<main class="content" id="quarto-document-content">
 
-<div class="bslib-grid-item html-fill-item bslib-grid" data-layout="fill" style="display: grid; grid-template-rows: minmax(3em, 20fr) minmax(3em, 10fr) minmax(3em, 70fr); grid-auto-columns: minmax(0, 1fr);">
-<div class="bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr);
-grid-auto-rows: minmax(0, 1fr);">
-<div class="bslib-grid" style="display: grid; grid-template-rows: minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
-<div class="card valuebox cell bslib-card html-fill-container bslib-value-box bg-secondary showcase-left-center" data-bslib-card-init="" data-require-bs-caller="card()">
-<div class="card-body html-fill-item html-fill-container">
-<div data-icon="clipboard-check" class="html-fill-item html-fill-container value-box-grid">
-<div class="value-box-showcase html-fill-item html-fill-container">
 
-<i class="bi bi-clipboard-check"></i></div>
-<div class="value-box-area">
-<p class="value-box-title">
-Correct tips
-</p>
-<p class="value-box-value">
-105
-</p>
-</div>
-</div>
-</div>
-<script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
-</div><div class="bslib-grid" style="display: grid; grid-template-rows: minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
-<div class="card valuebox cell bslib-card html-fill-container bslib-value-box showcase-left-center" data-bslib-card-init="" data-require-bs-caller="card()" style=" background: #49EBB7;">
-<div class="card-body html-fill-item html-fill-container">
-<div data-icon="bullseye" class="html-fill-item html-fill-container value-box-grid">
-<div class="value-box-showcase html-fill-item html-fill-container">
 
-<i class="bi bi-bullseye"></i></div>
-<div class="value-box-area">
-<p class="value-box-title">
-Accuracy
-</p>
-<p class="value-box-value">
-68.6%
-</p>
-</div>
-</div>
-</div>
-<script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
-</div><div class="bslib-grid" style="display: grid; grid-template-rows: minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
-<div class="card valuebox cell bslib-card html-fill-container bslib-value-box showcase-left-center" data-bslib-card-init="" data-require-bs-caller="card()" style=" background: #49EB80;">
-<div class="card-body html-fill-item html-fill-container">
-<div data-icon="bar-chart-line" class="html-fill-item html-fill-container value-box-grid">
-<div class="value-box-showcase html-fill-item html-fill-container">
 
-<i class="bi bi-bar-chart-line"></i></div>
-<div class="value-box-area">
-<p class="value-box-title">
-Percentile of official AFL footy tipping comp
-</p>
-<p class="value-box-value">
-0.59%
-</p>
+<section id="row" class="level2" height="20%">
+<h2 height="20%" class="anchored" data-anchor-id="row">Row</h2>
+<section id="column" class="level3">
+<h3 class="anchored" data-anchor-id="column">Column</h3>
+<div class="cell" content="valuebox" title="Correct tips">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list</span>(</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">icon =</span> <span class="st">"clipboard-check"</span>,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">value =</span> <span class="st">"105"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$icon
+[1] "clipboard-check"
+
+$value
+[1] "105"</code></pre>
+</div>
+</div>
+</section>
+<section id="column-1" class="level3">
+<h3 class="anchored" data-anchor-id="column-1">Column</h3>
+<div class="cell" content="valuebox" title="Accuracy">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list</span>(</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">color =</span> <span class="st">"#49EBB7"</span>,</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">icon =</span> <span class="st">"bullseye"</span>, </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">value =</span> <span class="st">"68.6%"</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$color
+[1] "#49EBB7"
+
+$icon
+[1] "bullseye"
+
+$value
+[1] "68.6%"</code></pre>
+</div>
+</div>
+</section>
+<section id="column-2" class="level3">
+<h3 class="anchored" data-anchor-id="column-2">Column</h3>
+<div class="cell" content="valuebox" title="Percentile of official AFL footy tipping comp">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list</span>(</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">color =</span> <span class="st">"#49EB80"</span>,</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">icon =</span> <span class="st">"bar-chart-line"</span>, </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">value =</span> <span class="st">"0.59%"</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$color
+[1] "#49EB80"
+
+$icon
+[1] "bar-chart-line"
+
+$value
+[1] "0.59%"</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="row-1" class="level2" height="10%">
+<h2 height="10%" class="anchored" data-anchor-id="row-1">Row</h2>
+<p>Welcome to the Footy Forest. Here you’ll find predictions, details on how the model is perPowering, rankings of each team and occasional statistical analyses of AFL footy and other sports.</p>
+</section>
+<section id="row-2" class="level2" height="70%">
+<h2 height="70%" class="anchored" data-anchor-id="row-2">Row</h2>
+<section id="column-3" class="level3">
+<h3 class="anchored" data-anchor-id="column-3">Column</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ ggplot2   3.5.1     ✔ tibble    3.2.1
+✔ lubridate 1.9.3     ✔ tidyr     1.3.1
+✔ purrr     1.0.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggimage)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magick)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Linking to ImageMagick 6.9.11.60
+Enabled features: fontconfig, freetype, fftw, heic, lcms, pango, webp, x11
+Disabled features: cairo, ghostscript, raw, rsvg
+Using 4 threads</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Create df of correct tips by round</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>rounds <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>,<span class="dv">11</span>,<span class="dv">12</span>,<span class="dv">13</span>,<span class="dv">14</span>,<span class="dv">15</span>,<span class="dv">16</span>,<span class="dv">17</span>,<span class="dv">18</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>correct <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">6</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">9</span>, <span class="dv">6</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">6</span>, <span class="dv">5</span>, <span class="dv">7</span>)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>total_correct <span class="ot">&lt;-</span> <span class="fu">sum</span>(correct)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>icon <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Images/Tree_icon_forest.png"</span>)</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>size <span class="ot">=</span> <span class="dv">11</span> </span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>replace <span class="ot">=</span> <span class="cn">TRUE</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>model_perPowerance <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(rounds, correct, icon, size, replace)</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(model_perPowerance) <span class="sc">+</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(<span class="at">x =</span> rounds, <span class="at">y =</span> <span class="fu">cumsum</span>(correct)) <span class="sc">+</span></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="fu">min</span>(rounds), <span class="fu">max</span>(rounds), <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, total_correct, <span class="dv">10</span>)) <span class="sc">+</span></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">""</span>) <span class="sc">+</span></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_image</span>(<span class="fu">aes</span>(<span class="at">image =</span> icon), <span class="at">size =</span> <span class="fl">0.085</span>) <span class="sc">+</span></span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Correct tips 2024"</span>) <span class="sc">+</span></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>(<span class="at">base_size =</span> <span class="dv">18</span>) <span class="sc">+</span></span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
 </div>
 </div>
 </div>
-<script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
-</div>
-</div>
-<div class="bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr);
-grid-auto-rows: minmax(0, 1fr);">
-<div class="card bslib-card html-fill-container" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
-<div class="card-body html-fill-item html-fill-container">
-<p>Welcome to the Footy Forest. Here you’ll find predictions, details on how the model is performing, rankings of each team and occasional statistical analyses of AFL footy and other sports.</p>
-</div>
-<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
-    <template>Expand</template>
-    <span class="bslib-full-screen-enter badge rounded-pill">
-        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
-    </span>
-</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
-</div>
-<div class="bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr) minmax(3em, 1fr);
-grid-auto-rows: minmax(0, 1fr);">
-<div class="bslib-grid" style="display: grid; grid-template-rows: minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
-<div class="card cell bslib-card html-fill-container" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
-<div class="card-body html-fill-item html-fill-container">
-<div class="cell-output-display html-fill-item html-fill-container">
-<img src="index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid quarto-dashboard-img-contain">
-</div>
-</div>
-<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
-    <template>Expand</template>
-    <span class="bslib-full-screen-enter badge rounded-pill">
-        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
-    </span>
-</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
-</div><div class="bslib-grid" style="display: grid; grid-template-rows: minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
-<div class="card cell bslib-card html-fill-container" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
-<div class="card-body html-fill-item html-fill-container">
-<div class="cell-output-display html-fill-item html-fill-container">
-<div id="gimdnbkknk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;" class="html-fill-item html-fill-container">
-<style>#gimdnbkknk table {
+</section>
+<section id="column-4" class="level3">
+<h3 class="anchored" data-anchor-id="column-4">Column</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="do">########################################################################</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gtExtras)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>tips_table_for_website <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"tips_table_for_website.csv"</span>)</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co">#Make pretty prediction table 2</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>tips_table_for_website <span class="ot">&lt;-</span> tips_table_for_website <span class="sc">|&gt;</span> </span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">!</span><span class="fu">c</span>(seas_rnd, venue, tip)) <span class="sc">|&gt;</span> </span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">Home =</span> home_team, <span class="at">Away =</span> away_team, </span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>         <span class="st">"Power"</span> <span class="ot">=</span> elo_differential_c, </span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>         <span class="st">"Venue exp"</span> <span class="ot">=</span> venue_experience_differential_c, </span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>         <span class="st">"Travel"</span> <span class="ot">=</span> travel_differential_c, </span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>         <span class="st">"Team rating"</span> <span class="ot">=</span> team_player_rating_differential_c,</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>         <span class="st">"Predicted winner"</span> <span class="ot">=</span> predicted_winner, </span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>         <span class="st">"Margin"</span> <span class="ot">=</span> margin, </span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>         <span class="st">"Probability"</span> <span class="ot">=</span> probability) <span class="sc">|&gt;</span> </span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">relocate</span>(Home, Away, <span class="st">"Power"</span>, <span class="st">"Venue exp"</span>, <span class="st">"Team rating"</span>, <span class="st">"Travel"</span>, <span class="st">"Predicted winner"</span>, <span class="st">"Probability"</span>, <span class="st">"Margin"</span>)</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>tips_table_for_website <span class="sc">|&gt;</span>  </span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>( </span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Based on teams selected on Thursday night"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_spanner</span>(</span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">label =</span> <span class="fu">md</span>(<span class="st">"Relative advantage to the home team^1^"</span>),</span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> <span class="fu">c</span>(<span class="st">"Power"</span>, <span class="st">"Venue exp"</span>, <span class="st">"Travel"</span>, <span class="st">"Team rating"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_footnote</span>(<span class="at">footnote =</span> <span class="fu">md</span>(<span class="st">"^1^This is the difference between the teams where 100 is the highest since 2015 and -100 is the lowest"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_align_table_header</span>(<span class="at">align =</span> <span class="st">"left"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_align</span>(<span class="at">columns =</span> <span class="fu">c</span>(<span class="st">"Power"</span>, <span class="st">"Venue exp"</span>, <span class="st">"Team rating"</span>, <span class="st">"Travel"</span>, <span class="st">"Predicted winner"</span>, <span class="st">"Probability"</span>, <span class="st">"Margin"</span>) , <span class="at">align =</span> <span class="st">"center"</span>) <span class="sc">|&gt;</span>  <span class="fu">tab_style</span>(<span class="at">style =</span> <span class="fu">cell_text</span>(<span class="at">weight =</span> <span class="st">"bold"</span>), </span>
+<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a>            <span class="at">locations =</span> <span class="fu">cells_body</span>(<span class="at">columns =</span> <span class="fu">c</span>(<span class="st">"Predicted winner"</span>))) <span class="sc">|&gt;</span> </span>
+<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data_color</span>(</span>
+<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> <span class="fu">c</span>(<span class="st">"Power"</span>, <span class="st">"Venue exp"</span>, <span class="st">"Team rating"</span>, <span class="st">"Travel"</span>),  </span>
+<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">palette =</span> <span class="fu">c</span>(<span class="st">"red"</span>, <span class="st">"white"</span>, <span class="st">"darkgreen"</span>),</span>
+<span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a>    <span class="at">domain =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">100</span>, <span class="dv">100</span>), </span>
+<span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">quantiles =</span> <span class="dv">5</span> </span>
+<span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb12-39"><a href="#cb12-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_width</span>(<span class="fu">c</span>(<span class="st">"Power"</span>, <span class="st">"Venue exp"</span>, <span class="st">"Team rating"</span>, <span class="st">"Travel"</span>) <span class="sc">~</span> <span class="fu">px</span>(<span class="dv">95</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="sbyuaqifsk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#sbyuaqifsk table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#gimdnbkknk thead, #gimdnbkknk tbody, #gimdnbkknk tfoot, #gimdnbkknk tr, #gimdnbkknk td, #gimdnbkknk th {
+#sbyuaqifsk thead, #sbyuaqifsk tbody, #sbyuaqifsk tfoot, #sbyuaqifsk tr, #sbyuaqifsk td, #sbyuaqifsk th {
   border-style: none;
 }
 
-#gimdnbkknk p {
+#sbyuaqifsk p {
   margin: 0;
   padding: 0;
 }
 
-#gimdnbkknk .gt_table {
+#sbyuaqifsk .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -284,12 +396,12 @@ grid-auto-rows: minmax(0, 1fr);">
   border-left-color: #D3D3D3;
 }
 
-#gimdnbkknk .gt_caption {
+#sbyuaqifsk .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#gimdnbkknk .gt_title {
+#sbyuaqifsk .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -301,7 +413,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-bottom-width: 0;
 }
 
-#gimdnbkknk .gt_subtitle {
+#sbyuaqifsk .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -313,7 +425,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-top-width: 0;
 }
 
-#gimdnbkknk .gt_heading {
+#sbyuaqifsk .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -325,13 +437,13 @@ grid-auto-rows: minmax(0, 1fr);">
   border-right-color: #D3D3D3;
 }
 
-#gimdnbkknk .gt_bottom_border {
+#sbyuaqifsk .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#gimdnbkknk .gt_col_headings {
+#sbyuaqifsk .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -346,7 +458,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-right-color: #D3D3D3;
 }
 
-#gimdnbkknk .gt_col_heading {
+#sbyuaqifsk .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -366,7 +478,7 @@ grid-auto-rows: minmax(0, 1fr);">
   overflow-x: hidden;
 }
 
-#gimdnbkknk .gt_column_spanner_outer {
+#sbyuaqifsk .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -378,15 +490,15 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 4px;
 }
 
-#gimdnbkknk .gt_column_spanner_outer:first-child {
+#sbyuaqifsk .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#gimdnbkknk .gt_column_spanner_outer:last-child {
+#sbyuaqifsk .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#gimdnbkknk .gt_column_spanner {
+#sbyuaqifsk .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -398,11 +510,11 @@ grid-auto-rows: minmax(0, 1fr);">
   width: 100%;
 }
 
-#gimdnbkknk .gt_spanner_row {
+#sbyuaqifsk .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#gimdnbkknk .gt_group_heading {
+#sbyuaqifsk .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -428,7 +540,7 @@ grid-auto-rows: minmax(0, 1fr);">
   text-align: left;
 }
 
-#gimdnbkknk .gt_empty_group_heading {
+#sbyuaqifsk .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -443,15 +555,15 @@ grid-auto-rows: minmax(0, 1fr);">
   vertical-align: middle;
 }
 
-#gimdnbkknk .gt_from_md > :first-child {
+#sbyuaqifsk .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#gimdnbkknk .gt_from_md > :last-child {
+#sbyuaqifsk .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#gimdnbkknk .gt_row {
+#sbyuaqifsk .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -470,7 +582,7 @@ grid-auto-rows: minmax(0, 1fr);">
   overflow-x: hidden;
 }
 
-#gimdnbkknk .gt_stub {
+#sbyuaqifsk .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -483,7 +595,7 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 5px;
 }
 
-#gimdnbkknk .gt_stub_row_group {
+#sbyuaqifsk .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -497,15 +609,15 @@ grid-auto-rows: minmax(0, 1fr);">
   vertical-align: top;
 }
 
-#gimdnbkknk .gt_row_group_first td {
+#sbyuaqifsk .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#gimdnbkknk .gt_row_group_first th {
+#sbyuaqifsk .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#gimdnbkknk .gt_summary_row {
+#sbyuaqifsk .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -515,16 +627,16 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 5px;
 }
 
-#gimdnbkknk .gt_first_summary_row {
+#sbyuaqifsk .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#gimdnbkknk .gt_first_summary_row.thick {
+#sbyuaqifsk .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#gimdnbkknk .gt_last_summary_row {
+#sbyuaqifsk .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -534,7 +646,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-bottom-color: #D3D3D3;
 }
 
-#gimdnbkknk .gt_grand_summary_row {
+#sbyuaqifsk .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -544,7 +656,7 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 5px;
 }
 
-#gimdnbkknk .gt_first_grand_summary_row {
+#sbyuaqifsk .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -554,7 +666,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-top-color: #D3D3D3;
 }
 
-#gimdnbkknk .gt_last_grand_summary_row_top {
+#sbyuaqifsk .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -564,11 +676,11 @@ grid-auto-rows: minmax(0, 1fr);">
   border-bottom-color: #D3D3D3;
 }
 
-#gimdnbkknk .gt_striped {
+#sbyuaqifsk .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#gimdnbkknk .gt_table_body {
+#sbyuaqifsk .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -577,7 +689,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-bottom-color: #D3D3D3;
 }
 
-#gimdnbkknk .gt_footnotes {
+#sbyuaqifsk .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -591,7 +703,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-right-color: #D3D3D3;
 }
 
-#gimdnbkknk .gt_footnote {
+#sbyuaqifsk .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -600,7 +712,7 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 5px;
 }
 
-#gimdnbkknk .gt_sourcenotes {
+#sbyuaqifsk .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -614,7 +726,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-right-color: #D3D3D3;
 }
 
-#gimdnbkknk .gt_sourcenote {
+#sbyuaqifsk .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -622,63 +734,63 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 5px;
 }
 
-#gimdnbkknk .gt_left {
+#sbyuaqifsk .gt_left {
   text-align: left;
 }
 
-#gimdnbkknk .gt_center {
+#sbyuaqifsk .gt_center {
   text-align: center;
 }
 
-#gimdnbkknk .gt_right {
+#sbyuaqifsk .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#gimdnbkknk .gt_font_normal {
+#sbyuaqifsk .gt_font_normal {
   font-weight: normal;
 }
 
-#gimdnbkknk .gt_font_bold {
+#sbyuaqifsk .gt_font_bold {
   font-weight: bold;
 }
 
-#gimdnbkknk .gt_font_italic {
+#sbyuaqifsk .gt_font_italic {
   font-style: italic;
 }
 
-#gimdnbkknk .gt_super {
+#sbyuaqifsk .gt_super {
   font-size: 65%;
 }
 
-#gimdnbkknk .gt_footnote_marks {
+#sbyuaqifsk .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#gimdnbkknk .gt_asterisk {
+#sbyuaqifsk .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#gimdnbkknk .gt_indent_1 {
+#sbyuaqifsk .gt_indent_1 {
   text-indent: 5px;
 }
 
-#gimdnbkknk .gt_indent_2 {
+#sbyuaqifsk .gt_indent_2 {
   text-indent: 10px;
 }
 
-#gimdnbkknk .gt_indent_3 {
+#sbyuaqifsk .gt_indent_3 {
   text-indent: 15px;
 }
 
-#gimdnbkknk .gt_indent_4 {
+#sbyuaqifsk .gt_indent_4 {
   text-indent: 20px;
 }
 
-#gimdnbkknk .gt_indent_5 {
+#sbyuaqifsk .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -697,7 +809,7 @@ grid-auto-rows: minmax(0, 1fr);">
 <th rowspan="2" id="Margin" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Margin</th>
 </tr>
 <tr class="header gt_col_headings">
-<th id="Form" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Form</th>
+<th id="Power" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Power</th>
 <th id="Venue exp" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Venue exp</th>
 <th id="Travel" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Travel</th>
 <th id="Team rating" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Team rating</th>
@@ -705,103 +817,103 @@ grid-auto-rows: minmax(0, 1fr);">
 </thead>
 <tbody class="gt_table_body">
 <tr class="odd">
-<td class="gt_row gt_left" headers="Home">Collingwood</td>
-<td class="gt_row gt_left" headers="Away">Geelong Cats</td>
-<td class="gt_row gt_center" headers="Form" style="background-color: #FFF2ED; color: #000000">-6.8</td>
-<td class="gt_row gt_center" headers="Venue exp" style="background-color: #FFEEE8; color: #000000">-8.8</td>
-<td class="gt_row gt_center" headers="Travel" style="background-color: #FBFCFA; color: #000000">1.8</td>
-<td class="gt_row gt_center" headers="Team rating" style="background-color: #DDE8D9; color: #000000">14.3</td>
-<td class="gt_row gt_center" headers="Predicted winner" style="font-weight: bold">Collingwood</td>
-<td class="gt_row gt_center" headers="Probability">51</td>
-<td class="gt_row gt_center" headers="Margin">2</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Home">Hawthorn</td>
-<td class="gt_row gt_left" headers="Away">Fremantle</td>
-<td class="gt_row gt_center" headers="Form" style="background-color: #FFD5C7; color: #000000">-21.8</td>
-<td class="gt_row gt_center" headers="Venue exp" style="background-color: #598E4B; color: #FFFFFF">71.9</td>
-<td class="gt_row gt_center" headers="Travel" style="background-color: #5F9251; color: #FFFFFF">69.6</td>
-<td class="gt_row gt_center" headers="Team rating" style="background-color: #ACC6A3; color: #000000">35.7</td>
-<td class="gt_row gt_center" headers="Predicted winner" style="font-weight: bold">Hawthorn</td>
-<td class="gt_row gt_center" headers="Probability">53</td>
+<td class="gt_row gt_left" headers="Home">Essendon</td>
+<td class="gt_row gt_left" headers="Away">Adelaide Crows</td>
+<td class="gt_row gt_center" headers="Power" style="background-color: #FFE6DD; color: #000000">-13.1</td>
+<td class="gt_row gt_center" headers="Venue exp" style="background-color: #8CB180; color: #000000">49.6</td>
+<td class="gt_row gt_center" headers="Travel" style="background-color: #D5E2CF; color: #000000">18.1</td>
+<td class="gt_row gt_center" headers="Team rating" style="background-color: #FFEAE2; color: #000000">-11.0</td>
+<td class="gt_row gt_center" headers="Predicted winner" style="font-weight: bold">Essendon</td>
+<td class="gt_row gt_center" headers="Probability">52</td>
 <td class="gt_row gt_center" headers="Margin">3</td>
 </tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Home">Sydney Swans</td>
-<td class="gt_row gt_left" headers="Away">North Melbourne</td>
-<td class="gt_row gt_center" headers="Form" style="background-color: #186A10; color: #FFFFFF">95.7</td>
-<td class="gt_row gt_center" headers="Venue exp" style="background-color: #1B6B12; color: #FFFFFF">95.0</td>
-<td class="gt_row gt_center" headers="Travel" style="background-color: #D0DFCA; color: #000000">20.2</td>
-<td class="gt_row gt_center" headers="Team rating" style="background-color: #F1F6EF; color: #000000">5.9</td>
-<td class="gt_row gt_center" headers="Predicted winner" style="font-weight: bold">Sydney Swans</td>
-<td class="gt_row gt_center" headers="Probability">79</td>
-<td class="gt_row gt_center" headers="Margin">32</td>
-</tr>
 <tr class="even">
-<td class="gt_row gt_left" headers="Home">Western Bulldogs</td>
-<td class="gt_row gt_left" headers="Away">Carlton</td>
-<td class="gt_row gt_center" headers="Form" style="background-color: #FFFDFC; color: #000000">-1.2</td>
-<td class="gt_row gt_center" headers="Venue exp" style="background-color: #FFEEE8; color: #000000">-8.8</td>
-<td class="gt_row gt_center" headers="Travel" style="background-color: #FFFFFF; color: #000000">0.0</td>
-<td class="gt_row gt_center" headers="Team rating" style="background-color: #F8FAF7; color: #000000">3.0</td>
-<td class="gt_row gt_center" headers="Predicted winner" style="font-weight: bold">Western Bulldogs</td>
-<td class="gt_row gt_center" headers="Probability">52</td>
-<td class="gt_row gt_center" headers="Margin">2</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Home">Adelaide Crows</td>
-<td class="gt_row gt_left" headers="Away">St Kilda</td>
-<td class="gt_row gt_center" headers="Form" style="background-color: #EFF4ED; color: #000000">6.9</td>
-<td class="gt_row gt_center" headers="Venue exp" style="background-color: #6A995C; color: #FFFFFF">64.7</td>
-<td class="gt_row gt_center" headers="Travel" style="background-color: #D5E2CF; color: #000000">18.1</td>
-<td class="gt_row gt_center" headers="Team rating" style="background-color: #F2F6F1; color: #000000">5.4</td>
-<td class="gt_row gt_center" headers="Predicted winner" style="font-weight: bold">Adelaide Crows</td>
-<td class="gt_row gt_center" headers="Probability">61</td>
-<td class="gt_row gt_center" headers="Margin">12</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Home">Melbourne</td>
-<td class="gt_row gt_left" headers="Away">Essendon</td>
-<td class="gt_row gt_center" headers="Form" style="background-color: #B2CAA9; color: #000000">33.2</td>
-<td class="gt_row gt_center" headers="Venue exp" style="background-color: #FFEEE8; color: #000000">-8.8</td>
-<td class="gt_row gt_center" headers="Travel" style="background-color: #FFFFFF; color: #000000">0.1</td>
-<td class="gt_row gt_center" headers="Team rating" style="background-color: #A2C098; color: #000000">39.9</td>
-<td class="gt_row gt_center" headers="Predicted winner" style="font-weight: bold">Melbourne</td>
+<td class="gt_row gt_left" headers="Home">GWS Giants</td>
+<td class="gt_row gt_left" headers="Away">Gold Coast Suns</td>
+<td class="gt_row gt_center" headers="Power" style="background-color: #F4F7F2; color: #000000">4.8</td>
+<td class="gt_row gt_center" headers="Venue exp" style="background-color: #327726; color: #FFFFFF">87.5</td>
+<td class="gt_row gt_center" headers="Travel" style="background-color: #D3E1CD; color: #000000">18.9</td>
+<td class="gt_row gt_center" headers="Team rating" style="background-color: #D3E1CE; color: #000000">18.8</td>
+<td class="gt_row gt_center" headers="Predicted winner" style="font-weight: bold">GWS Giants</td>
 <td class="gt_row gt_center" headers="Probability">71</td>
 <td class="gt_row gt_center" headers="Margin">23</td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_left" headers="Home">Gold Coast Suns</td>
-<td class="gt_row gt_left" headers="Away">Port Adelaide</td>
-<td class="gt_row gt_center" headers="Form" style="background-color: #FFDCD0; color: #000000">-18.2</td>
-<td class="gt_row gt_center" headers="Venue exp" style="background-color: #468239; color: #FFFFFF">79.8</td>
-<td class="gt_row gt_center" headers="Travel" style="background-color: #99B98E; color: #000000">44.1</td>
-<td class="gt_row gt_center" headers="Team rating" style="background-color: #F5F8F4; color: #000000">4.2</td>
-<td class="gt_row gt_center" headers="Predicted winner" style="font-weight: bold">Gold Coast Suns</td>
-<td class="gt_row gt_center" headers="Probability">50</td>
-<td class="gt_row gt_center" headers="Margin">1</td>
+<td class="gt_row gt_left" headers="Home">St Kilda</td>
+<td class="gt_row gt_left" headers="Away">West Coast Eagles</td>
+<td class="gt_row gt_center" headers="Power" style="background-color: #B6CDAE; color: #000000">31.3</td>
+<td class="gt_row gt_center" headers="Venue exp" style="background-color: #9DBC92; color: #000000">42.3</td>
+<td class="gt_row gt_center" headers="Travel" style="background-color: #528944; color: #FFFFFF">75.1</td>
+<td class="gt_row gt_center" headers="Team rating" style="background-color: #D3E1CE; color: #000000">18.7</td>
+<td class="gt_row gt_center" headers="Predicted winner" style="font-weight: bold">St Kilda</td>
+<td class="gt_row gt_center" headers="Probability">81</td>
+<td class="gt_row gt_center" headers="Margin">35</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_left" headers="Home">Richmond</td>
-<td class="gt_row gt_left" headers="Away">GWS Giants</td>
-<td class="gt_row gt_center" headers="Form" style="background-color: #FFC1AD; color: #000000">-32.1</td>
-<td class="gt_row gt_center" headers="Venue exp" style="background-color: #709D62; color: #FFFFFF">62.2</td>
-<td class="gt_row gt_center" headers="Travel" style="background-color: #D1E0CC; color: #000000">19.5</td>
-<td class="gt_row gt_center" headers="Team rating" style="background-color: #FFCBB9; color: #000000">-27.1</td>
-<td class="gt_row gt_center" headers="Predicted winner" style="font-weight: bold">GWS Giants</td>
+<td class="gt_row gt_left" headers="Home">Hawthorn</td>
+<td class="gt_row gt_left" headers="Away">Collingwood</td>
+<td class="gt_row gt_center" headers="Power" style="background-color: #FFF0EB; color: #000000">-7.8</td>
+<td class="gt_row gt_center" headers="Venue exp" style="background-color: #FFEEE8; color: #000000">-8.8</td>
+<td class="gt_row gt_center" headers="Travel" style="background-color: #FFFFFF; color: #000000">0.0</td>
+<td class="gt_row gt_center" headers="Team rating" style="background-color: #CADBC3; color: #000000">22.8</td>
+<td class="gt_row gt_center" headers="Predicted winner" style="font-weight: bold">Collingwood</td>
+<td class="gt_row gt_center" headers="Probability">53</td>
+<td class="gt_row gt_center" headers="Margin">4</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Home">Geelong Cats</td>
+<td class="gt_row gt_left" headers="Away">Western Bulldogs</td>
+<td class="gt_row gt_center" headers="Power" style="background-color: #FFF7F4; color: #000000">-4.2</td>
+<td class="gt_row gt_center" headers="Venue exp" style="background-color: #397B2D; color: #FFFFFF">84.9</td>
+<td class="gt_row gt_center" headers="Travel" style="background-color: #FBFCFA; color: #000000">1.8</td>
+<td class="gt_row gt_center" headers="Team rating" style="background-color: #E6EEE3; color: #000000">10.5</td>
+<td class="gt_row gt_center" headers="Predicted winner" style="font-weight: bold">Geelong Cats</td>
 <td class="gt_row gt_center" headers="Probability">62</td>
 <td class="gt_row gt_center" headers="Margin">13</td>
 </tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Home">Port Adelaide</td>
+<td class="gt_row gt_left" headers="Away">Richmond</td>
+<td class="gt_row gt_center" headers="Power" style="background-color: #A2C098; color: #000000">40.0</td>
+<td class="gt_row gt_center" headers="Venue exp" style="background-color: #7BA56E; color: #FFFFFF">57.3</td>
+<td class="gt_row gt_center" headers="Travel" style="background-color: #D5E2CF; color: #000000">18.1</td>
+<td class="gt_row gt_center" headers="Team rating" style="background-color: #ACC6A2; color: #000000">35.9</td>
+<td class="gt_row gt_center" headers="Predicted winner" style="font-weight: bold">Port Adelaide</td>
+<td class="gt_row gt_center" headers="Probability">82</td>
+<td class="gt_row gt_center" headers="Margin">37</td>
+</tr>
 <tr class="odd">
-<td class="gt_row gt_left" headers="Home">West Coast Eagles</td>
-<td class="gt_row gt_left" headers="Away">Brisbane Lions</td>
-<td class="gt_row gt_center" headers="Form" style="background-color: #FF4527; color: #FFFFFF">-87.9</td>
+<td class="gt_row gt_left" headers="Home">Brisbane Lions</td>
+<td class="gt_row gt_left" headers="Away">Sydney Swans</td>
+<td class="gt_row gt_center" headers="Power" style="background-color: #FFCFBE; color: #000000">-25.1</td>
+<td class="gt_row gt_center" headers="Venue exp" style="background-color: #468239; color: #FFFFFF">79.9</td>
+<td class="gt_row gt_center" headers="Travel" style="background-color: #D1E0CB; color: #000000">19.6</td>
+<td class="gt_row gt_center" headers="Team rating" style="background-color: #FFF9F7; color: #000000">-3.1</td>
+<td class="gt_row gt_center" headers="Predicted winner" style="font-weight: bold">Sydney Swans</td>
+<td class="gt_row gt_center" headers="Probability">61</td>
+<td class="gt_row gt_center" headers="Margin">12</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Home">Fremantle</td>
+<td class="gt_row gt_left" headers="Away">Melbourne</td>
+<td class="gt_row gt_center" headers="Power" style="background-color: #F3F7F1; color: #000000">5.1</td>
+<td class="gt_row gt_center" headers="Venue exp" style="background-color: #407E33; color: #FFFFFF">82.4</td>
+<td class="gt_row gt_center" headers="Travel" style="background-color: #518944; color: #FFFFFF">75.2</td>
+<td class="gt_row gt_center" headers="Team rating" style="background-color: #FFE1D7; color: #000000">-15.6</td>
+<td class="gt_row gt_center" headers="Predicted winner" style="font-weight: bold">Fremantle</td>
+<td class="gt_row gt_center" headers="Probability">75</td>
+<td class="gt_row gt_center" headers="Margin">27</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Home">Carlton</td>
+<td class="gt_row gt_left" headers="Away">North Melbourne</td>
+<td class="gt_row gt_center" headers="Power" style="background-color: #709D62; color: #FFFFFF">62.2</td>
 <td class="gt_row gt_center" headers="Venue exp" style="background-color: #FFEEE8; color: #000000">-8.8</td>
-<td class="gt_row gt_center" headers="Travel" style="background-color: #036501; color: #FFFFFF">99.6</td>
-<td class="gt_row gt_center" headers="Team rating" style="background-color: #FFE3D9; color: #000000">-14.8</td>
-<td class="gt_row gt_center" headers="Predicted winner" style="font-weight: bold">Brisbane Lions</td>
-<td class="gt_row gt_center" headers="Probability">74</td>
-<td class="gt_row gt_center" headers="Margin">26</td>
+<td class="gt_row gt_center" headers="Travel" style="background-color: #FFFFFF; color: #000000">0.0</td>
+<td class="gt_row gt_center" headers="Team rating" style="background-color: #C0D4B8; color: #000000">27.1</td>
+<td class="gt_row gt_center" headers="Predicted winner" style="font-weight: bold">Carlton</td>
+<td class="gt_row gt_center" headers="Probability">83</td>
+<td class="gt_row gt_center" headers="Margin">39</td>
 </tr>
 </tbody><tfoot class="gt_footnotes">
 <tr class="even">
@@ -814,22 +926,12 @@ grid-auto-rows: minmax(0, 1fr);">
 </div>
 </div>
 </div>
-<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
-    <template>Expand</template>
-    <span class="bslib-full-screen-enter badge rounded-pill">
-        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
-    </span>
-</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
 
 
-<div id="3ade8a4a-fb1d-4a6c-8409-ac45482d5fc9" class="hidden">
+</section>
+</section>
 
-</div>
-</div>
-</div>
-</div>
-
-
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1252,14 +1354,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 </div> <!-- /content -->
 
-<script type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (_event) {
-  if (window.bslib.Card) {
-    window.bslib.Card.initializeAllCards();
-  }
-}); 
-</script>
-  
 
 
 
