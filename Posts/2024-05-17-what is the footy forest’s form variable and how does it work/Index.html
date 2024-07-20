@@ -9,7 +9,7 @@
 <meta name="author" content="Matt Nurse">
 <meta name="description" content="Elo elo elo">
 
-<title>What is the Footy Forest’s form variable and how does it work – The Footy Forest</title>
+<title>What is the Footy Forest’s power variable and how does it work – The Footy Forest</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -71,7 +71,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="What is the Footy Forest’s form variable and how does it work – The Footy Forest">
+<meta property="og:title" content="What is the Footy Forest’s power variable and how does it work – The Footy Forest">
 <meta property="og:description" content="Elo elo elo">
 <meta property="og:site_name" content="The Footy Forest">
 </head>
@@ -134,7 +134,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">What is the Footy Forest’s form variable and how does it work</h1>
+      <h1 class="title">What is the Footy Forest’s power variable and how does it work</h1>
                   <div>
         <div class="description">
           Elo elo elo
@@ -181,16 +181,17 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p>The way I measure form in the Footy Forest is entirely based on a <a href="https://en.wikipedia.org/wiki/Elo_rating_system">commonly used rating formula called Elo</a>. This formula was developed to rate and rank the relative skill levels chess players, but it can also be applied to team sports like Australian rules football. Originally developed by Arpad Elo, a Hungarian-American physics professor, the Elo formula has become one of the <a href="https://www.theatlantic.com/technology/archive/2024/04/elo-ratings-are-everywhere/678129/">most popular ways of ranking players and teams across many competitive domains</a>.</p>
+<p>The way I measure a team’s power in the Footy Forest is entirely based on a <a href="https://en.wikipedia.org/wiki/Elo_rating_system">commonly used rating formula called Elo</a>. This formula was developed to rate and rank the relative skill levels chess players, but it can also be applied to team sports like Australian rules football. Originally developed by Arpad Elo, a Hungarian-American physics professor, the Elo formula has become one of the <a href="https://www.theatlantic.com/technology/archive/2024/04/elo-ratings-are-everywhere/678129/">most popular ways of ranking players and teams across many competitive domains</a>.</p>
 <section id="how-the-elo-formula-works" class="level4">
 <h4 class="anchored" data-anchor-id="how-the-elo-formula-works">How the Elo Formula Works</h4>
-<p>At its core, the Elo rating system assumes that the chance of one team beating another is a based on a rating difference between. This rating takes into account the previous results not only between these two teams but against all teams in the competition. If two teams have equal ratings, we’d expect each team to have an equal chance of winning the game. But as the rating gap widens, the probability favours the higher-rated team.</p>
+<p>At its core, the power variable is a measure of a team’s recent form. The Elo rating system assumes that the chance of one team beating another is a based on a rating difference between the form of the two teams. This rating takes into account the previous results not only between these two teams but against all teams in the competition. If two teams have equal ratings, we’d expect each team to have an equal chance of winning the game. But as the rating gap widens, the probability favours the higher-rated team.</p>
 <p>After each game, the Elo formula updates the ratings of the winning and losing teams based on the pre-game ratings and the margin. The winner gains rating some points from the loser, with the number of points exchanged being higher when there is an upset. So, if your team is ranked towards the bottom and you beat a strongly ranked team, your team will get a large boost in its rating. So, the Footy Forest updates the ratings after every game to make sure it is updating every team’s form based on the latest results.</p>
-<p>Of course, the Elo ratings are just one input and in the Footy Forest this measure of form is combined with other data like a rating for each selected player in each team, experience at the venue, and travel, to build a fairly sophisticated AFL prediction model. But the Elo / form variable is the starting point for the model because my tests show that it is the single most powerful predictor of match outcomes.</p>
+<p>Of course, the Elo ratings are just one input and in the Footy Forest this measure of form is combined with other data like a rating for each selected player in each team, experience at the venue, and travel, to build a fairly sophisticated AFL prediction model. But the Elo / power variable is the starting point for the model because my tests show that it is the single most powerful predictor of match outcomes.</p>
 <p>It also means I can calculate power rankings for each team, such as the table below. Power here is simply refers to the raw Elo rating. This ranking is much more useful than looking at the ladder, because your team could have simply beaten a bunch of lowly ranked teams.</p>
 <p>In the Footy Forest, the form variable uses the information from the Elo formula. It presents the ratings in a relative sense, where the home team’s form is subtracted from the away team’s form. It then compares this result to every form rating for every game since 2015, so that you can see the measure in this historical context.</p>
 <p>So in the table below, you can see not only that West Coast’s form is very low compared to Melbourne’s (at -89.9) but also that the form disadvantage is close to the highest relative disadvantage we’ve seen since 2015 (which would be -100).</p>
 <p><img src="Rplot20.png" class="img-fluid"></p>
+<p>These ratings are updated after every game so check out the <a href="https://www.footyforest.com/dashboard.html">Footy Forest’s latest team power rankings</a>.</p>
 
 
 </section>
