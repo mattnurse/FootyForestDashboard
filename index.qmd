@@ -13,7 +13,7 @@ format:
 #| title: "Correct tips"
 list(
   icon = "clipboard-check",
-  value = "111"
+  value = "117"
 )
 
 ```
@@ -26,7 +26,7 @@ list(
 list(
   color = "#49EBB7",
   icon = "bullseye", 
-  value = "68.5%"
+  value = "68.4%"
 )
 
 ```
@@ -39,7 +39,7 @@ list(
 list(
   color = "#49EB80",
   icon = "bar-chart-line", 
-  value = "Top 1.23%"
+  value = "Top 0.97%"
 )
 
 ```
@@ -59,8 +59,8 @@ library(magick)
 
 
 #Create df of correct tips by round
-rounds <- c(0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19)
-correct <- c(6, 5, 6, 8, 4, 5, 9, 6, 4, 5, 7, 3, 4, 6, 5, 6, 6, 5, 7, 5)
+rounds <- c(0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20)
+correct <- c(6, 5, 6, 8, 4, 5, 9, 6, 4, 5, 7, 3, 4, 6, 5, 6, 6, 5, 7, 5, 6)
 total_correct <- sum(correct)
 icon <- c("Images/Tree_icon_forest.png")
 size = 11 
