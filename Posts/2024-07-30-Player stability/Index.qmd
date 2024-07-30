@@ -43,13 +43,6 @@ But as always it pays to do a proper analysis. Here I'm going with a generalised
 ```{r}
 #| warning: false
 
-suppressMessages(suppressWarnings({
-  if (!requireNamespace("sjPlot", quietly = TRUE)) {
-    install.packages("sjPlot")
-  }
-
-}))
-
 library(sjPlot)
 model1 <- glm(Wins ~ num_players, data = final_data, family = "poisson")
 tab_model(model1)
@@ -61,12 +54,6 @@ One of the downsides of using a generalised linear model is that the numbers are
 
 ```{r}
 #| warning: false
-suppressMessages(suppressWarnings({
-  if (!requireNamespace("ggeffects", quietly = TRUE)) {
-    install.packages("ggeffects")
-  }
-
-}))
 
 library(ggeffects)
 library(ggplot2)
