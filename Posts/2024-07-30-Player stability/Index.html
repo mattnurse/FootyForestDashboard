@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Matt Nurse">
+<meta name="description" content="How much does moving the magnets affect winning">
 
-<title>about – The Footy Forest</title>
+<title>Player stability – The Footy Forest</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,23 +25,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./Images/Footy_forest_favicon_logo.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../Images/Footy_forest_favicon_logo.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -69,21 +71,22 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="The Footy Forest">
+<meta property="og:title" content="Player stability – The Footy Forest">
+<meta property="og:description" content="How much does moving the magnets affect winning">
 <meta property="og:site_name" content="The Footy Forest">
 </head>
 
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./Images/Footy_forest_simple_logo.png" alt="" class="navbar-logo">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../Images/Footy_forest_simple_logo.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">The Footy Forest</span>
     </a>
   </div>
@@ -94,15 +97,15 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" aria-current="page"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./dashboard.html"> 
+    <a class="nav-link" href="../../dashboard.html"> 
 <span class="menu-text">Team power rankings</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./blog.html"> 
+    <a class="nav-link" href="../../blog.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
 </ul>
@@ -128,7 +131,44 @@ ul.task-list li input[type="checkbox"] {
 </div></div>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Player stability</h1>
+                  <div>
+        <div class="description">
+          How much does moving the magnets affect winning
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">AFL football</div>
+                <div class="quarto-category">Inferential statistics</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p><a href="https://footyforest.com">Matt Nurse</a> </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">30-September-2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -136,83 +176,144 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#frequently-asked-questions" id="toc-frequently-asked-questions" class="nav-link active" data-scroll-target="#frequently-asked-questions">Frequently asked questions</a>
-  <ul class="collapse">
-  <li><a href="#model-questions" id="toc-model-questions" class="nav-link" data-scroll-target="#model-questions">Model questions</a></li>
-  <li><a href="#betting-and-tipping" id="toc-betting-and-tipping" class="nav-link" data-scroll-target="#betting-and-tipping">Betting and tipping</a></li>
-  <li><a href="#technical-questions" id="toc-technical-questions" class="nav-link" data-scroll-target="#technical-questions">Technical questions</a></li>
-  <li><a href="#afl-questions" id="toc-afl-questions" class="nav-link" data-scroll-target="#afl-questions">AFL questions</a></li>
-  <li><a href="#personal-questions" id="toc-personal-questions" class="nav-link" data-scroll-target="#personal-questions">Personal questions</a></li>
-  </ul></li>
+  <li><a href="#analysis" id="toc-analysis" class="nav-link active" data-scroll-target="#analysis">Analysis</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
-<section id="frequently-asked-questions" class="level1">
-<h1>Frequently asked questions</h1>
-<section id="model-questions" class="level2">
-<h2 class="anchored" data-anchor-id="model-questions">Model questions</h2>
-<p><strong>Why is this called the “Footy Forest”?</strong></p>
-<p>The statistical techniques used in this model are “tree-based”, so I thought I’d take the tree concept and run with it like Ed Langdon on a fast break. Also it predicts … footy.</p>
-<p><strong>What variables does the Footy Forest use?</strong></p>
-<p>It uses four variables. These are:</p>
-<ol type="1">
-<li><p>each team’s form, based on an <a href="https://www.theatlantic.com/technology/archive/2024/04/elo-ratings-are-everywhere/678129/">Elo formula</a>.</p></li>
-<li><p>venue experience</p></li>
-<li><p>player ratings for each selected team, and</p></li>
-<li><p>the distance each team has had to travel.</p></li>
-</ol>
-<p>Each of these are calculated for each team and then converted as a relative measure showing the advantage for the home team compared to its opponent on the day.</p>
-<p><strong>How can I check the performance of this model?</strong></p>
-<p>I update the performance metrics on the home page every week. I’ve also entered the model in the official AFL footy tipping competition, so <a href="https://tipping.afl.com.au/tipping/index.html#/tipping-rankings">you can check the performance by searching there</a>.</p>
-</section>
-<section id="betting-and-tipping" class="level2">
-<h2 class="anchored" data-anchor-id="betting-and-tipping">Betting and tipping</h2>
-<p><strong>Are you doing this to make money?</strong></p>
-<p>Hell, no. I am doing this for fun and for a challenge. Yes, I am a nerd. And yes, I am obsessed by Australian football.</p>
-<p><strong>Should I use this model to place bets?</strong></p>
-<p>Definitely not. Betting is for mugs and niff-naffs.</p>
-<p><strong>Should I use this model for footy tipping?</strong></p>
-<p>Absolutely. Go bananas.</p>
-</section>
-<section id="technical-questions" class="level2">
-<h2 class="anchored" data-anchor-id="technical-questions">Technical questions</h2>
-<p><strong>What program did you use to write this model?</strong></p>
-<p><a href="https://www.r-project.org/">I use R for this project</a>, which is what I use for a lot of my academic work. The website you’re looking at now is also produced with R with <a href="https://posit.co/products/open-source/rstudio/">RStudio</a> and <a href="https://quarto.org/">Quarto</a>.</p>
-<p><strong>Does this model use ChatGPT, or a similar large language model?</strong></p>
-<p>No.&nbsp;This model is one hundred per cent pure, old fashioned, home-grown human-written computer code, born free right here in the real world.</p>
-<p><strong>Isn’t that a line from The Matrix?</strong></p>
-<p><a href="https://www.youtube.com/watch?v=HD_MO3cCl28">Yes. Yes it is.</a></p>
-<p><strong>What techniques are used for this model?</strong></p>
-<p>This model is an ensemble of models compiled with the <a href="https://www.tidymodels.org/">R Tidymodels package</a>. It uses a stacked combination of gradient boosted trees, generalised linear models and random forest models to make its predictions.</p>
-<p><strong>Where do you get your data from?</strong></p>
-<p>I use the <a href="https://cran.r-project.org/web/packages/fitzRoy/index.html">FitzRoy package for R.</a> It is wonderful. Cheers to the legends to have developed it and maintain it.</p>
-</section>
-<section id="afl-questions" class="level2">
-<h2 class="anchored" data-anchor-id="afl-questions">AFL questions</h2>
-<p><strong>What is Australian football or the Australian Football League?</strong></p>
-<p>My friend, let me introduce you to <a href="https://www.youtube.com/watch?v=u_SqfNNfhmM&amp;t=13s">by far the best sport on the entire planet</a>.</p>
-</section>
-<section id="personal-questions" class="level2">
-<h2 class="anchored" data-anchor-id="personal-questions">Personal questions</h2>
-<p><strong>What football team do you barrack for?</strong></p>
-<p>I barrack for the original Australian football team – the <a href="https://www.melbournefc.com.au/">Melbourne Demons</a>.</p>
-<p><strong>Who is your favourite footballer?</strong></p>
-<p>As a kid my favourite player was <a href="http://demonwiki.org/Stephen+Tingay">Stephen (Stinga) Tingay</a>. But right now it is probably young <a href="https://www.melbournefc.com.au/players/6443/caleb-windsor">Caleb Windsor</a>. I guess I have a thing for wingers.</p>
-<p><strong>What is your background?</strong></p>
-<p>I am a quantitative social scientist who is mainly interested in researching empirical problems in science communication. While this gives me some useful skills in statistical analysis, and <a href="https://academic.oup.com/pnasnexus/article/1/3/pgac093/6631580">I have helped to publish some academic work using machine learning techniques</a>, <a href="https://squiggle.com.au/">there are many more qualified people than me who have produced similar models</a>. Prior to this I worked in various communication roles.</p>
-<p><strong>Are you a real doctor?</strong></p>
-<p>I am not a medical doctor. I have a PhD in science from <a href="https://www.anu.edu.au/">ANU</a>.</p>
-<p><strong>How frequently are you actually asked these questions?</strong></p>
-<p>Never. I’ve never been asked any of these questions.</p>
+
+<p>If you’ve watched sport for any length of time you know that teams keep a consistent lineup tend to win more games. Teams strive to keep a core group on the park throughout the season but sometimes can’t because of injuries or the need to blood new players - or it could just be that experienced players grow tired of losing and find fortune elsewhere or just simply retire.</p>
+<p>I recently came across <a href="https://www.saintsational.net/viewtopic.php?t=114129&amp;sid=46edb59581f56b0a0f59c5b368a7bd8b&amp;fbclid=IwY2xjawEVKqNleHRuA2FlbQIxMAABHTDgw3Mt9u5xWamcpDjZou4CSUrDpIcxN-2HK6s_6m5B_IGfEDhnjXaGYg_aem_pAdICoNlK4DsHwzbvShCZA">an analysis which seeks to quantify this association</a>. The analysis is no doubt designed to be a quick and simple approach. It considers AFL teams’ 2024 ladder positions and seeks to correlate them with the number of players used by each team so far, by ranking them from the teams that used the most players to those who used the least. By doing this they find a correlation coefficient of 0.81 - a strong (and presumably significant) correlation.</p>
+<p>There are a few issues with this approach, although I don’t dispute the overall conclusion. The first issue is that it uses only part of a season, which may not paint a very useful picture. For example, some teams may have had a relatively easy draw so far. The other issue is that it has used ranked data which has several limitations. Firstly, ranked data don’t account for the magnitude of differences between the teams. A good example of this is the current AFL ladder where Sydney is first, Brisbane is second and Fremantle is third. But when you look at the number of wins, Sydney is way in front with 56 premiership points which Brisbane and Fremantle both have 50. A distance of three ranks between these teams doesn’t tell the complete picture here. The other issue is that using ranked data for statistical tests designed for continuous data can reduce statistical power.</p>
+<section id="analysis" class="level3">
+<h3 class="anchored" data-anchor-id="analysis">Analysis</h3>
+<p>One way to avoid these problems is to look at a team’s performance by their number of wins in a whole season. One challenge in doing that is that we need to find complete seasons that have the same number of games. We can’t use 2020 because that was the year that the AFL restricted the season to just 17 games to help deal with COVID-19. 2023 is out because the season was extended to 23 games. And believe it or not we cannot use 2015 because an Adelaide coach was killed just before their clash against the Cats, leading to the cancellation of that game.</p>
+<p>So to get a sufficient and sensible sample, I’ve gathered data from 2016 to 2019 and 2021 to 2022 for this exercise.</p>
+<p>To avoid statistical problems and to retain power we can treat wins more appropriately as a count variable. Plotting these variables and eyeballing them gives us what looks like a correlation.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Index_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>But as always it pays to do a proper analysis. Here I’m going with a generalised linear model based on the poisson distribution usually inherent in count variables.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># Downloading packages -------------------------------------------------------
+- Downloading sjPlot from CRAN ...              OK [813.1 Kb in 1.4s]
+- Downloading bayestestR from CRAN ...          OK [401.1 Kb in 1.2s]
+- Downloading insight from CRAN ...             OK [953.2 Kb in 1.5s]
+- Downloading datawizard from CRAN ...          OK [550.5 Kb in 1.4s]
+- Downloading ggeffects from CRAN ...           OK [467.9 Kb in 1.4s]
+- Downloading parameters from CRAN ...          OK [683.1 Kb in 1.4s]
+- Downloading performance from CRAN ...         OK [2 Mb in 1.7s]
+- Downloading sjlabelled from CRAN ...          OK [151.6 Kb in 1.0s]
+- Downloading sjmisc from CRAN ...              OK [216.9 Kb in 1.2s]
+- Downloading sjstats from CRAN ...             OK [146.7 Kb in 1.0s]
+- Downloading effectsize from CRAN ...          OK [375.6 Kb in 1.2s]
+Successfully downloaded 11 packages in 18 seconds.
+
+The following package(s) will be installed:
+- bayestestR  [0.14.0]
+- datawizard  [0.12.2]
+- effectsize  [0.8.9]
+- ggeffects   [1.7.0]
+- insight     [0.20.2]
+- parameters  [0.22.1]
+- performance [0.12.2]
+- sjlabelled  [1.2.0]
+- sjmisc      [2.8.10]
+- sjPlot      [2.8.16]
+- sjstats     [0.19.0]
+These packages will be installed into "~/work/FootyForestDashboard/FootyForestDashboard/renv/library/R-4.2/x86_64-pc-linux-gnu".
+
+# Installing packages --------------------------------------------------------
+- Installing insight ...                        OK [built from source and cached in 14s]
+- Installing datawizard ...                     OK [built from source and cached in 5.5s]
+- Installing bayestestR ...                     OK [built from source and cached in 5.6s]
+- Installing ggeffects ...                      OK [built from source and cached in 6.1s]
+- Installing parameters ...                     OK [built from source and cached in 13s]
+- Installing performance ...                    OK [built from source and cached in 8.9s]
+- Installing sjlabelled ...                     OK [built from source and cached in 2.2s]
+- Installing sjmisc ...                         OK [built from source and cached in 3.5s]
+- Installing effectsize ...                     OK [built from source and cached in 4.1s]
+- Installing sjstats ...                        OK [built from source and cached in 2.6s]
+- Installing sjPlot ...                         OK [built from source and cached in 8.6s]
+Successfully installed 11 packages in 1.2 minutes.</code></pre>
+</div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th" style="text-align: center; border-top: double; font-style: normal; font-weight: bold; padding: 0.2cm;">&nbsp;</td>
+<td colspan="3" data-quarto-table-cell-role="th" style="text-align: center; border-top: double; font-style: normal; font-weight: bold; padding: 0.2cm;">Wins</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; border-bottom: 1px solid; font-style: italic; font-weight: normal;">Predictors</td>
+<td style="text-align: center; border-bottom: 1px solid; font-style: italic; font-weight: normal;">Incidence Rate Ratios</td>
+<td style="text-align: center; border-bottom: 1px solid; font-style: italic; font-weight: normal;">CI</td>
+<td style="text-align: center; border-bottom: 1px solid; font-style: italic; font-weight: normal;">p</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">(Intercept)</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">212.77</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">94.89&nbsp;–&nbsp;474.68</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">num players</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.92</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.90&nbsp;–&nbsp;0.94</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm; border-top: 1px solid;">Observations</td>
+<td colspan="3" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm; border-top: 1px solid;">108</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">R<sup>2</sup> Nagelkerke</td>
+<td colspan="3" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">0.452</td>
+</tr>
+</tbody>
+</table>
 
 
-</section>
+</div>
+</div>
+<p>What the table above does is confirms that there is a statistically significant and negative correlation between the number of players a team uses throughout the year and the number of wins they should expect to get.</p>
+<p>One of the downsides of using a generalised linear model is that the numbers are pretty hard to interpret. So its customary to provide a plot of the marginal effects from the model.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Here we can see that - generally speaking - teams that use 30 players during the season win about 16-21 games. While those that swap out the magnets 45 times tend to win just over five. But its also worth knowing that the relationship is curved, showing the exponentially greater wins for those teams that aren’t changing things around.</p>
+<p>Of course this begs the question of how different teams have performed, now that we have some detailed insight on how this relationship works.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Here we can see some interesting things. My own team, Melbourne made quite a few changes in 2019 and by 2021 of course, they won a flag - a year where things were incredibly stable. The West Coast Eagles have slipped from a team that had quite a lot of success until 2022 when they performed badly and made plenty of changes. North Melbourne not had the luxury of stability and their performance progressively suffered.</p>
+<p>Will the trend continue this year? We should wait until the end of the year for that, but it certainly seems to be.</p>
+
+
 </section>
 
 </main> <!-- /main -->
