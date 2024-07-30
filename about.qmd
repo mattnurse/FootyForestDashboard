@@ -29,6 +29,12 @@ It uses four variables. These are:
 Each of these are calculated for each team and then converted as a relative measure showing the
 advantage for the home team compared to its opponent on the day.
 
+**How can I check the performance of this model?**
+
+I update the performance metrics on the home page every week. I've also entered the model in the
+official AFL footy tipping competition, so [you can check the performance by searching
+there](https://tipping.afl.com.au/tipping/index.html#/tipping-rankings).
+
 ## Betting and tipping
 
 **Are you doing this to make money?**
