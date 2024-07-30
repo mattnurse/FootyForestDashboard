@@ -58,7 +58,7 @@ library(ggplot2)
 final_data$Season <- factor(final_data$Season)
 predictions <- ggpredict(model1, terms = "num_players") 
 
-plot_x_range <- seq(from = 30, to = 50, by = 1)
+plot_x_range <- seq(from = 25, to = 50, by = 1)
 
 plot <- plot_model(model1, type = "pred", terms = "num_players [plot_x_range]", color = "darkgreen", title = "Model's predicted wins as a function of players used", axis.labels = c("wins", "number of players used")) +
   set_theme(base = theme_classic())
@@ -74,7 +74,7 @@ Of course this begs the question of how different teams have performed recently,
 ggplot(final_data) +
   aes(x = num_players, y = Wins, colour = Season) +
   geom_point(size = 3L) +
-  xlim(30, 50) +
+  xlim(25, 50) +
   ggtitle("Wins by number of players used by each team") +
   theme_classic() +
   facet_wrap(vars(Team)) 
