@@ -48,7 +48,7 @@ tab_model(model1)
 
 The results in the table above confirms that there is a statistically significant and negative correlation between the number of players a team uses throughout the year and the number of wins they should expect to get.
 
-One of the downsides of using a generalised linear model is that the coefficient numbers are pretty hard to interpret. So its customary to provide a plot of the marginal effects from the model, which usually provides a more complete picture than a simple coefficient anyway.
+One of the downsides of using a generalised linear model is that the *Incidence Rate Ratio* coefficient numbers are pretty hard to interpret. So its customary to provide a plot of the marginal effects from the model, which usually provides a more complete picture than a simple coefficient anyway.
 
 ```{r}
 #| warning: false
@@ -60,7 +60,7 @@ predictions <- ggpredict(model1, terms = "num_players")
 
 plot_x_range <- seq(from = 30, to = 50, by = 1)
 
-plot <- plot_model(model1, type = "pred", terms = "num_players [plot_x_range]", color = "darkgreen", title = "Predicted wins as a function of players used", axis.labels = c("wins", "number of players used")) +
+plot <- plot_model(model1, type = "pred", terms = "num_players [plot_x_range]", color = "darkgreen", title = "Model's predicted wins as a function of players used", axis.labels = c("wins", "number of players used")) +
   set_theme(base = theme_classic())
 plot
 ```
