@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Matt Nurse">
-<meta name="description" content="How much does moving the magnets affect winning">
+<meta name="description" content="Winning teams don’t change the magnets">
 
 <title>Player stability – The Footy Forest</title>
 <style>
@@ -72,7 +72,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 <meta property="og:title" content="Player stability – The Footy Forest">
-<meta property="og:description" content="How much does moving the magnets affect winning">
+<meta property="og:description" content="Winning teams don’t change the magnets">
 <meta property="og:site_name" content="The Footy Forest">
 </head>
 
@@ -137,7 +137,7 @@ ul.task-list li input[type="checkbox"] {
       <h1 class="title">Player stability</h1>
                   <div>
         <div class="description">
-          How much does moving the magnets affect winning
+          Winning teams don’t change the magnets
         </div>
       </div>
                           <div class="quarto-categories">
@@ -188,12 +188,12 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>If you’ve watched sport for any length of time you know that teams who keep a consistent lineup tend to win more games. Coaches talk about their strive to keep a core group on the park throughout the season in the pursuit of sporting glory. Some of them lament that they can’t because of injuries or the need to blood new players. Sometimes their plans are ruined by experienced players who grow tired of losing and find fortune elsewhere - or just simply retire.</p>
-<p>I recently came across <a href="https://www.saintsational.net/viewtopic.php?t=114129&amp;sid=46edb59581f56b0a0f59c5b368a7bd8b&amp;fbclid=IwY2xjawEVKqNleHRuA2FlbQIxMAABHTDgw3Mt9u5xWamcpDjZou4CSUrDpIcxN-2HK6s_6m5B_IGfEDhnjXaGYg_aem_pAdICoNlK4DsHwzbvShCZA">an analysis which seeks to quantify this association between team stability and performance</a>. The analysis is no doubt designed to be a quick and simple approach. It correlates AFL teams’ current ladder positions with the number of players used by each team so far, by ranking them from the teams that used the most players to those who used the least. By doing this they find a correlation coefficient of 0.81 - a strong (and presumably significant) correlation.</p>
-<p>There are a few issues with this approach, although I don’t dispute the overall conclusion. The first issue is that it uses only part of a season, which may not paint a very useful picture. For example, some teams may have had a relatively easy draw so far. The other issue is that it has used ranked data which has several limitations. First, ranked data don’t account for the magnitude of differences between the teams. A good example of this is the current AFL ladder where Sydney is first, Brisbane is second and Fremantle is third. But when you look at the number of wins, Sydney is way in front with 56 premiership points while Brisbane and Fremantle both have 50. A distance of three ranks between these teams doesn’t tell the complete picture here. The other issue is that using ranked data for statistical tests designed for continuous data can reduce statistical power, leading to misleading results.</p>
+<p>I recently came across <a href="https://www.saintsational.net/viewtopic.php?t=114129&amp;sid=46edb59581f56b0a0f59c5b368a7bd8b&amp;fbclid=IwY2xjawEVKqNleHRuA2FlbQIxMAABHTDgw3Mt9u5xWamcpDjZou4CSUrDpIcxN-2HK6s_6m5B_IGfEDhnjXaGYg_aem_pAdICoNlK4DsHwzbvShCZA">an analysis which seeks to quantify this association between team stability and performance</a>. The analysis is no doubt designed to be a quick and simple approach. It correlates AFL teams’ current ladder positions with the number of players used by each team so far, by ranking them from the teams that used the most players to those who used the least. By doing this they find a correlation coefficient of 0.81 - a strong (and presumably statistically significant) correlation.</p>
+<p>There are a few issues with this approach, although I don’t dispute the overall conclusion. The first issue is that it uses only part of a season, which may not paint a very useful picture. For example, some teams may have had a relatively easy draw so far. The other issue is that it has used ranked data which has several limitations. First, ranked data don’t account for the magnitude of differences between the teams. A good example of this is the current AFL ladder where Sydney is first, Brisbane is second and Fremantle is third. But when you look at the number of wins, Sydney is way in front with 56 premiership points while Brisbane and Fremantle both have 50. A distance of three ranks between these teams doesn’t tell the complete story here. The other issue is that using statistical tests designed for continous data with ranked data can reduce statistical power, leading to misleading results.</p>
 <section id="analysis" class="level3">
 <h3 class="anchored" data-anchor-id="analysis">Analysis</h3>
-<p>One way to avoid these problems is to look at a team’s performance according to their number of wins across a whole season. One challenge in doing that is that we need to find complete seasons that have the same number of games. Looking at recent seasons, we can’t use 2020 because that was the year that the AFL restricted the season to just 17 games to help deal with COVID-19. Next, 2023 is out because the season was extended to 23 games. And believe it or not we cannot use 2015 because an Adelaide coach was killed just before their clash against the Cats, leading to the cancellation of that game. So to get a sufficient and sensible sample, I’ve gathered data from the season 2016 to 2019 and 2021 to 2022. That’s 6 seasons for each of the 18 teams, which gives us 108 observations to work with.</p>
-<p>To avoid statistical problems and to retain power we can treat wins more appropriately as a count variable, rather than a rank or a continuous one. Plotting these wins for each team and eyeballing them gives us what looks like a correlation.</p>
+<p>One way to avoid these problems is to look at a team’s performance according to their number of wins across a whole season. One challenge in doing that is that we need to find complete seasons where teams have played the same number of games. Looking at recent seasons, we can’t use 2020 because that was the year that the AFL restricted the season to just 17 games instead of the more usual 22 to help deal with COVID-19. Next, 2023 is out because the season was extended to 23 games. And believe it or not we cannot use 2015 because an Adelaide coach was killed just before their clash against the Cats, leading to the cancellation of that game. So to get a sufficient and sensible sample, I’ve gathered data from the season 2016 to 2019 and 2021 to 2022. That’s 6 seasons for each of the 18 teams, which gives us 108 observations to work with.</p>
+<p>To get the most statistical power out of this data we can treat wins more appropriately as a count variable, rather than a rank or a continuous one. Plotting these wins for each team and eyeballing them gives us what looks like a negative correlation.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -244,7 +244,7 @@ ul.task-list li input[type="checkbox"] {
 
 </div>
 </div>
-<p>The results in the table above confirms that there is a statistically significant and negative correlation between the number of players a team uses throughout the year and the number of wins they should expect to get.</p>
+<p>The results in the table above confirm that there is a statistically significant and negative correlation between the number of players a team uses throughout the year and the number of wins they should expect to get.</p>
 <p>One of the downsides of using a generalised linear model is that the <em>Incidence Rate Ratio</em> coefficient numbers are pretty hard to interpret. So its customary to provide a plot of the marginal effects from the model, which usually provides a more complete picture than a simple coefficient anyway.</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -255,7 +255,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>Here we can see that - generally speaking - teams that use 30 players during the season win about 16-21 games. While those that swap out the magnets 45 times tend to win just over five. But its also worth knowing that the relationship is curved, showing the exponentially greater wins for those teams that aren’t changing things around.</p>
+<p>Here we can see that - generally speaking - teams that use 30 players during the season can expect to win about 16-21 games. While those that swap out the magnets 45 times tend to win just over five. But its also worth knowing that the relationship is curved, showing the exponentially greater wins for those teams that aren’t changing things around.</p>
 <p>Of course this begs the question of how different teams have performed recently, now that we have some detailed insight on how this relationship works.</p>
 <div class="cell">
 <div class="cell-output-display">
