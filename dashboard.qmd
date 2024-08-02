@@ -50,7 +50,7 @@ historical_results_df$home_team <- str_replace(historical_results_df$home_team, 
 historical_results_df$away_team <- str_replace(historical_results_df$away_team, "GWS GIANTS", "GWS Giants")
 historical_results_df$home_team <- str_replace(historical_results_df$home_team, "Gold Coast SUNS", "Gold Coast Suns")
 historical_results_df$away_team <- str_replace(historical_results_df$away_team, "Gold Coast SUNS", "Gold Coast Suns")
-str_replace(historical_results_df$home_team, "Footscray", "Western Bulldogs")
+historical_results_df$home_team <-str_replace(historical_results_df$home_team, "Footscray", "Western Bulldogs")
 historical_results_df$away_team <- str_replace(historical_results_df$away_team, "Footscray", "Western Bulldogs")
 
 
@@ -121,8 +121,6 @@ power_rankings_dashboard <- rbind(power_rankings_home_elos, power_rankings_away_
 #Convert to average team = 100 not 1000 for ease of interpretation 
 power_rankings_dashboard <- power_rankings_dashboard |> 
   mutate(Power = round(Power, 1)/10) 
-
-
 ```
 
 ```{r, make ladder}
@@ -141,7 +139,7 @@ ladder <- ladder |>
 ladder <- ladder %>%
   mutate(Team = str_replace(Team, "Gold Coast SUNS", "Gold Coast Suns")) %>%
   mutate(Team = str_replace(Team, "GWS GIANTS", "GWS Giants")) %>%
-  mutate(Team = str_replace(Team, "Footscray", "Western Bulldogs")) %>% 
+  mutate(Team = str_replace(Team, "Footscray", "Western Bulldogs"))%>%   
   mutate(Team = str_replace(Team, "Narrm", "Melbourne")) %>%
   mutate(Team = str_replace(Team, "Kuwarna", "Adelaide Crows")) %>%
   mutate(Team = str_replace(Team, "Yartapuulti", "Port Adelaide")) %>%
