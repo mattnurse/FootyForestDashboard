@@ -12,7 +12,7 @@ execute:
   echo: false
 ---
 
-Inspired by [some in the US media who insists on posting Paris 2024 Olympic medal tallies by total medals](https://www.foxsports.com.au/olympics/weird-way-america-is-rigging-medal-tally-at-olympics/news-story/5c59c67e4462cba045b9430bb318b7d8), and the [Choose Your Own Adventure books](https://en.wikipedia.org/wiki/Choose_Your_Own_Adventure), this table lets you sort by your metric of choice, including per capita and adjusted for your country's GDP. Updated every hour.
+Inspired by [some in the US media who insist on posting Paris 2024 Olympic medal tallies by total medals](https://www.foxsports.com.au/olympics/weird-way-america-is-rigging-medal-tally-at-olympics/news-story/5c59c67e4462cba045b9430bb318b7d8), and the [Choose Your Own Adventure book series](https://en.wikipedia.org/wiki/Choose_Your_Own_Adventure), this table lets you sort by your metric of choice, including per capita and adjusted for your country's GDP. Updated every hour.
 
 ```{r}
 #| warning: false
