@@ -62,12 +62,12 @@ medal_table |>
     columns = everything()
   ) |> 
   cols_label(
-    gold = html(paste0("<img src='https://mattnurse.com/wp-content/uploads/2024/08/gold.png' width='30' height='30'>")), 
-    silver = html(paste0("<img src='https://mattnurse.com/wp-content/uploads/2024/08/silver.png' width='30' height='30'>")),
-    bronze = html(paste0("<img src='https://mattnurse.com/wp-content/uploads/2024/08/bronze.png' width='30' height='30'>")),  
-    medals = html(paste0("<img src='https://mattnurse.com/wp-content/uploads/2024/08/silver.png' width='30' height='30'>")),
-    silver = html(paste0("<img src='https://mattnurse.com/wp-content/uploads/2024/08/silver.png' width='30' height='30'>")),
-    silver = html(paste0("<img src='https://mattnurse.com/wp-content/uploads/2024/08/silver.png' width='30' height='30'>")),
-    silver = html(paste0("<img src='https://mattnurse.com/wp-content/uploads/2024/08/silver.png' width='30' height='30'>")),
-    silver = html(paste0("<img src='https://mattnurse.com/wp-content/uploads/2024/08/silver.png' width='30' height='30'>")),
+    gold = html(paste0("<img src='https://mattnurse.com/wp-content/uploads/2024/08/gold.png' width='50' height='50'>")), 
+    silver = html(paste0("<img src='https://mattnurse.com/wp-content/uploads/2024/08/silver.png' width='50' height='50'>")),
+    bronze = html(paste0("<img src='https://mattnurse.com/wp-content/uploads/2024/08/bronze.png' width='50' height='50'>")),  
+    medals = html(paste0("<img src='https://mattnurse.com/wp-content/uploads/2024/08/medals.png' width='50' height='50'>")),
+    goldperperson = html(paste0("<img src='https://mattnurse.com/wp-content/uploads/2024/08/goldperperson.png' width='50' height='50'>")),
+    medalsperperson = html(paste0("<img src='https://mattnurse.com/wp-content/uploads/2024/08/medalsperperson.png' width='50' height='50'>")),
+    goldperGDP = html(paste0("<img src='https://mattnurse.com/wp-content/uploads/2024/08/goldperGDP.png' width='50' height='50'>")),
+    medalsperGDP = html(paste0("<img src='https://mattnurse.com/wp-content/uploads/2024/08/medalsperGDP.png' width='50' height='50'>")),
     )
