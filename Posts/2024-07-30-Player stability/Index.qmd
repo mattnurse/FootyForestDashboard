@@ -4,7 +4,7 @@ description: "Winning teams don't change the magnets"
 author:
   - name: Matt Nurse
     url: https://footyforest.com
-date: 30-September-2024
+date: 30-July-2024
 date-format: "D-MMMM-YYYY"
 categories: [AFL football, Inferential statistics] # self-defined categories
 draft: false 
