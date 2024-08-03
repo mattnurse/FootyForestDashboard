@@ -79,7 +79,7 @@ medal_table |>
     goldperperson = html(paste0("<img src='https://mattnurse.com/wp-content/uploads/2024/08/goldperperson.png' width='50' height='50'>")),
     medalsperperson = html(paste0("<img src='https://mattnurse.com/wp-content/uploads/2024/08/medalsperperson.png' width='50' height='50'>")),
     goldperGDP = html(paste0("<img src='https://mattnurse.com/wp-content/uploads/2024/08/goldperGDP.png' width='50' height='50'>")),
-    medalsperGDP = html(paste0("<img src='https://mattnurse.com/wp-content/uploads/2024/08/medalsperGDP.png' width='50' height='50'>")),
+    medalsperGDP = html(paste0("<img src='https://mattnurse.com/wp-content/uploads/2024/08/medalsperGDP.png' width='50' height='50'>"))
     )
 
 ```
