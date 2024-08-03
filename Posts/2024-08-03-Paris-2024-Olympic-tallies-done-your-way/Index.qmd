@@ -85,4 +85,8 @@ medal_table |>
     medalsperGDP = html(paste0("<img src='https://mattnurse.com/wp-content/uploads/2024/08/medalsperGDP.png' width='50' height='50'>"))
     )
 
+
+
 ```
+
+![](yysw436091.jpg)
