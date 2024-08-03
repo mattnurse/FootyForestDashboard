@@ -2223,6 +2223,27 @@
       ],
       "Hash": "390f9315bc0025be03012054103d227c"
     },
+    "wbstats": {
+      "Package": "wbstats",
+      "Version": "1.0.4",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "dplyr",
+        "httr",
+        "jsonlite",
+        "lifecycle",
+        "lubridate",
+        "magrittr",
+        "readr",
+        "rlang",
+        "stringr",
+        "tibble",
+        "tidyr"
+      ],
+      "Hash": "503678a5ad5d99378960224904a76c47"
+    },
     "withr": {
       "Package": "withr",
       "Version": "3.0.0",

@@ -1,0 +1,73 @@
+options(scipen = 999)
+library(dplyr)
+library(jsonlite)
+library(tidyr)
+library(wbstats)
+library(magick)
+
+
+# Define the URL of the website with the medal tally
+medal_table_json <- fromJSON("https://api.olympics.kevle.xyz/medals")
+medal_table <- as.data.frame(medal_table_json) 
+
+#Split lists into their own columns
+medal_table <- medal_table |> 
+  unnest_wider(results.country) |> 
+  unnest_wider(results.medals) 
+
+#Select variables of interest
+medal_table <- medal_table |>  
+  select(name, iso_alpha_2, code, gold, silver, bronze, total) |> 
+  rename(country = name, country_code = code)
+
+#Select indictators to download from world bank
+my_indicators <- c("population" = "SP.POP.TOTL",
+                   "GDP" = "NY.GDP.MKTP.CD")
+
+country_statistics <- wb_data(my_indicators) |> 
+  filter(date == 2023) |> 
+  select(iso2c, population, GDP) |> 
+  rename(iso_alpha_2 = iso2c)
+
+medal_table <- left_join(medal_table, country_statistics, by = "iso_alpha_2") |> 
+  select(!iso_alpha_2) |> 
+  rename(medals = total)
+
+medal_table <- medal_table |> 
+  mutate("goldperperson" = gold/population) |> 
+  mutate("medalsperperson" = medals/population) |> 
+  mutate("goldperGDP" = gold/GDP) |> 
+  mutate("medalsperGDP" = medals/GDP)
+
+library(gt)
+library(gtExtras)
+library(sjlabelled)
+
+medal_table <- remove_all_labels(medal_table) |> 
+  select(country, gold, silver, bronze, medals, goldperperson, medalsperperson, goldperGDP, medalsperGDP)
+
+
+# URL or local path to images
+gold_icon <- "Images/gold.png"
+
+print(gold_icon)
+
+
+
+medal_table |> 
+  gt() |> 
+  opt_interactive(use_resizers = TRUE, use_highlight = TRUE, use_page_size_select = FALSE, use_pagination_info = FALSE, use_pagination =  FALSE) |> 
+  cols_align(
+    align = "center",
+    columns = everything()
+  ) |> 
+  cols_label(
+    gold = html(paste0("<img src='https://mattnurse.com/wp-content/uploads/2024/08/gold.png' width='30' height='30'>")), 
+    silver = html(paste0("<img src='https://mattnurse.com/wp-content/uploads/2024/08/silver.png' width='30' height='30'>")),
+    bronze = html(paste0("<img src='https://mattnurse.com/wp-content/uploads/2024/08/bronze.png' width='30' height='30'>")),  
+    medals = html(paste0("<img src='https://mattnurse.com/wp-content/uploads/2024/08/silver.png' width='30' height='30'>")),
+    silver = html(paste0("<img src='https://mattnurse.com/wp-content/uploads/2024/08/silver.png' width='30' height='30'>")),
+    silver = html(paste0("<img src='https://mattnurse.com/wp-content/uploads/2024/08/silver.png' width='30' height='30'>")),
+    silver = html(paste0("<img src='https://mattnurse.com/wp-content/uploads/2024/08/silver.png' width='30' height='30'>")),
+    silver = html(paste0("<img src='https://mattnurse.com/wp-content/uploads/2024/08/silver.png' width='30' height='30'>")),
+    )
