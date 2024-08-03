@@ -1,6 +1,9 @@
 ---
 title: "Paris 2024 Olympic tallies done your way"
 description: "Everyone's a winner when you pick your own metrics"
+format: 
+  html:
+    page-layout: full
 author:
   - name: Matt Nurse
     url: https://footyforest.com
