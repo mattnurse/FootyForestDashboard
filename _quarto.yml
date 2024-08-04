@@ -6,7 +6,9 @@ project:
 website:
   favicon: Images/Footy_forest_favicon_logo.png
   title: "The Footy Forest"
+  twitter-card: TRUE
   open-graph: true
+  google-analytics: G-5B3T74R9KE
   announcement: 
     dismissable: false
     content: <font color="black"> A machine learning model that predicts the winners of AFL football matches</font>
