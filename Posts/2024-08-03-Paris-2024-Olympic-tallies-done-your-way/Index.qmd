@@ -9,7 +9,7 @@ author:
     url: https://footyforest.com
 date: 3-August-2024
 date-format: "D-MMMM-YYYY"
-categories: [Olympics, Descriptive statistics] # self-defined categories
+categories: [Olympics, Data visualisation] # self-defined categories
 draft: false 
 execute:
   echo: false
