@@ -4,7 +4,7 @@ format:
 ---
 
 
-## Row {height="20%"}
+## Row {height="30%"}
 
 ### Column
 
@@ -35,7 +35,7 @@ list(
 
 ```{r}
 #| content: valuebox
-#| title: "% of official AFL footy tipping comp"
+#| title: "% of AFL footy tipping comp"
 list(
   color = "#49EB80",
   icon = "bar-chart-line", 
@@ -48,7 +48,7 @@ list(
 
 Welcome to the Footy Forest. Here you'll find predictions, details on how the model is performing, rankings of each team and occasional statistical analyses of AFL footy and other sports.
 
-## Row {height="70%"}
+## Row {height="60%"}
 
 ### Column
 
