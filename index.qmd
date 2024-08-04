@@ -35,7 +35,7 @@ list(
 
 ```{r}
 #| content: valuebox
-#| title: "Percentile of official AFL footy tipping comp"
+#| title: "% of official AFL footy tipping comp"
 list(
   color = "#49EB80",
   icon = "bar-chart-line", 
