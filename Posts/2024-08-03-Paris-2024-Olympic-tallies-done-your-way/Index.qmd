@@ -54,6 +54,19 @@ medal_table <- left_join(medal_table, country_statistics, by = "iso_alpha_2") |>
   select(!iso_alpha_2) |> 
   rename(medals = total)
 
+#############################################
+library(readr)
+Olympic_team_size <- read_csv("Olympic_team_size.csv") 
+
+Olympic_team_size$Olympic_team_size <- as.integer(Olympic_team_size$team_size)
+Olympic_team_size <- as.data.frame(Olympic_team_size)
+
+
+
+medal_table <- left_join(medal_table, Olympic_team_size, by = "country") |> 
+  mutate("goldperathlete" = gold/team_size) |> 
+  mutate("medalsperathlete" = medals/team_size) 
+
 medal_table <- medal_table |> 
   mutate("goldperperson" = gold/population) |> 
   mutate("medalsperperson" = medals/population) |> 
@@ -65,7 +78,7 @@ library(gtExtras)
 library(sjlabelled)
 
 medal_table <- remove_all_labels(medal_table) |>
-  select(country, gold, silver, bronze, medals, goldperperson, medalsperperson, goldperGDP, medalsperGDP)
+  select(country, gold, silver, bronze, medals, goldperperson, medalsperperson, goldperGDP, medalsperGDP, goldperathlete, medalsperathlete)
 
 
 medal_table |> 
@@ -83,7 +96,9 @@ medal_table |>
     goldperperson = html(paste0("<img src='https://mattnurse.com/wp-content/uploads/2024/08/goldperperson.png' width='50' height='50'>")),
     medalsperperson = html(paste0("<img src='https://mattnurse.com/wp-content/uploads/2024/08/medalsperperson.png' width='50' height='50'>")),
     goldperGDP = html(paste0("<img src='https://mattnurse.com/wp-content/uploads/2024/08/goldperGDP.png' width='50' height='50'>")),
-    medalsperGDP = html(paste0("<img src='https://mattnurse.com/wp-content/uploads/2024/08/medalsperGDP.png' width='50' height='50'>"))
+    medalsperGDP = html(paste0("<img src='https://mattnurse.com/wp-content/uploads/2024/08/medalsperGDP.png' width='50' height='50'>")), 
+    goldperathlete = html(paste0("<img src='https://mattnurse.com/wp-content/uploads/2024/08/goldperathlete.png' width='50' height='50'>")), 
+    medalsperathlete = html(paste0("<img src='https://mattnurse.com/wp-content/uploads/2024/08/medalsperathlete.png' width='50' height='50'>"))
     )
 
 
