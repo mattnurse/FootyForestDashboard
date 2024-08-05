@@ -6,11 +6,18 @@ editor:
 
 # Frequently asked questions
 
+## AFL questions
+
+**What is Australian football or the Australian Football League?**
+
+My friend, let me introduce you to [by far the best sport on the entire
+planet](https://www.youtube.com/watch?v=u_SqfNNfhmM&t=13s).
+
 ## Model questions
 
 **Why is this called the “Footy Forest”?**
 
-The statistical techniques used in this model are "tree-based", so I thought I’d take the tree
+Many of statistical techniques used in this model are "tree-based", so I thought I’d take the tree
 concept and run with it like Ed Langdon on a fast break. Also it predicts … footy.
 
 **What variables does the Footy Forest use?**
@@ -77,13 +84,6 @@ generalised linear models and random forest models to make its predictions.
 
 I use the [FitzRoy package for R.](https://cran.r-project.org/web/packages/fitzRoy/index.html) It is
 wonderful. Cheers to the legends to have developed it and maintain it.
-
-## AFL questions
-
-**What is Australian football or the Australian Football League?**
-
-My friend, let me introduce you to [by far the best sport on the entire
-planet](https://www.youtube.com/watch?v=u_SqfNNfhmM&t=13s).
 
 ## Personal questions
 
