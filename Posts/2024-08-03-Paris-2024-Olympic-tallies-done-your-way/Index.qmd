@@ -16,7 +16,7 @@ execute:
 image: Olympic_tally_screenshot.png
 ---
 
-Inspired by [some over in the American media who insist on sorting the official Paris 2024 Olympic medal tallies by total medals](https://www.foxsports.com.au/olympics/weird-way-america-is-rigging-medal-tally-at-olympics/news-story/5c59c67e4462cba045b9430bb318b7d8), and the [Choose Your Own Adventure book series](https://en.wikipedia.org/wiki/Choose_Your_Own_Adventure), this table lets you sort by your metric of choice, including gold per capita, gold adjusted for your country's GDP and, gold per athlete in your country's team. Updated every hour.
+Inspired by [some over in the American media who insist on sorting the official Paris 2024 Olympic medal tallies by total medals](https://www.foxsports.com.au/olympics/weird-way-america-is-rigging-medal-tally-at-olympics/news-story/5c59c67e4462cba045b9430bb318b7d8), and the [Choose Your Own Adventure book series](https://en.wikipedia.org/wiki/Choose_Your_Own_Adventure), this table lets you sort by your metric of choice, including gold per capita, gold adjusted for your country's GDP, and gold per athlete in your country's team. Updated every hour.
 
 ```{r}
 #| warning: false
@@ -98,7 +98,7 @@ medal_table |>
     goldperGDP = html(paste0("<img src='https://mattnurse.com/wp-content/uploads/2024/08/goldperGDP.png' width='50' height='50'>")),
     medalsperGDP = html(paste0("<img src='https://mattnurse.com/wp-content/uploads/2024/08/medalsperGDP.png' width='50' height='50'>")), 
     goldperathlete = html(paste0("<img src='https://mattnurse.com/wp-content/uploads/2024/08/goldperathlete.png' width='50' height='50'>")), 
-    medalsperathlete = html(paste0("<img src='https://mattnurse.com/wp-content/uploads/2024/08/medalsperathlete.png' width='50' height='50'>"))
+    medalsperathlete = html(paste0("<img src='https://mattnurse.com/wp-content/uploads/2024/08/medalsperathlete-1.png' width='50' height='50'>"))
     )
 
 
