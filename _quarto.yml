@@ -21,8 +21,6 @@ website:
         href: about.qmd
       - text: "AFL power rankings"
         href: dashboard.qmd
-      - text: "Live Olympic medal tallies"
-        href: https://www.footyforest.com/Posts/2024-08-03-Paris-2024-Olympic-tallies-done-your-way/Index.html
       - text: "Blog"
         href: blog.qmd
     right: 
