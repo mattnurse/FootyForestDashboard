@@ -116,7 +116,7 @@ library(gt)
 tips_table_for_website |>  
   gt() |> 
   tab_header( 
-    title = "Based on teams selected on Thursday night") |> 
+    title = "Tips based on teams selected on Thursday night") |> 
   tab_spanner(
     label = md("Relative advantage to the home team^1^"),
     columns = c("Power", "Venue exp", "Travel", "Team rating")) |> 
