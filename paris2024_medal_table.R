@@ -20,7 +20,7 @@ medal_table <- medal_table |>
   select(name, iso_alpha_2, code, gold, silver, bronze, total) |> 
   rename(country = name, country_code = code)
 
-#Select indictators to download from world bank
+#Select indicators to download from world bank
 my_indicators <- c("population" = "SP.POP.TOTL",
                    "GDP" = "NY.GDP.MKTP.CD")
 
@@ -32,6 +32,7 @@ country_statistics <- wb_data(my_indicators) |>
 medal_table <- left_join(medal_table, country_statistics, by = "iso_alpha_2") |> 
   select(!iso_alpha_2) |> 
   rename(medals = total)
+
 
 medal_table <- medal_table |> 
   mutate("goldperperson" = gold/population) |> 
@@ -47,10 +48,21 @@ medal_table <- remove_all_labels(medal_table) |>
   select(country, gold, silver, bronze, medals, goldperperson, medalsperperson, goldperGDP, medalsperGDP)
 
 
-# URL or local path to images
-gold_icon <- "Images/gold.png"
+#############################################
+library(readr)
+Olympic_team_size <- read_csv("Posts/2024-08-03-Paris-2024-Olympic-tallies-done-your-way/Olympic_team_size.csv") 
 
-print(gold_icon)
+Olympic_team_size$Olympic_team_size <- as.integer(Olympic_team_size$team_size)
+Olympic_team_size <- as.data.frame(Olympic_team_size)
+
+
+
+medal_table <- left_join(medal_table, Olympic_team_size, by = "country") |> 
+  mutate("goldperathlete" = gold/team_size) |> 
+  mutate("medalsperathlete" = medals/team_size) 
+
+str(Olympic_team_size)
+
 
 
 

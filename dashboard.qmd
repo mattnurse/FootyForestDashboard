@@ -21,6 +21,15 @@ library(gtExtras)
 
 ```{r, generate elo}
 
+#| echo: FALSE
+#| include: FALSE 
+library(tidyverse)
+library(fitzRoy)
+library(elo)
+library(svglite)
+library(gt)
+library(gtExtras)
+
 #Set current date and year
 current_date <- Sys.Date()
 current_year <- format(current_date, "%Y")
@@ -33,9 +42,22 @@ historical_results_df_2024 <- fetch_results_afl(2024)
 historical_results_df <- rbind(historical_results_df_2022, 
                                historical_results_df_2023, 
                                historical_results_df_2024) %>%
-select(match.utcStartTime, round.roundNumber, match.venue, venue.name, match.homeTeam.name, match.awayTeam.name, homeTeamScore.matchScore.totalScore, awayTeamScore.matchScore.totalScore, weather.weatherType, round.name) %>%
+  select(match.utcStartTime, round.roundNumber, match.venue, venue.name, match.homeTeam.name, match.awayTeam.name, homeTeamScore.matchScore.totalScore, awayTeamScore.matchScore.totalScore, weather.weatherType, round.name) %>%
   mutate(season = paste0(substr(match.utcStartTime, 1, 4))) %>%
   mutate(seas_rnd = as.character(paste0(season, "_", round.roundNumber)))
+
+# Check available years
+available_years <- unique(historical_results_df$season)
+print(paste("Available years:", paste(available_years, collapse = ", ")))
+
+# Use most recent year if current year not available
+if (!(current_year %in% available_years)) {
+  latest_year <- max(as.numeric(available_years))
+  cat("No data for current year (", current_year, "), using", latest_year, "instead\n")
+  historical_results_df <- historical_results_df |> filter(season == latest_year)
+} else {
+  historical_results_df <- historical_results_df |> filter(season == current_year)
+}
 
 #Remove finals games
 historical_results_df  <- historical_results_df %>% filter(!grepl("Final", round.name))
@@ -71,7 +93,7 @@ historical_results_df$away_team <- str_replace(historical_results_df$away_team, 
 
 
 
-#these has not been extensively cross-validated and refined - see Hyperparameter_tuning2.R
+#these has now been extensively cross-validated and refined - see Hyperparameter_tuning2.R
 HGA <- 45 
 Carry_over <- 0.7 
 k_val <- 42 
@@ -102,9 +124,8 @@ elo.df <- as.data.frame(elo.data)
 #Join this to the results database   
 historical_results_df <- bind_cols(historical_results_df, elo.df)
 
-#Filter to just this year
-historical_results_df <- historical_results_df |>  
-  filter(season == current_year)
+# IMPORTANT: Removed the filter to current_year since we already filtered earlier
+# historical_results_df <- historical_results_df |> filter(season == current_year)
 
 power_rankings_home_elos <- historical_results_df |> 
   select(round_number, home_team, elo.A) |> 
@@ -160,10 +181,18 @@ sparkline_data <- power_rankings_dashboard |>
 #Flip this so that each team is on its own row
 power_rankings_dashboard_for_joining <- pivot_wider(data = power_rankings_dashboard, names_from = round_number, values_from = Power)
 
+# Check number of columns before using last_col()
+num_cols <- ncol(power_rankings_dashboard_for_joining)
 
-#Replace NAs with the previous column 
-power_rankings_dashboard_for_joining <- power_rankings_dashboard_for_joining |>  
-  select(Team, last_col(offset = 1), last_col())
+# Only use last_col if we have enough columns
+if (num_cols > 2) {
+  #Replace NAs with the previous column 
+  power_rankings_dashboard_for_joining <- power_rankings_dashboard_for_joining |>  
+    select(Team, last_col(offset = 1), last_col())
+} else {
+  # If we only have Team and one round column, keep as is
+  power_rankings_dashboard_for_joining <- power_rankings_dashboard_for_joining
+}
 
 
 power_rankings_dashboard_for_joining <- power_rankings_dashboard_for_joining %>% rename(latest_elo = 3, second_latest_elo = 2 )
