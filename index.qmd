@@ -13,7 +13,7 @@ format:
 #| title: "Correct tips"
 list(
   icon = "clipboard-check",
-  value = "TBC"
+  value = "1"
 )
 
 ```
@@ -26,7 +26,7 @@ list(
 list(
   color = "#49EBB7",
   icon = "bullseye", 
-  value = "TBC"
+  value = "50%"
 )
 
 ```
@@ -39,7 +39,7 @@ list(
 list(
   color = "#49EB80",
   icon = "bar-chart-line", 
-  value = "TBC"
+  value = "52%"
 )
 
 ```
