@@ -1,17 +1,198 @@
 /*-- scss:defaults --*/
-// Base document colors
-$body-bg: white;
-$body-color: black;
-$link-color: #003300;
 
-$primary: white;
-$secondary: #003300;
-$dark: black;
+// Import fonts
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap');
 
-.custom-row-1 {
-  max-height: 200px; /* Adjust the height as needed */
-  overflow: hidden; /* Optional: hide the overflow content */
+// Colors
+$primary: #003300;         // Dark green for primary actions - AFL field color
+$secondary: #A23333;       // Burgundy for accents - football color
+$info: #49EBB7;            // Teal for highlights
+$success: #49EB80;         // Light green for positive indicators
+$body-color: #333333;      // Dark gray for text
+$body-bg: #f8f8f8;         // Light gray background
+$navbar-bg: #003300;       // Dark green navbar
+$navbar-fg: #ffffff;       // White text in navbar
+$link-color: $secondary;   // Burgundy links
+
+// Typography
+$font-family-sans-serif: 'Montserrat', sans-serif;
+$font-family-base: 'Open Sans', sans-serif;
+$headings-font-family: 'Montserrat', sans-serif;
+$headings-font-weight: 600;
+
+// Card styling
+$card-border-radius: 8px;
+$card-border-color: rgba(0, 0, 0, 0.125);
+$card-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+$card-cap-bg: rgba(0, 0, 0, 0.03);
+
+// Spacing
+$spacer: 1rem;
+
+/*-- scss:rules --*/
+
+// Global styles
+body {
+  line-height: 1.6;
 }
 
-// Code blocks
-$code-block-bg-alpha: -.8;
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 1rem;
+  color: $primary;
+}
+
+// Navbar styling
+.navbar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+  .navbar-brand img {
+    max-height: 40px;
+  }
+  
+  .nav-link {
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    
+    &:hover {
+      color: $info !important;
+    }
+  }
+}
+
+// Announcement banner
+.announcement {
+  font-weight: 500;
+  padding: 0.75rem 0;
+  background-color: $success !important;
+  
+  font {
+    color: $primary !important;
+    font-weight: 600;
+  }
+}
+
+// Dashboard styling
+.card {
+  border-radius: $card-border-radius;
+  border: 1px solid $card-border-color;
+  box-shadow: $card-box-shadow;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.value-box {
+  border-radius: $card-border-radius;
+  box-shadow: $card-box-shadow;
+  
+  .value-box-title {
+    font-family: $headings-font-family;
+    font-weight: 500;
+    font-size: 1rem;
+  }
+  
+  .value-box-value {
+    font-weight: 700;
+    font-size: 2rem;
+  }
+  
+  i {
+    font-size: 2rem;
+    opacity: 0.8;
+  }
+}
+
+// Table styling
+.gt_table {
+  border-radius: $card-border-radius;
+  overflow: hidden;
+  box-shadow: $card-box-shadow;
+  
+  .gt_heading {
+    background-color: $primary;
+    color: white;
+  }
+  
+  .gt_title {
+    color: white !important;
+    font-weight: 600;
+  }
+  
+  .gt_column_spanner {
+    font-weight: 600;
+  }
+  
+  .gt_row {
+    transition: background-color 0.2s ease-in-out;
+    
+    &:hover {
+      background-color: rgba(73, 235, 183, 0.1);
+    }
+  }
+}
+
+// Blog post listings
+.quarto-listing-category {
+  font-weight: 600;
+  background-color: rgba(0, 51, 0, 0.1);
+  color: $primary;
+  border-radius: 4px;
+  padding: 0.2rem 0.5rem;
+}
+
+.listing-description {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+// Footer
+footer {
+  margin-top: 3rem;
+  padding: 2rem 0;
+  background-color: $primary;
+  color: white;
+  
+  a {
+    color: $info;
+    
+    &:hover {
+      color: white;
+    }
+  }
+}
+
+// Custom chart styling
+.plot-container {
+  border-radius: $card-border-radius;
+  overflow: hidden;
+  box-shadow: $card-box-shadow;
+  background-color: white;
+  padding: 1rem;
+}
+
+// Print styles
+@media print {
+  .navbar, .sidebar, footer {
+    display: none;
+  }
+  
+  .main-content {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+// Responsive styles
+@media (max-width: 768px) {
+  .value-box-value {
+    font-size: 1.5rem !important;
+  }
+  
+  .value-box i {
+    font-size: 1.5rem !important;
+  }
+}
