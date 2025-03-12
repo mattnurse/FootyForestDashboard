@@ -1,0 +1,17 @@
+/*-- scss:defaults --*/
+// Base document colors
+$body-bg: white;
+$body-color: black;
+$link-color: #003300;
+
+$primary: white;
+$secondary: #003300;
+$dark: black;
+
+.custom-row-1 {
+  max-height: 200px; /* Adjust the height as needed */
+  overflow: hidden; /* Optional: hide the overflow content */
+}
+
+// Code blocks
+$code-block-bg-alpha: -.8;

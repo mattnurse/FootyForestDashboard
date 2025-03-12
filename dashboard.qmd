@@ -46,9 +46,6 @@ historical_results_df <- rbind(historical_results_df_2022,
   mutate(season = paste0(substr(match.utcStartTime, 1, 4))) %>%
   mutate(seas_rnd = as.character(paste0(season, "_", round.roundNumber)))
 
-# Check available years
-available_years <- unique(historical_results_df$season)
-print(paste("Available years:", paste(available_years, collapse = ", ")))
 
 # Use most recent year if current year not available
 if (!(current_year %in% available_years)) {
