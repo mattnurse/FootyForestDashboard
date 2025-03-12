@@ -1,62 +1,88 @@
 ---
+title: "The Footy Forest"
+subtitle: "AFL Predictions Powered by Machine Learning"
+page-layout: full
+toc: false
 format: 
-  dashboard
+  dashboard:
+    theme: 
+      - morph
+      - custom.scss
+    orientation: rows
 ---
 
+::: {.content-visible when-format="html"}
+::: {.hero-banner style="background-image: url('Images/afl_field_banner.jpg'); background-size: cover; background-position: center; padding: 2rem; border-radius: 10px; margin-bottom: 1rem;"}
+::: {.hero-text style="background-color: rgba(255,255,255,0.8); padding: 1.5rem; border-radius: 8px; max-width: 700px;"}
+# Welcome to The Footy Forest
 
-## Row {height="30%"}
+A machine learning approach to predicting AFL football matches. Using a combination of tree-based models, we analyze team performance, player ratings, venue experience, and more to forecast match outcomes.
 
-### Column
+[View Latest Predictions](#latest-predictions){.btn .btn-primary style="margin-right: 10px;"} [Learn More](about.qmd){.btn .btn-secondary}
+:::
+:::
+:::
+
+## Model Performance {.storyboard}
 
 ```{r}
-#| content: valuebox
-#| title: "Correct tips"
-list(
-  icon = "clipboard-check",
-  value = "1"
-)
-
+#| echo: false
+#| warning: false
+#| message: false
+library(tidyverse)
+library(ggimage)
+library(magick)
 ```
 
-### Column
+### Performance Metrics {height="auto"}
 
+::: {.grid}
+
+::: {.g-col-12 .g-col-md-4}
+```{r}
+#| content: valuebox
+#| title: "Correct Tips"
+list(
+  icon = "clipboard-check",
+  color = "#003300",
+  value = "1"
+)
+```
+:::
+
+::: {.g-col-12 .g-col-md-4}
 ```{r}
 #| content: valuebox
 #| title: "Accuracy"
 list(
-  color = "#49EBB7",
   icon = "bullseye", 
+  color = "#49EBB7",
   value = "50%"
 )
-
 ```
+:::
 
-### Column
-
+::: {.g-col-12 .g-col-md-4}
 ```{r}
 #| content: valuebox
-#| title: "Top percentile of AFL footy tipping"
+#| title: "AFL Tipping Percentile"
 list(
-  color = "#49EB80",
   icon = "bar-chart-line", 
+  color = "#49EB80",
   value = "52%" 
 )
-
 ```
+:::
 
-## Row {height="10%"}
+:::
 
-Welcome to the Footy Forest. Here you'll find predictions, details on how the model is performing, rankings of each team and occasional statistical analyses of AFL footy and other sports.
+### Cumulative Performance {.g-col-12 height="auto"} 
 
-## Row {height="60%"}
-
-### Column
-
+::: {.plot-container}
 ```{r}
-library(tidyverse)
-library(ggimage)
-library(magick)
-
+#| echo: false
+#| fig.height: 6
+#| fig.width: 10
 
 #Create df of correct tips by round
 rounds <- c(0)
@@ -68,67 +94,189 @@ replace = TRUE
 
 model_performance <- data.frame(rounds, correct, icon, size, replace)
   
-
 ggplot(model_performance) +
   aes(x = rounds, y = cumsum(correct)) +
-  geom_line(linewidth = 1) +
+  geom_line(linewidth = 1.5, color = "#003300") +
   scale_x_continuous(breaks = seq(min(rounds), max(rounds), 1)) +
   scale_y_continuous(breaks = seq(0, total_correct, 10)) +
-  labs(y = "") +
+  labs(y = "Cumulative Correct Tips", x = "Round") +
   geom_image(aes(image = icon), size = 0.085) +
-  ggtitle("Correct tips 2024") +
-  theme_classic(base_size = 12) +
-  theme(plot.title = element_text(hjust = 0.5))
-
+  ggtitle("Correct Tips 2024 Season") +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold", color = "#003300"),
+    panel.grid.minor = element_blank(),
+    panel.grid.major = element_line(color = "#e5e5e5"),
+    panel.border = element_rect(color = "#e0e0e0", fill = NA),
+    axis.title = element_text(face = "bold"),
+    plot.background = element_rect(fill = "white", color = NA),
+    plot.margin = margin(20, 20, 20, 20)
+  )
 ```
+:::
 
-### Column
+## Latest Predictions {#latest-predictions}
 
-```{r, make pretty predictions table}
-########################################################################
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
 library(tidyverse)
 library(gt)
 library(gtExtras)
 
+# Time check for context
+current_time = lubridate::now("Australia/Canberra")
+day_of_the_week = lubridate::wday(current_time, label = TRUE, abbr = FALSE)
+
+# Read predictions
 tips_table_for_website <- read.csv("tips_table_for_website.csv")
-#Make pretty prediction table 2
+
+# Format the table
 tips_table_for_website <- tips_table_for_website |> 
   select(!c(seas_rnd, venue, tip)) |> 
-  rename(Home = home_team, Away = away_team, 
+  rename(Home = home_team, 
+         Away = away_team, 
          "Power" = elo_differential_c, 
-         "Venue exp" = venue_experience_differential_c, 
+         "Venue Exp" = venue_experience_differential_c, 
          "Travel" = travel_differential_c, 
-         "Team rating" = team_player_rating_differential_c,
-         "Predicted winner" = predicted_winner, 
+         "Team Rating" = team_player_rating_differential_c,
+         "Predicted Winner" = predicted_winner, 
          "Margin" = margin, 
-         "Probability" = probability) |> 
-  relocate(Home, Away, "Power", "Venue exp", "Team rating", "Travel", "Predicted winner", "Probability", "Margin")
+         "Win Probability" = probability) |> 
+  relocate(Home, Away, "Power", "Venue Exp", "Team Rating", "Travel", "Predicted Winner", "Win Probability", "Margin")
 
-
-#Get time and day of the week to determine whether to use team lists for predictions or to just predict on the other factors
-library(tidyverse)
-current_time = now("Australia/Canberra")
-day_of_the_week = wday(current_time, label = TRUE, abbr = FALSE)
-
-
-
-library(gt)
+# Create highlighted table
 tips_table_for_website |>  
   gt() |> 
   tab_header( 
-    title = "Tips based on teams selected on Thursday night") |> 
-  tab_spanner(
-    label = md("Relative advantage to the home team^1^"),
-    columns = c("Power", "Venue exp", "Travel", "Team rating")) |> 
-  tab_footnote(footnote = md("^1^This is the difference between the teams where 100 is the highest since 2015 and -100 is the lowest")) |> 
-  opt_align_table_header(align = "left") |> 
-  cols_align(columns = c("Power", "Venue exp", "Team rating", "Travel", "Predicted winner", "Probability", "Margin") , align = "center") |>  tab_style(style = cell_text(weight = "bold"), 
-            locations = cells_body(columns = c("Predicted winner"))) |> 
-  data_color(
-    columns = c("Power", "Venue exp", "Team rating", "Travel"),  
-    palette = c("red", "white", "darkgreen"),
-    domain = c(-100, 100), 
-    quantiles = 5 
+    title = md("**Round Predictions**"),
+    subtitle = paste("Based on teams selected on", day_of_the_week, "night")
   ) |> 
-  cols_width(c("Power", "Venue exp", "Team rating", "Travel") ~ px(95))
+  tab_spanner(
+    label = md("**Home Team Advantage Factors**"),
+    columns = c("Power", "Venue Exp", "Travel", "Team Rating")
+  ) |> 
+  tab_footnote(
+    footnote = md("*Advantage metrics are standardized on a scale from -100 to 100, where positive values favor the home team*"),
+    locations = cells_column_spanners(spanners = "Home Team Advantage Factors")
+  ) |> 
+  opt_align_table_header(align = "left") |> 
+  cols_align(
+    columns = c("Power", "Venue Exp", "Team Rating", "Travel", "Predicted Winner", "Win Probability", "Margin"),
+    align = "center"
+  ) |>  
+  tab_style(
+    style = cell_text(weight = "bold"),
+    locations = cells_body(columns = c("Predicted Winner"))
+  ) |> 
+  tab_style(
+    style = cell_text(color = "#003300", weight = "bold"),
+    locations = cells_column_labels(columns = everything())
+  ) |>
+  data_color(
+    columns = c("Power", "Venue Exp", "Team Rating", "Travel"),  
+    palette = c("#A23333", "#FFFFFF", "#003300"),
+    domain = c(-100, 100)
+  ) |>
+  fmt_percent(
+    columns = "Win Probability",
+    decimals = 1
+  ) |>
+  fmt_number(
+    columns = "Margin",
+    decimals = 1
+  ) |>
+  tab_style(
+    style = cell_fill(color = "#f8f8f8"),
+    locations = cells_body(rows = seq(1, nrow(tips_table_for_website), 2))
+  ) |>
+  tab_options(
+    table.border.top.color = "#003300",
+    table.border.bottom.color = "#003300",
+    heading.border.bottom.color = "#003300",
+    column_labels.border.bottom.color = "#003300",
+    column_labels.border.top.color = "#003300"
+  ) |>
+  cols_width(
+    c("Power", "Venue Exp", "Team Rating", "Travel") ~ px(95),
+    c("Home", "Away", "Predicted Winner") ~ px(150),
+    c("Win Probability", "Margin") ~ px(120)
+  ) |>
+  opt_interactive(
+    use_search = TRUE,
+    use_resizers = TRUE,
+    use_highlight = TRUE
+  )
 ```
+
+## How It Works {.content-visible when-format="html"}
+
+::: {.grid}
+
+::: {.g-col-12 .g-col-md-6}
+### The Footy Forest Model
+
+The Footy Forest uses an ensemble of machine learning models to predict AFL match outcomes, combining:
+
+- **Team Form**: Using an Elo-based rating system
+- **Venue Experience**: How teams perform at specific venues
+- **Player Ratings**: Individual player performance metrics
+- **Travel Impact**: Distance traveled by each team
+
+The model is trained on historical AFL data and continuously updated with each round's results.
+:::
+
+::: {.g-col-12 .g-col-md-6}
+### Recent Blog Posts
+
+```{r}
+#| echo: false
+#| eval: true
+
+# This would ideally pull from your blog posts
+blog_posts <- data.frame(
+  title = c("Analyzing Round 5 Upsets", "The Impact of Home Ground Advantage", "Midseason Model Performance Review"),
+  date = c("14 April 2024", "2 April 2024", "25 March 2024"),
+  link = c("Posts/round-5-upsets.html", "Posts/home-ground-advantage.html", "Posts/midseason-review.html")
+)
+
+# Display recent posts
+blog_posts |>
+  head(3) |>
+  gt() |>
+  cols_label(
+    title = "Title",
+    date = "Date",
+    link = ""
+  ) |>
+  text_transform(
+    locations = cells_body(columns = title),
+    fn = function(x) {
+      paste0("<a href='", blog_posts$link, "' style='color: #A23333; font-weight: 500;'>", x, "</a>")
+    }
+  ) |>
+  text_transform(
+    locations = cells_body(columns = link),
+    fn = function(x) {
+      paste0("<a href='", x, "' class='btn btn-sm btn-outline-secondary'>Read</a>")
+    }
+  ) |>
+  cols_align(
+    align = "left",
+    columns = everything()
+  ) |>
+  tab_options(
+    column_labels.background.color = "#003300",
+    column_labels.font.weight = "bold",
+    column_labels.color = "white"
+  ) |>
+  opt_table_font(
+    font = "Open Sans"
+  )
+```
+
+[View All Posts →](blog.qmd){.btn .btn-sm .btn-outline-primary .mt-2}
+:::
+
+:::
