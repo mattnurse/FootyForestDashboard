@@ -93,10 +93,10 @@ historical_results_df$away_team <- str_replace(historical_results_df$away_team, 
 
 
 
-#these has now been extensively cross-validated and refined - see Hyperparameter_tuning2.R
-HGA <- 45 
+#Set parameters based on ELO_parameter_Estimation project
+HGA <- 55
 Carry_over <- 0.7 
-k_val <- 42 
+k_val <- 60 
 
 
 #Cap the benefit from winning or losing by greater than 80 points
