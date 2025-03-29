@@ -38,10 +38,12 @@ current_year <- format(current_date, "%Y")
 historical_results_df_2022 <- fetch_results_afl(2022) 
 historical_results_df_2023 <- fetch_results_afl(2023)
 historical_results_df_2024 <- fetch_results_afl(2024)
+historical_results_df_2025 <- fetch_results_afl(2025)
 
 historical_results_df <- rbind(historical_results_df_2022, 
                                historical_results_df_2023, 
-                               historical_results_df_2024) %>%
+                               historical_results_df_2024, 
+                               historical_results_df_2025) %>%
   select(match.utcStartTime, round.roundNumber, match.venue, venue.name, match.homeTeam.name, match.awayTeam.name, homeTeamScore.matchScore.totalScore, awayTeamScore.matchScore.totalScore, weather.weatherType, round.name) %>%
   mutate(season = paste0(substr(match.utcStartTime, 1, 4))) %>%
   mutate(seas_rnd = as.character(paste0(season, "_", round.roundNumber)))
