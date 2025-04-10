@@ -32,7 +32,7 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
-          with:
+        with:
           submodules: false
 
       - name: Set up Quarto
