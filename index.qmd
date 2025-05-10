@@ -11,9 +11,9 @@ format:
 ```{r}
 #| content: valuebox
 #| title: "Correct tips"
-list(
+list(color = "darkgreen",
   icon = "clipboard-check",
-  value = "23"
+  value = "50"
 )
 
 ```
@@ -24,13 +24,9 @@ list(
 #| content: valuebox
 #| title: "Accuracy"
 list(
-  color = "#49EBB7",
+  color = "darkgreen",
   icon = "bullseye", 
-<<<<<<< HEAD
-  value = "63.2%"
-=======
-  value = "66%"
->>>>>>> 7b825f6475f30c6b208ddb21cfce0dd07e528d2b
+  value = "63%"
 )
 
 ```
@@ -41,9 +37,9 @@ list(
 #| content: valuebox
 #| title: "Top percentile of AFL footy tipping"
 list(
-  color = "#49EB80",
+  color = "darkgreen",
   icon = "bar-chart-line", 
-  value = "38%"
+  value = "35%"
 )
 
 ```
