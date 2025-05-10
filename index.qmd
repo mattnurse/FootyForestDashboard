@@ -91,7 +91,7 @@ library(gt)
 library(gtExtras)
 
   # Create GT table with formatting
-  pretty_predictions_table <-   read.csv("tips_table_for_website.csv") %>%
+  pretty_predictions_table <- read.csv("tips_table_for_website.csv") %>%
     select(-matchID, -seas_rnd, -has_lineup_data) %>%
     rename(
         Home = home_team, 
@@ -140,20 +140,21 @@ library(gtExtras)
   all_team_ratings_numeric <- !any(pretty_predictions_table$`Team rating` == "TBA")
   
   # Add color to Team rating only if all values are numeric
-  if(all_team_ratings_numeric) {
-    pretty_predictions_table <- pretty_predictions_table %>%
-      fmt_number(
-        columns = c("Team rating"),
-        decimals = 0
-      ) %>%
-      data_color(
-        columns = c("Team rating"),  
-        palette = c("red", "white", "darkgreen"),
-        domain = c(-100, 100), 
-        quantiles = 5 
-      )
+if(all_team_ratings_numeric) {
+  pretty_predictions_table <- pretty_predictions_table %>%
+    fmt_number(
+      columns = c("Team rating"),
+      decimals = 0
+    ) %>%
+    data_color(
+      columns = c("Team rating"),  
+      palette = c("red", "white", "darkgreen"),
+      domain = c(-100, 100), 
+      quantiles = 5 
+    )
+}
 
+# Display the table outside the if statement to ensure it always renders
 pretty_predictions_table
-    
-  }
+
 ```
