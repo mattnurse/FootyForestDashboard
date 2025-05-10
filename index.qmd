@@ -92,7 +92,7 @@ library(gtExtras)
 
   # Create GT table with formatting
   pretty_predictions_table <- read.csv("tips_table_for_website.csv") %>%
-    select(-matchID, -seas_rnd, -has_lineup_data) %>%
+    select(-matchID, -seas_rnd, -has_lineup_data, -tip, -venue) %>%
     rename(
         Home = home_team, 
         Away = away_team, 
