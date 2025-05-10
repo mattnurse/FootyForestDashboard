@@ -90,45 +90,67 @@ library(tidyverse)
 library(gt)
 library(gtExtras)
 
-tips_table_for_website <- read.csv("tips_table_for_website.csv")
-#Make pretty prediction table 2
-tips_table_for_website <- tips_table_for_website |> 
-  select(!c(seas_rnd, venue, tip)) |> 
-  rename(Home = home_team, Away = away_team, 
-         "Power" = elo_differential_c, 
-         "Venue exp" = venue_experience_differential_c, 
-         "Travel" = travel_differential_c, 
-         "Team rating" = team_player_rating_differential_c,
-         "Predicted winner" = predicted_winner, 
-         "Margin" = margin, 
-         "Probability" = probability) |> 
-  relocate(Home, Away, "Power", "Venue exp", "Team rating", "Travel", "Predicted winner", "Probability", "Margin")
-
-
-#Get time and day of the week to determine whether to use team lists for predictions or to just predict on the other factors
-library(tidyverse)
-current_time = now("Australia/Canberra")
-day_of_the_week = wday(current_time, label = TRUE, abbr = FALSE)
-
-
-
-library(gt)
-tips_table_for_website |>  
-  gt() |> 
-  tab_header( 
-    title = "Tips based on teams selected on Thursday night") |> 
-  tab_spanner(
-    label = md("Relative advantage to the home team^1^"),
-    columns = c("Power", "Venue exp", "Travel", "Team rating")) |> 
-  tab_footnote(footnote = md("^1^This is the difference between the teams where 100 is the highest since 2015 and -100 is the lowest")) |> 
-  opt_align_table_header(align = "left") |> 
-  cols_align(columns = c("Power", "Venue exp", "Team rating", "Travel", "Predicted winner", "Probability", "Margin") , align = "center") |>  tab_style(style = cell_text(weight = "bold"), 
-            locations = cells_body(columns = c("Predicted winner"))) |> 
-  data_color(
-    columns = c("Power", "Venue exp", "Team rating", "Travel"),  
-    palette = c("red", "white", "darkgreen"),
-    domain = c(-100, 100), 
-    quantiles = 5 
-  ) |> 
-  cols_width(c("Power", "Venue exp", "Team rating", "Travel") ~ px(95))
+  # Create GT table with formatting
+  pretty_predictions_table <-   read.csv("tips_table_for_website.csv") %>%
+    select(-matchID, -seas_rnd, -has_lineup_data) %>%
+    rename(
+        Home = home_team, 
+        Away = away_team, 
+        "Power" = elo_differential_c, 
+        "Venue exp" = venue_experience_differential_c, 
+        "Team rating" = team_player_rating_differential_c, 
+        "Travel" = travel_differential_c, 
+        "Predicted winner" = predicted_winner,
+        "Margin" = margin,
+        "Probability" = probability) %>%
+    gt() %>% 
+    tab_header( 
+      title = paste0("Footy Forest predictions")
+    ) %>% 
+    tab_spanner(
+      label = md("Relative advantage to the home team^1^"),
+      columns = c("Power", "Venue exp", "Team rating", "Travel")
+    ) %>%
+    tab_footnote(
+      footnote = md("^1^ Relative advantage to the home team scaled from -100 to +100 www.footyforest.com")
+    ) %>% 
+    opt_align_table_header(align = "left") %>%
+    cols_align(
+      columns = c("Power", "Venue exp", "Team rating", "Travel", 
+                  "Predicted winner", "Margin"),
+      align = "center"
+    ) %>% 
+    tab_style(
+      style = cell_text(weight = "bold"), 
+      locations = cells_body(columns = c("Predicted winner"))
+    ) %>%
+    fmt_number(
+      columns = c("Power", "Venue exp", "Travel"),  # Team rating handled separately
+      decimals = 0
+    ) %>%
+    data_color(
+      columns = c("Power", "Venue exp", "Travel"),  
+      palette = c("red", "white", "darkgreen"),
+      domain = c(-100, 100), 
+      quantiles = 5 
+    ) %>% 
+    cols_width(c("Power", "Venue exp", "Team rating", "Travel") ~ px(95))
+  
+  # Check if all Team rating values are numeric (not "TBA")
+  all_team_ratings_numeric <- !any(pretty_predictions_table$`Team rating` == "TBA")
+  
+  # Add color to Team rating only if all values are numeric
+  if(all_team_ratings_numeric) {
+    pretty_predictions_table <- pretty_predictions_table %>%
+      fmt_number(
+        columns = c("Team rating"),
+        decimals = 0
+      ) %>%
+      data_color(
+        columns = c("Team rating"),  
+        palette = c("red", "white", "darkgreen"),
+        domain = c(-100, 100), 
+        quantiles = 5 
+      )
+  }
 ```
