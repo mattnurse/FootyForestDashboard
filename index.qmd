@@ -13,7 +13,7 @@ format:
 #| title: "Correct tips"
 list(color = "darkgreen",
   icon = "clipboard-check",
-  value = "50"
+  value = "51"
 )
 
 ```
@@ -57,28 +57,18 @@ library(tidyverse)
 library(ggimage)
 library(magick)
 
+#Load tips by round data created in a seperate script in the Footy Forest project
+performance_data <- read.csv2("performance_data.csv")
 
-#Create df of correct tips by round
-rounds <- c(0)
-correct <- c(0)
-total_correct <- sum(correct)
-icon <- c("Images/Tree_icon_forest.png")
-size = 11 
-replace = TRUE
+#Create plot
+performance_graph <- ggplot(performance_data) +
+  aes(x = round, y = tips) +
+  geom_col(fill = "#006400") +  # Replace geom_point with geom_col
+  theme_classic() +
+  scale_x_continuous(breaks = 0:24, limits = c(-0.5, 24))
 
-model_performance <- data.frame(rounds, correct, icon, size, replace)
-  
-
-ggplot(model_performance) +
-  aes(x = rounds, y = cumsum(correct)) +
-  geom_line(linewidth = 1) +
-  scale_x_continuous(breaks = seq(min(rounds), max(rounds), 1)) +
-  scale_y_continuous(breaks = seq(0, total_correct, 10)) +
-  labs(y = "") +
-  geom_image(aes(image = icon), size = 0.085) +
-  ggtitle("Correct tips 2024") +
-  theme_classic(base_size = 12) +
-  theme(plot.title = element_text(hjust = 0.5))
+#Display plot
+performance_graph
 
 ```
 
