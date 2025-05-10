@@ -55,15 +55,14 @@ Welcome to the Footy Forest. Here you'll find predictions, details on how the mo
 ```{r}
 library(tidyverse)
 library(ggimage)
-library(magick)
 
-#Load tips by round data created in a seperate script in the Footy Forest project
+#Load tips by round data created in a separate script in the Footy Forest project
 performance_data <- read.csv2("performance_data.csv")
 
-#Create plot
+#Create plot. Note that that the x scale starts at -0.5 to allow the graph to render properly
 performance_graph <- ggplot(performance_data) +
   aes(x = round, y = tips) +
-  geom_col(fill = "#006400") +  # Replace geom_point with geom_col
+  geom_col(fill = "#006400") + 
   theme_classic() +
   scale_x_continuous(breaks = 0:24, limits = c(-0.5, 24))
 
