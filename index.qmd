@@ -152,5 +152,8 @@ library(gtExtras)
         domain = c(-100, 100), 
         quantiles = 5 
       )
+
+pretty_predictions_table
+    
   }
 ```
