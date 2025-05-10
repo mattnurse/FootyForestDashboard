@@ -104,9 +104,6 @@ library(gtExtras)
         "Margin" = margin,
         "Probability" = probability) %>%
     gt() %>% 
-    tab_header( 
-      title = "Footy Forest predictions"
-    ) %>% 
     tab_spanner(
       label = md("Relative advantage to the home team^1^"),
       columns = c("Power", "Venue exp", "Team rating", "Travel")
