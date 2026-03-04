@@ -1,6 +1,13 @@
 project:
   type: website
   output-dir: docs
+  render:
+    - index.qmd
+    - dashboard.qmd
+    - rankings.qmd
+    - blog.qmd
+    - about.qmd
+    - Posts/**/*.qmd
 
 website:
   title: "The Footy Forest"
