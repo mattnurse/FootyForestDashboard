@@ -59,9 +59,9 @@ jobs:
           r-version: '4.3.0'
 
       - name: Install R Dependencies
-        uses: r-lib/actions/setup-renv@v2
-        with:
-          cache-version: 2
+        run: |
+          install.packages(c("tidyverse", "fitzRoy", "elo", "svglite", "gt", "gtExtras", "fs", "rmarkdown"), repos = "https://cloud.r-project.org")
+        shell: Rscript {0}
 
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
