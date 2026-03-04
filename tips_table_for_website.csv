@@ -1,6 +1,0 @@
-"matchID","seas_rnd","home_team","away_team","elo_differential_c","venue","venue_name","venue_experience_differential_c","team_player_rating_differential_c","travel_differential_c","has_lineup_data","tip","predicted_winner","probability","margin"
-"CD_M20260140001","2026_0","Sydney Swans","Carlton",1.5,"CD_V60","SCG",61.5,-1.2,20.2,TRUE,"home","Sydney Swans",95,12
-"CD_M20260140002","2026_0","Gold Coast Suns","Geelong Cats",-20.4,"CD_V81","People First Stadium",16.8,-10.4,38.8,FALSE,"away","Geelong Cats",65,16
-"CD_M20260140003","2026_0","GWS Giants","Hawthorn",-15.1,"CD_V43","ENGIE Stadium",44,-10.4,19.5,FALSE,"home","GWS Giants",64,15
-"CD_M20260140004","2026_0","Brisbane Lions","Western Bulldogs",-32.6,"CD_V20","Gabba",61.6,-10.4,38,FALSE,"away","Western Bulldogs",57,2
-"CD_M20260140005","2026_0","St Kilda","Collingwood",-40.4,"CD_V40","MCG",-9.4,-10.4,-0.1,FALSE,"away","Collingwood",79,3
