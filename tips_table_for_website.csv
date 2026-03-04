@@ -1,10 +1,6 @@
-"matchID","seas_rnd","home_team","away_team","elo_differential_c","venue","venue_experience_differential_c","team_player_rating_differential_c","travel_differential_c","has_lineup_data","tip","predicted_winner","probability","margin"
-"CD_M20250140901","2025_9","Fremantle","Collingwood",-25.3,"CD_V2925",59.8,0.1,75.2,TRUE,"away","Collingwood",59,11
-"CD_M20250140902","2025_9","St Kilda","Carlton",-15.5,"CD_V40",-3.4,5.6,0,TRUE,"away","Carlton",56,9
-"CD_M20250140903","2025_9","Melbourne","Hawthorn",-40.3,"CD_V40",18.8,-4.8,0,TRUE,"away","Hawthorn",74,36
-"CD_M20250140904","2025_9","Essendon","Sydney Swans",-19.9,"CD_V190",37.6,30.4,20.2,TRUE,"away","Sydney Swans",62,15
-"CD_M20250140905","2025_9","Gold Coast Suns","Western Bulldogs",-12.4,"CD_V160",1.7,9.6,6.7,TRUE,"away","Western Bulldogs",52,5
-"CD_M20250140906","2025_9","Port Adelaide","Adelaide Crows",-29.4,"CD_V6",-6,3.8,0,TRUE,"away","Adelaide Crows",70,25
-"CD_M20250140907","2025_9","Richmond","West Coast Eagles",3,"CD_V40",88.9,36.4,75.2,TRUE,"home","Richmond",70,17
-"CD_M20250140908","2025_9","Geelong Cats","GWS Giants",0.5,"CD_V30",60.7,6.4,21.3,TRUE,"home","Geelong Cats",69,15
-"CD_M20250140909","2025_9","North Melbourne","Brisbane Lions",-42.7,"CD_V2",23.9,-2,32.8,TRUE,"away","Brisbane Lions",75,36
+"matchID","seas_rnd","home_team","away_team","elo_differential_c","venue","venue_name","venue_experience_differential_c","team_player_rating_differential_c","travel_differential_c","has_lineup_data","tip","predicted_winner","probability","margin"
+"CD_M20260140001","2026_0","Sydney Swans","Carlton",1.5,"CD_V60","SCG",61.5,-1.2,20.2,TRUE,"home","Sydney Swans",95,12
+"CD_M20260140002","2026_0","Gold Coast Suns","Geelong Cats",-20.4,"CD_V81","People First Stadium",16.8,-10.4,38.8,FALSE,"away","Geelong Cats",65,16
+"CD_M20260140003","2026_0","GWS Giants","Hawthorn",-15.1,"CD_V43","ENGIE Stadium",44,-10.4,19.5,FALSE,"home","GWS Giants",64,15
+"CD_M20260140004","2026_0","Brisbane Lions","Western Bulldogs",-32.6,"CD_V20","Gabba",61.6,-10.4,38,FALSE,"away","Western Bulldogs",57,2
+"CD_M20260140005","2026_0","St Kilda","Collingwood",-40.4,"CD_V40","MCG",-9.4,-10.4,-0.1,FALSE,"away","Collingwood",79,3
