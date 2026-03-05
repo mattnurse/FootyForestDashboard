@@ -3,24 +3,23 @@ on:
   push:
     branches: main
   schedule:
-    - cron: "16 12 * 3-9 4"   # At 12:16 (10:16pm AEST) on every Thursday from March to September
-    - cron: "0 20 * 3-9 4"   # At 20:00 (6am AEST) on every Thursday from March to September
-    - cron: "0 9 * 3-9 5"    # At 09:00 (7pm AEST)on every Friday from March to September
-    - cron: "16 12 * 3-9 5"   # At 12:16 (10:16pm AEST) on every Friday from March to September
-    - cron: "0 20 * 3-9 5"   # At 20:00 (6am AEST) on every Friday from March to September
-    - cron: "0 7 * 3-9 6"    # At 07:00 (5pm AEST) on every Saturday from March to September
-    - cron: "0 9 * 3-9 6"    # At 09:00 (7pm AEST) on every Saturday from March to September
-    - cron: "0 10 * 3-9 6"   # At 10:00 (8pm AEST) on every Saturday from March to September
-    - cron: "16 12 * 3-9 6"   # At 12:16 (10:16pm AEST) on every Saturday from March to September
-    - cron: "0 20 * 3-9 6"   # At 20:00 (6am AEST) on every Saturday from March to September
-    - cron: "0 7 * 3-9 0"    # At 07:00 (5pm AEST) on every Sunday from March to September
-    - cron: "0 9 * 3-9 0"    # At 09:00 (7pm AEST) on every Sunday from March to September
-    - cron: "0 10 * 3-9 0"   # At 10:00 (8pm AEST) on every Sunday from March to September
-    - cron: "16 12 * 3-9 0"   # At 12:16 (10:16pm) on every Sunday from March to September
-    - cron: "0 20 * 3-9 0"   # At 20:00 (6am AEST) on every Sunday from March to September
-    - cron: "0 20 * 3-9 1"   # At 20:00 (6am AEST) on every Monday from March to September
-    - cron: "0 7 * 3-9 0"   # At 07:00 (5pm AEST) on every Monday from March to September
-
+    - cron: "16 12 * 3-9 4"
+    - cron: "0 20 * 3-9 4"
+    - cron: "0 9 * 3-9 5"
+    - cron: "16 12 * 3-9 5"
+    - cron: "0 20 * 3-9 5"
+    - cron: "0 7 * 3-9 6"
+    - cron: "0 9 * 3-9 6"
+    - cron: "0 10 * 3-9 6"
+    - cron: "16 12 * 3-9 6"
+    - cron: "0 20 * 3-9 6"
+    - cron: "0 7 * 3-9 0"
+    - cron: "0 9 * 3-9 0"
+    - cron: "0 10 * 3-9 0"
+    - cron: "16 12 * 3-9 0"
+    - cron: "0 20 * 3-9 0"
+    - cron: "0 20 * 3-9 1"
+    - cron: "0 7 * 3-9 1"
 
 name: Quarto Publish
 
@@ -37,35 +36,24 @@ jobs:
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
-        
-      - name: Install curl
-        run: sudo apt-get update
-        
-      - name: Install curl
-        run: sudo apt install curl
-        
-      - name: Install libcurl4
-        run: sudo apt-get install libcurl4-openssl-dev
-        
-      - name: Install libmagick
-        run: sudo apt-get install libmagick++-dev
-        
-      - name: Install libfribidi etc for textshaping package
-        run: sudo apt install libharfbuzz-dev libfribidi-dev libtiff5-dev
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y curl libcurl4-openssl-dev libmagick++-dev libharfbuzz-dev libfribidi-dev libtiff5-dev
 
       - name: Install R
         uses: r-lib/actions/setup-r@v2
         with:
           r-version: '4.3.0'
 
-      - name: Install R Dependencies
+      - name: Disable renv and install packages
         run: |
-          install.packages(c("tidyverse", "fitzRoy", "elo", "svglite", "gt", "gtExtras", "fs", "rmarkdown"), repos = "https://cloud.r-project.org")
+          if (file.exists(".Rprofile")) file.remove(".Rprofile")
+          if (file.exists("renv/activate.R")) file.remove("renv/activate.R")
+          install.packages(c("tidyverse", "fitzRoy", "elo", "svglite", "gt", "fs", "rmarkdown"), repos = "https://cloud.r-project.org")
         shell: Rscript {0}
-      - name: Clean previous builds
-        run: |
-          rm -rf _freeze docs _site .quarto
-          git checkout -- .
+
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
         with:
