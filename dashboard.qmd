@@ -14,7 +14,6 @@ library(fitzRoy)
 library(elo)
 library(svglite)
 library(gt)
-#library(gtExtras)
 
 ```
 
@@ -28,7 +27,6 @@ library(fitzRoy)
 library(elo)
 library(svglite)
 library(gt)
-#library(gtExtras)
 
 #Set current date and year
 current_date <- Sys.Date()
@@ -43,9 +41,9 @@ historical_results_df_2025 <- fetch_results_afl(2025)
 historical_results_df <- rbind(historical_results_df_2022, 
                                historical_results_df_2023, 
                                historical_results_df_2024, 
-                               historical_results_df_2025) %>%
-  select(match.utcStartTime, round.roundNumber, match.venue, venue.name, match.homeTeam.name, match.awayTeam.name, homeTeamScore.matchScore.totalScore, awayTeamScore.matchScore.totalScore, weather.weatherType, round.name) %>%
-  mutate(season = paste0(substr(match.utcStartTime, 1, 4))) %>%
+                               historical_results_df_2025) |>
+  select(match.utcStartTime, round.roundNumber, match.venue, venue.name, match.homeTeam.name, match.awayTeam.name, homeTeamScore.matchScore.totalScore, awayTeamScore.matchScore.totalScore, weather.weatherType, round.name) |>
+  mutate(season = paste0(substr(match.utcStartTime, 1, 4))) |>
   mutate(seas_rnd = as.character(paste0(season, "_", round.roundNumber)))
 
 # Check available years
@@ -61,11 +59,11 @@ if (!(current_year %in% available_years)) {
 }
 
 #Remove finals games
-historical_results_df  <- historical_results_df %>% filter(!grepl("Final", round.name))
+historical_results_df <- historical_results_df |> filter(!grepl("Final", round.name))
 
 
 #Rename variables to something more sensible
-historical_results_df <- historical_results_df %>% rename(round_number = round.roundNumber, venue = match.venue, home_team = match.homeTeam.name, away_team = match.awayTeam.name, home_score = homeTeamScore.matchScore.totalScore, away_score = awayTeamScore.matchScore.totalScore)
+historical_results_df <- historical_results_df |> rename(round_number = round.roundNumber, venue = match.venue, home_team = match.homeTeam.name, away_team = match.awayTeam.name, home_score = homeTeamScore.matchScore.totalScore, away_score = awayTeamScore.matchScore.totalScore)
 
 
 #need to change gold coast and gws to more sensible names
@@ -73,12 +71,11 @@ historical_results_df$home_team <- str_replace(historical_results_df$home_team, 
 historical_results_df$away_team <- str_replace(historical_results_df$away_team, "GWS GIANTS", "GWS Giants")
 historical_results_df$home_team <- str_replace(historical_results_df$home_team, "Gold Coast SUNS", "Gold Coast Suns")
 historical_results_df$away_team <- str_replace(historical_results_df$away_team, "Gold Coast SUNS", "Gold Coast Suns")
-historical_results_df$home_team <-str_replace(historical_results_df$home_team, "Footscray", "Western Bulldogs")
+historical_results_df$home_team <- str_replace(historical_results_df$home_team, "Footscray", "Western Bulldogs")
 historical_results_df$away_team <- str_replace(historical_results_df$away_team, "Footscray", "Western Bulldogs")
 
 
 #change any aboriginal names to original names
-#need to change gold coast and gws to more sensible names
 historical_results_df$home_team <- str_replace(historical_results_df$home_team, "Narrm", "Melbourne")
 historical_results_df$away_team <- str_replace(historical_results_df$away_team, "Narrm", "Melbourne")
 historical_results_df$home_team <- str_replace(historical_results_df$home_team, "Kuwarna", "Adelaide Crows")
@@ -103,7 +100,7 @@ k_val <- 60
 #Cap the benefit from winning or losing by greater than 80 points
 map_margin_to_outcome <- function(margin, marg.max = 80, marg.min = -80){
   norm <- (margin - marg.min)/(marg.max - marg.min)
-  norm %>% pmin(1) %>% pmax(0)
+  norm |> pmin(1) |> pmax(0)
 }
 
 
@@ -158,19 +155,17 @@ ladder <- ladder |>
   rename("Ladder position" = position, Team = team.name, "Games played" = played, Points = thisSeasonRecord.aggregatePoints, Percentage = thisSeasonRecord.percentage, "Ladder position this time last year" = thisRoundLastSeason.ladderPosition, Played = played)
 
 #Clean up team names
-ladder <- ladder %>%
-  mutate(Team = str_replace(Team, "Gold Coast SUNS", "Gold Coast Suns")) %>%
-  mutate(Team = str_replace(Team, "GWS GIANTS", "GWS Giants")) %>%
-  mutate(Team = str_replace(Team, "Footscray", "Western Bulldogs"))%>%   
-  mutate(Team = str_replace(Team, "Narrm", "Melbourne")) %>%
-  mutate(Team = str_replace(Team, "Kuwarna", "Adelaide Crows")) %>%
-  mutate(Team = str_replace(Team, "Yartapuulti", "Port Adelaide")) %>%
-  mutate(Team = str_replace(Team, "Kuwarna", "Adelaide Crows")) %>%
-  mutate(Team = str_replace(Team, "Euro-Yroke", "St Kilda")) %>%
-  mutate(Team = str_replace(Team, "Waalitj Marawar", "West Coast Eagles")) %>%
+ladder <- ladder |>
+  mutate(Team = str_replace(Team, "Gold Coast SUNS", "Gold Coast Suns")) |>
+  mutate(Team = str_replace(Team, "GWS GIANTS", "GWS Giants")) |>
+  mutate(Team = str_replace(Team, "Footscray", "Western Bulldogs")) |>   
+  mutate(Team = str_replace(Team, "Narrm", "Melbourne")) |>
+  mutate(Team = str_replace(Team, "Kuwarna", "Adelaide Crows")) |>
+  mutate(Team = str_replace(Team, "Yartapuulti", "Port Adelaide")) |>
+  mutate(Team = str_replace(Team, "Kuwarna", "Adelaide Crows")) |>
+  mutate(Team = str_replace(Team, "Euro-Yroke", "St Kilda")) |>
+  mutate(Team = str_replace(Team, "Waalitj Marawar", "West Coast Eagles")) |>
   mutate(Team = str_replace(Team, "Walyalup", "Fremantle")) 
-
-
 
 
 #Put the power rankings into a single column to create a sparkline
@@ -196,9 +191,9 @@ if (num_cols > 2) {
 }
 
 
-power_rankings_dashboard_for_joining <- power_rankings_dashboard_for_joining %>% rename(latest_elo = 3, second_latest_elo = 2 )
+power_rankings_dashboard_for_joining <- power_rankings_dashboard_for_joining |> rename(latest_elo = 3, second_latest_elo = 2)
 
-power_rankings_dashboard_for_joining <- power_rankings_dashboard_for_joining |>  mutate(power = coalesce(latest_elo, second_latest_elo))
+power_rankings_dashboard_for_joining <- power_rankings_dashboard_for_joining |> mutate(power = coalesce(latest_elo, second_latest_elo))
 
 power_rankings_dashboard_for_joining <- select(power_rankings_dashboard_for_joining, 1, last_col())
 
@@ -207,7 +202,7 @@ ladder <- ladder |> select("Ladder position", Team, Played, Points, Percentage, 
 
 ladder <- left_join(ladder, power_rankings_dashboard_for_joining, by = "Team") 
 
-ladder <- ladder |>  rename("Power" = last_col())
+ladder <- ladder |> rename("Power" = last_col())
 
 ladder <- left_join(ladder, sparkline_data, by = "Team")
 
@@ -240,9 +235,9 @@ ladder <- cbind(Rank, ladder)
 
 library(gt)
 
-ladder |>
+ladder |> 
   select(-"Power trend") |>
-  gt() |>
+  gt() |> 
   text_transform(
     locations = cells_body(columns = logo),
     fn = function(x) { lapply(x, function(path) local_image(filename = path, height = 30)) }
@@ -250,7 +245,7 @@ ladder |>
   cols_align(
     align = "center",
     columns = everything()
-  ) |>
+  ) |> 
   cols_label(logo = "", Power = "Power rating")
 
 ```

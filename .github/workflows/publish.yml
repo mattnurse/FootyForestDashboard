@@ -68,6 +68,15 @@ jobs:
           echo "=== _freeze exists? ==="
           ls -la _freeze/ 2>/dev/null || echo "No _freeze"
 
+      - name: Verify dashboard file
+        run: |
+          echo "=== Lines 235-260 of dashboard.qmd ==="
+          sed -n '235,260p' dashboard.qmd
+          echo "=== Checking for gtExtras references ==="
+          grep -n "gtExtras\|sparkline\|gt_plt\|data_color\|opt_interactive" dashboard.qmd || echo "NONE FOUND"
+          echo "=== Checking for renv files ==="
+          ls -la .Rprofile renv/ 2>/dev/null || echo "No renv files"
+
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
         with:
