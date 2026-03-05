@@ -47,12 +47,15 @@ jobs:
         with:
           r-version: '4.3.0'
 
-      - name: Disable renv and install packages
+      - name: Install R Dependencies
         run: |
-          if (file.exists(".Rprofile")) file.remove(".Rprofile")
-          if (file.exists("renv/activate.R")) file.remove("renv/activate.R")
+          unlink("renv", recursive = TRUE)
+          Sys.setenv(RENV_CONFIG_AUTOLOADER_ENABLED = "false")
+          options(renv.config.autoloader.enabled = FALSE)
           install.packages(c("tidyverse", "fitzRoy", "elo", "svglite", "gt", "fs", "rmarkdown"), repos = "https://cloud.r-project.org")
         shell: Rscript {0}
+        env:
+          RENV_CONFIG_AUTOLOADER_ENABLED: "false"
 
       - name: Debug dashboard contents
         run: |
