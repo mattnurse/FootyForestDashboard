@@ -247,7 +247,7 @@ ladder |>
   cols_align(
     align = "center",
     columns = everything()
-  ) 
+  ) |>
   cols_label(logo = "", Power = "Power rating") |>  
   gt_plt_sparkline("Power trend", type = "default", same_limit = FALSE, label = FALSE, palette = c("black", "transparent","#A23333","#003300","transparent"))
 
