@@ -62,7 +62,10 @@ jobs:
         run: |
           install.packages(c("tidyverse", "fitzRoy", "elo", "svglite", "gt", "gtExtras", "fs", "rmarkdown"), repos = "https://cloud.r-project.org")
         shell: Rscript {0}
-
+      - name: Clean previous builds
+        run: |
+          rm -rf _freeze docs _site .quarto
+          git checkout -- .
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
         with:
