@@ -242,14 +242,14 @@ library(gt)
 library(gtExtras)
 
 ladder |> 
+  select(-"Power trend") |>
   gt() |> 
   gt_img_rows(logo, img_source = "local") |> 
   cols_align(
     align = "center",
     columns = everything()
-  ) |>
-  cols_label(logo = "", Power = "Power rating") |>  
-  gt_plt_sparkline("Power trend", type = "default", same_limit = FALSE, label = FALSE, palette = c("black", "transparent","#A23333","#003300","transparent"))
+  ) |> 
+  cols_label(logo = "", Power = "Power rating")
 
 ```
 
