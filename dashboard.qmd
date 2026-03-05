@@ -239,16 +239,19 @@ ladder <- cbind(Rank, ladder)
 ```{r, generate GT table}
 
 library(gt)
-library(gtExtras)
 
-ladder |> 
+
+ladder |>
   select(-"Power trend") |>
-  gt() |> 
-  gt_img_rows(logo, img_source = "local") |> 
+  gt() |>
+  text_transform(
+    locations = cells_body(columns = logo),
+    fn = function(x) { lapply(x, function(path) local_image(filename = path, height = 30)) }
+  ) |>
   cols_align(
     align = "center",
     columns = everything()
-  ) |> 
+  ) |>
   cols_label(logo = "", Power = "Power rating")
 
 ```
