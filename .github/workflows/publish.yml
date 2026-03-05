@@ -54,6 +54,17 @@ jobs:
           install.packages(c("tidyverse", "fitzRoy", "elo", "svglite", "gt", "fs", "rmarkdown"), repos = "https://cloud.r-project.org")
         shell: Rscript {0}
 
+      - name: Debug dashboard contents
+        run: |
+          echo "=== dashboard.qmd GT chunk ==="
+          grep -n -A 20 "generate GT table" dashboard.qmd
+          echo "=== .Rprofile exists? ==="
+          ls -la .Rprofile 2>/dev/null || echo "No .Rprofile"
+          echo "=== renv activate exists? ==="
+          ls -la renv/activate.R 2>/dev/null || echo "No renv/activate.R"
+          echo "=== _freeze exists? ==="
+          ls -la _freeze/ 2>/dev/null || echo "No _freeze"
+
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
         with:
