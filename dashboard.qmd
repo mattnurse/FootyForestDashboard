@@ -55,9 +55,9 @@ available_years <- unique(historical_results_df$season)
 if (!(current_year %in% available_years)) {
   latest_year <- max(as.numeric(available_years))
   cat("No data for current year (", current_year, "), using", latest_year, "instead\n")
-  historical_results_df <- historical_results_df %>% filter(season == latest_year)
+  historical_results_df <- historical_results_df |> filter(season == latest_year)
 } else {
-  historical_results_df <- historical_results_df %>% filter(season == current_year)
+  historical_results_df <- historical_results_df |> filter(season == current_year)
 }
 
 #Remove finals games
@@ -126,22 +126,22 @@ elo.df <- as.data.frame(elo.data)
 historical_results_df <- bind_cols(historical_results_df, elo.df)
 
 # IMPORTANT: Removed the filter to current_year since we already filtered earlier
-# historical_results_df <- historical_results_df %>% filter(season == current_year)
+# historical_results_df <- historical_results_df |> filter(season == current_year)
 
-power_rankings_home_elos <- historical_results_df %>% 
-  select(round_number, home_team, elo.A) %>% 
+power_rankings_home_elos <- historical_results_df |> 
+  select(round_number, home_team, elo.A) |> 
   rename(Team = home_team, Power = elo.A)
 
-power_rankings_away_elos <- historical_results_df %>% 
-  select(round_number, away_team, elo.B) %>% 
+power_rankings_away_elos <- historical_results_df |> 
+  select(round_number, away_team, elo.B) |> 
   rename(Team = away_team, Power = elo.B)
 
 #Join the home and away elos together and Round the numbers and divide by 10 so an average team is 100 
-power_rankings_dashboard <- rbind(power_rankings_home_elos, power_rankings_away_elos) %>% 
+power_rankings_dashboard <- rbind(power_rankings_home_elos, power_rankings_away_elos) |> 
   arrange(round_number)
 
 #Convert to average team = 100 not 1000 for ease of interpretation 
-power_rankings_dashboard <- power_rankings_dashboard %>% 
+power_rankings_dashboard <- power_rankings_dashboard |> 
   mutate(Power = round(Power, 1)/10) 
 ```
 
@@ -150,11 +150,11 @@ power_rankings_dashboard <- power_rankings_dashboard %>%
 
 
 #Download ladder and select variables of interest
-ladder <- fetch_ladder_afl(comp = "AFLM") %>%   
+ladder <- fetch_ladder_afl(comp = "AFLM") |>   
   select(position, team.name, played, thisSeasonRecord.aggregatePoints, thisSeasonRecord.percentage, thisRoundLastSeason.ladderPosition)
 
 #Rename variables to be more sensible
-ladder <- ladder %>% 
+ladder <- ladder |> 
   rename("Ladder position" = position, Team = team.name, "Games played" = played, Points = thisSeasonRecord.aggregatePoints, Percentage = thisSeasonRecord.percentage, "Ladder position this time last year" = thisRoundLastSeason.ladderPosition, Played = played)
 
 #Clean up team names
@@ -174,8 +174,8 @@ ladder <- ladder %>%
 
 
 #Put the power rankings into a single column to create a sparkline
-sparkline_data <- power_rankings_dashboard %>% 
-  group_by(Team) %>% 
+sparkline_data <- power_rankings_dashboard |> 
+  group_by(Team) |> 
   summarize("Power trend" = list(Power), .groups = "drop")
 
 
@@ -188,7 +188,7 @@ num_cols <- ncol(power_rankings_dashboard_for_joining)
 # Only use last_col if we have enough columns
 if (num_cols > 2) {
   #Replace NAs with the previous column 
-  power_rankings_dashboard_for_joining <- power_rankings_dashboard_for_joining %>%  
+  power_rankings_dashboard_for_joining <- power_rankings_dashboard_for_joining |>  
     select(Team, last_col(offset = 1), last_col())
 } else {
   # If we only have Team and one round column, keep as is
@@ -198,16 +198,16 @@ if (num_cols > 2) {
 
 power_rankings_dashboard_for_joining <- power_rankings_dashboard_for_joining %>% rename(latest_elo = 3, second_latest_elo = 2 )
 
-power_rankings_dashboard_for_joining <- power_rankings_dashboard_for_joining %>%  mutate(power = coalesce(latest_elo, second_latest_elo))
+power_rankings_dashboard_for_joining <- power_rankings_dashboard_for_joining |>  mutate(power = coalesce(latest_elo, second_latest_elo))
 
 power_rankings_dashboard_for_joining <- select(power_rankings_dashboard_for_joining, 1, last_col())
 
 #Join ladder with temp elo df but first remove old elos
-ladder <- ladder %>% select("Ladder position", Team, Played, Points, Percentage, "Ladder position this time last year")
+ladder <- ladder |> select("Ladder position", Team, Played, Points, Percentage, "Ladder position this time last year")
 
 ladder <- left_join(ladder, power_rankings_dashboard_for_joining, by = "Team") 
 
-ladder <- ladder %>%  rename("Power" = last_col())
+ladder <- ladder |>  rename("Power" = last_col())
 
 ladder <- left_join(ladder, sparkline_data, by = "Team")
 
@@ -225,7 +225,7 @@ Team_logos$Team <- str_replace_all(Team_logos$Team, File_paths_and_suffixes, "")
 
 
 
-ladder <- left_join(Team_logos, ladder, by = "Team") %>% arrange(desc(Power))
+ladder <- left_join(Team_logos, ladder, by = "Team") |> arrange(desc(Power))
 
 #Add rank based on power sorting
 Rank <- seq(1,18, by = 1)
@@ -240,18 +240,17 @@ ladder <- cbind(Rank, ladder)
 
 library(gt)
 
-
-ladder %>%
-  select(-"Power trend") %>%
-  gt() %>%
+ladder |>
+  select(-"Power trend") |>
+  gt() |>
   text_transform(
     locations = cells_body(columns = logo),
     fn = function(x) { lapply(x, function(path) local_image(filename = path, height = 30)) }
-  ) %>%
+  ) |>
   cols_align(
     align = "center",
     columns = everything()
-  ) %>%
+  ) |>
   cols_label(logo = "", Power = "Power rating")
 
 ```
