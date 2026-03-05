@@ -14,7 +14,7 @@ library(fitzRoy)
 library(elo)
 library(svglite)
 library(gt)
-library(gtExtras)
+#library(gtExtras)
 
 ```
 
@@ -28,7 +28,7 @@ library(fitzRoy)
 library(elo)
 library(svglite)
 library(gt)
-library(gtExtras)
+#library(gtExtras)
 
 #Set current date and year
 current_date <- Sys.Date()
